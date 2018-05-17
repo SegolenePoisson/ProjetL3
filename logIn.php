@@ -58,7 +58,6 @@ crossorigin="anonymous"></script>
     <div class="col-md-4">
       <section class="login-form">
         <form method="post" action="index.php" role="login">
-          <!--<img src="http://i.imgur.com/RcmcLv4.png" class="img-responsive" alt="" />-->
           <input type="text" name="pseudo"  required class="form-control input-lg" />
           <br/>
           <input type="password" class="form-control input-lg" name="password" placeholder="Password" 
