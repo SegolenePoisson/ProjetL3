@@ -1,7 +1,9 @@
 <?php
 session_start();
 ?>
-
+<?php 
+$_SESSION["current_page"] = "about"
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>

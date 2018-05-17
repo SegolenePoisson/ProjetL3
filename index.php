@@ -1,6 +1,9 @@
 <?php
 session_start();
 ?>
+<?php 
+$_SESSION["current_page"] = "home"
+?>
 
 
 <!DOCTYPE html>

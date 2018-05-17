@@ -1,7 +1,9 @@
 <?php
 session_start();
 ?>
-
+<?php 
+$_SESSION["current_page"] = "poll"
+?>
 <!DOCTYPE html>
 <html lang="en">
 
