@@ -51,7 +51,14 @@
 </a></li> 
 
 
-    <li><a href="logIn.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    <li><a href="logIn.php"><?php
+ if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['pseudo'])) {
+  echo '<span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>';
+ }
+ else {
+  echo '<span class="glyphicon glyphicon-log-in"></span> Log in</a></li>';
+ }
+?>
     </ul>
   </div>
 </nav> 
