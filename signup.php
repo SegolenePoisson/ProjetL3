@@ -31,16 +31,11 @@ body {
 $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
 ?>
   <body>
-        <p>Test d'acces par combinaison nom de compte + mdp en php
-            pour testé son fonctionnement, creez une base nommé poll puis,
-            copiez ces lignes dans votre mySQL
+        <p>Test de création de compte, merci de creer la table suivante pour vérifier son fonctionnement
             : <br>
             <strong>CREATE TABLE `poll`.`user` ( `ID` INT NOT NULL , `username` VARCHAR(25) NOT NULL , `password` INT(25) NOT NULL , PRIMARY KEY (`ID`), UNIQUE `username` (`username`)) ENGINE = InnoDB;</strong> <br>
             puis <br>
-            <strong>
-            essaye de de connecter <a href="login.php"> ici </a> </strong> <br>
-
-            ensuite rentrez "boskov" comme nom de compte et "pwet" comme mdp vous devriez avoir une page qui s'affiche, essayer ensuite autre chose ca ne devrait pas fonctionné.
+            <strong> essaye de de connecter <a href="login.php"> ici </a> </strong> <br>
         </p>
         <form action="signedup.php" method="post">
             <p>
