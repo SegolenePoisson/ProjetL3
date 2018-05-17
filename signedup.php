@@ -50,7 +50,7 @@
             else
             {
                 $bdd->exec('INSERT INTO user (username, password) VALUES ( "'.$name.'" , "'.$password.'")');   
-                echo '<p>Bienvenue sur strawpoll 2.0 .$name. !<br> </p>';
+                echo '<p>Bienvenue sur strawpoll 2.0 ' . $name .' !<br> </p>';
                 echo 'essaye de de connecter <a href="login.php"> ici </a>';
             }
         }

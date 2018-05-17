@@ -42,7 +42,7 @@
 
            // $_SESSION["logged_in"] = true; 
            // $_SESSION["naam"] = $name; 
-           echo '<p>Ca fontionne je suis tellement content et le plus grand genie php que le monde ai jamais connus.</p>';
+           echo '<p>Ca fontionne je suis tellement content et le plus grand genie php que le monde ait jamais connu.</p>';
         }
         else
         {
