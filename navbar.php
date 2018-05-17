@@ -32,15 +32,14 @@
     <ul class="nav navbar-nav">
       <li <?php if ($_SESSION ["current_page"] == "home"){ echo 'class="active"';}?> ><a href="index.php">Home</a></li>
       <li <?php if ($_SESSION ["current_page"] == "poll"){ echo 'class="active"';}?> ><a href="POLL.php">StrawPoll</a></li>
-      <li <?php if ($_SESSION ["current_page"] == "profile"){ echo 'class="active"';}?> ><a href="profil.php" >Profile</a></li> <!-- à replacer à la place de log in -->
+      <li <?php if ($_SESSION ["current_page"] == ""){ echo 'class="active"';}?> ><a href="profil.php" >Profile</a></li> <!-- à replacer à la place de log in -->
       <li <?php if ($_SESSION ["current_page"] == "about"){ echo 'class="active"';}?> ><a href="about.php">About Us</a></li>
     </ul>
     <ul class="nav navbar-nav navbar-right">
-    <li><a href="SignUp.php"><span class="glyphicon glyphicon-user"></span>
-
-    
-
-    <?php
+		
+   
+   <li><a href="profil.php" > <span class="glyphicon glyphicon-user"></span>
+	   <?php
  if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['pseudo'])) {
     echo $_SESSION['pseudo'];
  }
@@ -49,8 +48,9 @@
   
  }
 ?>
+</a></li> 
 
-   </a></li>
+
     <li><a href="logIn.php"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
     </ul>
   </div>
