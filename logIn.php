@@ -58,7 +58,8 @@ crossorigin="anonymous"></script>
     <div class="col-md-4">
       <section class="login-form">
         <form method="post" action="index.php" role="login">
-          <input type="text" name="pseudo"  required class="form-control input-lg" />
+          <input type="text" name="pseudo"  required class="form-control input-lg" name="Email" placeholder="Email Address" 
+required="" />
           <br/>
           <input type="password" class="form-control input-lg" name="password" placeholder="Password" 
 required="" />

@@ -36,9 +36,21 @@ crossorigin="anonymous"></script>
 ?>
 
 	
-	<p>
-	
-	Presentation du projet
+  <h1>
+    WOUI
+  </h1>
+<embed height="60" type="audio/midi" width="144" src="Easteraudio.mp3" volume="60" loop="false" autostart="true" />
+  <p>
+
+Afin de préserver le monde de la dévastation</br>
+Afin de rallier tous les peuples à notre nation</br>
+Afin d'écraser l'amour et la vérité</br>
+Afin d'étendre notre pouvoir jusqu'à la voie lactée</br>
+Jessie !</br>
+James !</br>
+La Team Rocket plus rapide que la lumière</br>
+Rendez-vous tous, ou ce sera la guerre</br>
+Miaouss, oui, la guerre !</br>
 	</p>
 </body>
   
