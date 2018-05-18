@@ -37,18 +37,23 @@
     <ul class="nav navbar-nav navbar-right">
 		
    
-   <li><a href="profil.php" > <span class="glyphicon glyphicon-user"></span>
-	   <?php
+    <!---------- GESTION LOG IN / LOG OUT / SIGN UP ----------->
+
+<li>
+	   <a <?php
  if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['pseudo'])) {
+    echo 'href="profil.php" >';
+    echo '<span class="glyphicon glyphicon-user"></span>';
     echo $_SESSION['pseudo'];
  }
+
  else {
-  echo 'Sign Up';
-  
+  echo'href="SignUp.php">';
+  echo '<span class="glyphicon glyphicon-user"></span>';
+  echo 'Sign Up' ;
  }
 ?>
 </a></li> 
-
 
     <li><a href="logIn.php"><?php
  if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['pseudo'])) {
