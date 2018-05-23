@@ -26,7 +26,7 @@
   <?php
 
 
-$bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', 'root');
+$bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
 
 if(isset($_POST["pseudo"], $_POST["password"], $_POST["confirm"]) && $_POST["password"] == $_POST["confirm"])) 
 {     
