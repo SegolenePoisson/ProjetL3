@@ -2,8 +2,9 @@
 
 $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
 $sql = "CREATE TABLE `user` (
- `id` int(11) NOT NULL AUTO_INCREMENT,
- `username` varchar(25) NOT NULL,
+ `id` int(25) NOT NULL AUTO_INCREMENT,
+ `username` varchar(255) NOT NULL,
+ `name` varchar(255) NOT NULL,
  `password` varchar(255) NOT NULL,
  `email` varchar(255) NOT NULL,
  PRIMARY KEY (`id`),
@@ -13,7 +14,7 @@ $sql = "CREATE TABLE `user` (
 $bdd->exec($sql);
 
 $sql = "CREATE TABLE `polls` (
- `id` int(11) NOT NULL,
+ `id` int(25) NOT NULL,
  `creatorId` int(25) NOT NULL,
  `question` varchar(255) NOT NULL,
  PRIMARY KEY (`id`),
@@ -23,7 +24,7 @@ $sql = "CREATE TABLE `polls` (
 $bdd->exec($sql);
 
 $sql = "CREATE TABLE `answers` (
- `id` int(11) NOT NULL AUTO_INCREMENT,
+ `id` int(25) NOT NULL AUTO_INCREMENT,
  `pollId` int(25) NOT NULL,
  `answer` varchar(255) NOT NULL,
  PRIMARY KEY (`id`),
@@ -33,7 +34,7 @@ $sql = "CREATE TABLE `answers` (
 $bdd->exec($sql);
 
 $sql = "CREATE TABLE `votes` (
- `id` int(11) NOT NULL AUTO_INCREMENT,
+ `id` int(25) NOT NULL AUTO_INCREMENT,
  `userId` int(25) NOT NULL,
  `answerId` int(25) NOT NULL,
  PRIMARY KEY (`id`),
