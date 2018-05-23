@@ -23,9 +23,9 @@ $sql = "CREATE TABLE `polls` (
 $bdd->exec($sql);
 
 $sql = "CREATE TABLE `answers` (
- `id` int(11) NOT NULL,
+ `id` int(11) NOT NULL AUTO_INCREMENT,
  `pollId` int(25) NOT NULL,
- `reponse` varchar(255) NOT NULL,
+ `answer` varchar(255) NOT NULL,
  PRIMARY KEY (`id`),
  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
@@ -33,7 +33,7 @@ $sql = "CREATE TABLE `answers` (
 $bdd->exec($sql);
 
 $sql = "CREATE TABLE `votes` (
- `id` int(11) NOT NULL,
+ `id` int(11) NOT NULL AUTO_INCREMENT,
  `userId` int(25) NOT NULL,
  `answerId` int(25) NOT NULL,
  PRIMARY KEY (`id`),
