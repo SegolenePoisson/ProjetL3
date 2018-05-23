@@ -4,7 +4,7 @@ $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
 $sql = "CREATE TABLE `user` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `username` varchar(25) NOT NULL,
- `password` int(25) NOT NULL,
+ `password` varchar(255) NOT NULL,
  `email` varchar(255) NOT NULL,
  PRIMARY KEY (`id`),
  UNIQUE KEY `username` (`username`)
