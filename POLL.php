@@ -34,9 +34,5 @@ $_SESSION["current_page"] = "poll"
     include 'navbar.php';
     ?>
 
-       <div class="divperso"> 
-         ICI ON MET LE STRAWPOLL
-      </div>
-
   </body>
 </html>
