@@ -1,12 +1,8 @@
 <?php
 session_start();
 ?>
-
-
 <html lang="en">
 <head>
-
-
   <meta charset="utf-8">
   <!-- For proper scaling on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -24,15 +20,10 @@ session_start();
     
 	<title>WOUI</title>
 </head>
-  
-  
  <body>
-  
     <?php
 	  include 'navbar.php';
 	?>
-
-
 <form action="index.php" method="post">
 <div class="container">
 			<div class="row main">
@@ -96,12 +87,13 @@ session_start();
 						</div>
 					<br/>
 						<div class="form-group ">
-							<input type="button" class="btn btn-primary btn-lg btn-block login-button" value="Register"></input>
+							<input type="button" OnClick="location.href= '/ProjetL3/Register.php'"  class="btn btn-primary btn-lg btn-block login-button" value="Register"></input>
 						</div>
 					</form>
 				</div>
 			</div>
 		</div>
+		
 		</form>
 		<script type="text/javascript" src="assets/js/bootstrap.js"></script>
 	</body>
