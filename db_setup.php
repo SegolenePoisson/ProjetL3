@@ -25,7 +25,7 @@ $bdd->exec($sql);
 $sql = "CREATE TABLE `answers` (
  `id` int(11) NOT NULL AUTO_INCREMENT,
  `pollId` int(25) NOT NULL,
- `reponse` varchar(255) NOT NULL,
+ `answer` varchar(255) NOT NULL,
  PRIMARY KEY (`id`),
  UNIQUE KEY `id` (`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
