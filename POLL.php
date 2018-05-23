@@ -36,22 +36,28 @@ $_SESSION["current_page"] = "poll"
     <form method="post" action="create_poll.php">
  
       <fieldset>
-       <legend>Nouveau sondage</legend> <!-- Titre du fieldset --> 
+       <legend>Nouveau sondage</legend> <!-- Titre du fieldset -->
 
        <label for="question">Question : </label>
-       <input type="text" name="question" id="question" placeholder="Ex : Où voulez vous manger demain soir ?" />
+       <input type="text" name="question" id="question" placeholder="Ex : Où voulez vous manger demain soir ?" /><br/>
 
        <label for="choice1">Réponse 1 : </label>
-       <input type="text" name="choice1" id="choice1" placeholder="Ex : Au restaurant." required />
+       <input type="text" name="choice1" id="choice1" placeholder="Ex : Au restaurant." required /><br/>
  
        <label for="choice2">Réponse 2 : </label>
-       <input type="text" name="choice2" id="choice2" placeholder="Ex : A la maison." required />
+       <input type="text" name="choice2" id="choice2" placeholder="Ex : A la maison." required /><br/>
 
        <label for="choice3">Réponse 3 (champ facultatif) : </label>
-       <input type="text" name="choice3" id="choice3" placeholder="Ex : Chez mamie." required />
+       <input type="text" name="choice3" id="choice3" placeholder="Ex : Chez mamie." required /><br/>
 
       </fieldset>
       <input type="submit" value="Envoyer" />
     </form>
+    <style>
+      fieldset, legend
+      {
+        color: white;
+      }
+    </style>
   </body>
 </html>
