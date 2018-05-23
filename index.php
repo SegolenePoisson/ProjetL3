@@ -28,13 +28,14 @@ $_SESSION["current_page"] = "home";
   $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
 
   if(isset($_POST["pseudo"], $_POST["password"])) 
-  {     
+  {
     $pseudo = $_POST["pseudo"]; 
     $password = $_POST["password"]; 
 
-    $result = $bdd->query('SELECT username, password FROM user WHERE username = "'.$pseudo.'" AND  password = "'.$password.'"');
+    $result = $bdd->prepare('SELECT username, password FROM user WHERE username = ? AND password = ?');
+    $result->execute([$pseudo, $password]);
 
-    if($result->rowCount() > 0 )
+    if ($result->rowCount() > 0)
     {
       $_SESSION["logged_in"] = true; 
       $_SESSION["pseudo"] = $pseudo;
