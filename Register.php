@@ -35,7 +35,6 @@ if(isset($_POST["name"], $_POST["password"], $_POST["pseudo"], $_POST["email"], 
 {     
 		$email = $_POST["email"];
         $pseudo = $_POST["pseudo"];
-        $_SESSION['pseudo'] = $_POST["pseudo"];
         $password = $_POST["password"];
 
 	$result_register = $bdd->mysql_query("SELECT username FROM `poll`.`user` WHERE username = '.$pseudo.' ");
