@@ -10,7 +10,7 @@ $sql = "CREATE TABLE `user` (
  UNIQUE KEY `username` (`username`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1";
 
- $bdd->exec($sql);
+$bdd->exec($sql);
 
 $sql = "CREATE TABLE `polls` (
  `id` int(11) NOT NULL,
