@@ -39,7 +39,7 @@ crossorigin="anonymous"></script>
   <h1>
     WOUI
   </h1>
-<embed height="60" type="audio/midi" width="144" src="Easteraudio.mp3" volume="60" loop="false" autostart="true" />
+<!----<embed height="60" type="audio/midi" width="144" src="Easteraudio.mp3" volume="60" loop="false" autostart="true" /> -->
   <p>
 
 Afin de préserver le monde de la dévastation</br>
