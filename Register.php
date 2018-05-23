@@ -26,26 +26,26 @@ session_start();
 <body>
    
   <?php
-  $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
+  $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', 'root');
 
-  if(isset($_POST["name"], $_POST["password"], $_POST["pseudo"], $_POST["email"], $_POST["confirm"]) && $_POST["password"] == $_POST["confirm"])
+  if(isset($_POST["name"], $_POST["password"], $_POST["username"], $_POST["email"], $_POST["confirm"]) && $_POST["password"] == $_POST["confirm"])
   {     
   	$email = $_POST["email"];
-    $pseudo = $_POST["pseudo"];
+    $username = $_POST["username"];
     $password = $_POST["password"];
 
-  	$result_register = $bdd->mysql_query("SELECT username FROM `poll`.`user` WHERE username = '.$pseudo.' ");
+  	$result_register = $bdd->exec('SELECT username FROM `user` WHERE username = "'.$username.'"');
 
-  	if($result_register->rowCount() > 0 ){
+  	if($result_register){
   		echo "Erreur pseudo déjà utilisé";
   	}
   	else {
-  		$bdd->exec("INSERT INTO `poll`.`user` (username, password, email) VALUES ('.$pseudo. ',' .$password. ',' .$email.')") OR die(mysql_error());
+  		$bdd->exec('INSERT INTO `user` (username, password, email) VALUES ("'.$username. '","' .$password. '","' .$email.'")') OR die(print_r($bdd->errorInfo()));
   	}
   }
 
   ?>
-  <h1> Bienvenue sur WOUI<br> votre sondage personnalisé</h1>
+  <h1>Bienvenue sur WOUI<br> votre sondage personnalisé</h1>
   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
 </body>
 </html>
