@@ -1,15 +1,11 @@
 <?php
 session_start();
-?>
-<?php 
-$_SESSION["current_page"] = "poll"
+$_SESSION["current_page"] = "poll";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-
   <meta charset="utf-8">
   <!-- For proper scaling on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,10 +18,14 @@ $_SESSION["current_page"] = "poll"
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-	<!-- Classe css -->
-	<link rel="stylesheet" href="class1.css" />
-    
-	<title>WOUI</title>
+  <!-- Classe css -->
+  <link rel="stylesheet" href="class1.css" />
+  <style>
+    label, legend {
+      color: white;
+    }
+  </style>
+  <title>WOUI</title>
 </head>
   
   
@@ -53,11 +53,5 @@ $_SESSION["current_page"] = "poll"
       </fieldset>
       <input type="submit" value="Envoyer" />
     </form>
-    <style>
-      label, legend
-      {
-        color: white;
-      }
-    </style>
   </body>
 </html>
