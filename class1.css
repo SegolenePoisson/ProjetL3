@@ -1,9 +1,10 @@
 	body{
 	    background-image: url("wallpaperSite.jpg");
+	    background-attachment: fixed;
 	}
 	
 	h1 {
-	color 	: White ;
+	color 	: white ;
 	font-weight	: bold ;
 	text-align	: center;
 	padding-top : 50px;
@@ -11,7 +12,7 @@
 	}
 	div {
 	color : white;
-	text-align	: center;
+	text-align	: justify;
 	}
 
 	p {
@@ -26,3 +27,18 @@
 	.container {
 	padding-top: 100px;
 	}
+
+	.divperso {
+	text-align	: center;
+  	color : white;
+    box-sizing: border-box;
+    width: 320px;
+    padding: 320px;
+    border: 5px solid white;
+    margin-left: auto;
+    margin-right: auto;
+	}
+
+	.navbar-nav > li:hover{
+    background-color: black;
+}

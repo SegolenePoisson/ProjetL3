@@ -22,13 +22,9 @@
 	<title>WOUI</title>
 </head>
   <body>
-	
-	
+    
      <nav class="navbar navbar-inverse">
   <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="#">WebSiteName</a>
-    </div>
     <ul class="nav navbar-nav">
       <li <?php if ($_SESSION ["current_page"] == "home"){ echo 'class="active"';}?> ><a href="index.php">Home</a></li>
       <li <?php if ($_SESSION ["current_page"] == "poll"){ echo 'class="active"';}?> ><a href="POLL.php">StrawPoll</a></li>
@@ -60,7 +56,7 @@
   echo '<span class="glyphicon glyphicon-log-out"></span> Log Out</a></li>';
  }
  else {
-  echo '<span class="glyphicon glyphicon-log-in"></span> Log in</a></li>';
+  echo '<span class="glyphicon glyphicon-log-in">  </span> Log in</a></li>';
  }
 ?>
     </ul>
