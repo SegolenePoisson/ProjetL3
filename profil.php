@@ -1,15 +1,11 @@
 <?php
 session_start();
-?>
-<?php 
-$_SESSION["current_page"] = "profile"
+$_SESSION["current_page"] = "profile";
 ?>
 
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
   <meta charset="utf-8">
   <!-- For proper scaling on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,18 +23,17 @@ $_SESSION["current_page"] = "profile"
     
 	<title>WOUI</title>
 </head>
+<body>
   
-  
-  <body>
-      <?php
-    include 'navbar.php';
-?>
+  <?php
+  include 'navbar.php';
+  ?>
 
-<p>
-	
-	Ici, on balancera les infos de chaque personne <br/>
-	Accès à la BDD<br/>
-	JS de prévu ?<br/>
+  <p>
+	Ici, on balancera les infos de chaque personne <br>
+	Accès à la BDD<br>
+	JS de prévu ?<br>
 	</p>
 
+</body>
 </html>
