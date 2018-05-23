@@ -54,11 +54,10 @@ $_SESSION["current_page"] = "poll"
       <input type="submit" value="Envoyer" />
     </form>
     <style>
-      label, legend
+      fieldset, legend
       {
         color: white;
       }
-
     </style>
   </body>
 </html>
