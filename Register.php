@@ -1,3 +1,7 @@
+<?php
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -24,22 +28,21 @@
   <body>
    
   <?php
-
-
 $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
 
-if(isset($_POST["name"], $_POST["password"], $_POST["pseudo"], $_POST["email"], $_POST["confirm"]) && $_POST["password"] == $_POST["confirm"])) 
+if(isset($_POST["name"], $_POST["password"], $_POST["pseudo"], $_POST["email"], $_POST["confirm"]) && $_POST["password"] == $_POST["confirm"])
 {     
+		$email = $_POST["email"];
         $pseudo = $_POST["pseudo"];
         $password = $_POST["password"];
 
-	$result_register = $bdd->query('SELECT username FROM user WHERE username = "'.$pseudo.'" ');
+	$result_register = $bdd->query('SELECT username FROM `poll`.`user` WHERE username = `$pseudo` ');
 
-	if($result_register->rowCount() <> 0 ){
+	if($result_register->rowCount() > 0 ){
 		echo "Erreur pseudo déjà utilisé";
 	}
 	else {
-		$bdd->query('INSERT INTO `poll`.`user` (`username`, `password`) VALUES ($pseudo, $password)');
+		$bdd->query('INSERT INTO `poll`.`user` (username, password, email) VALUES (`$pseudo`, `$password`, `$email`)');
 	}
 }
 
