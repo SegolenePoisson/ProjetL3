@@ -23,9 +23,13 @@ $_SESSION["current_page"] = "poll"
   <!-- Latest compiled and minified JavaScript -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Classe css -->
-	<link rel="stylesheet" href="class1.css" />
-    
-	<title>WOUI</title>
+  <link rel="stylesheet" href="class1.css" />
+  <style>
+  	label, legend {
+        	color: white;
+      	}
+  </style>
+  <title>WOUI</title>
 </head>
   
   
@@ -53,11 +57,5 @@ $_SESSION["current_page"] = "poll"
       </fieldset>
       <input type="submit" value="Envoyer" />
     </form>
-    <style>
-      label, legend
-      {
-        color: white;
-      }
-    </style>
   </body>
 </html>
