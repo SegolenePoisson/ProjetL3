@@ -48,7 +48,7 @@ $_SESSION["current_page"] = "poll"
        <input type="text" name="choice2" id="choice2" placeholder="Ex : A la maison." required /><br/>
 
        <label for="choice3">Réponse 3 (champ facultatif) : </label>
-       <input type="text" name="choice3" id="choice3" placeholder="Ex : Chez mamie." required /><br/>
+       <input type="text" name="choice3" id="choice3" placeholder="Ex : Chez mamie."/><br/>
 
       </fieldset>
       <input type="submit" value="Envoyer" />
