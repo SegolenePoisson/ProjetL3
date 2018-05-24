@@ -1,17 +1,12 @@
 <?php
 session_start();
+$_SESSION["current_page"] = "home";
 ?>
-<?php 
-$_SESSION["current_page"] = "home"
-?>
-
 
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
-
-
   <meta charset="utf-8">
   <!-- For proper scaling on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -26,37 +21,30 @@ $_SESSION["current_page"] = "home"
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Classe css -->
 	<link rel="stylesheet" href="class1.css" />
-    
 	<title>WOUI</title>
 </head>
-  <body>
-   
+<body>
   <?php
-
   $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
 
-     if(isset($_POST["pseudo"], $_POST["password"])) 
-    {     
-        $pseudo = $_POST["pseudo"]; 
-        $password = $_POST["password"]; 
+  if(isset($_POST["pseudo"], $_POST["password"])) 
+  {
+    $pseudo = $_POST["pseudo"]; 
+    $password = $_POST["password"]; 
 
-        $result = $bdd->query('SELECT username, password FROM user WHERE username = "'.$pseudo.'" AND  password = "'.$password.'"');
+    $result = $bdd->prepare('SELECT username, password FROM user WHERE username = ? AND password = ?');
+    $result->execute([$pseudo, $password]);
 
-        if($result->rowCount() > 0 )
-        { 
-
-           $_SESSION["logged_in"] = true; 
-           $_SESSION["pseudo"] = $pseudo;
-
-        }
-      }
-       include 'navbar.php';
-?>
-           <h1> Bienvenue sur WOUI<br/> votre sondage personnalisé
-           </h1>
-             <form>
-               <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
-             </form>;
-	</body>
+    if ($result->rowCount() > 0)
+    {
+      $_SESSION["logged_in"] = true; 
+      $_SESSION["pseudo"] = $pseudo;
+    }
+  }
+  include 'navbar.php';
+  ?>
+  <h1>Bienvenue sur WOUI<br>votre sondage personnalisé</h1>
+  <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+</body>
 </html>
 

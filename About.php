@@ -1,14 +1,10 @@
 <?php
 session_start();
-?>
-<?php 
-$_SESSION["current_page"] = "about"
+$_SESSION["current_page"] = "about";
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
-
   <meta charset="utf-8">
   <!-- For proper scaling on mobile -->
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -27,29 +23,27 @@ integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7T
 crossorigin="anonymous"></script>
 	<!-- Classe css -->
 	<link rel="stylesheet" href="class1.css" />
-    <title>WOUI - A Propos</title>
+  <title>WOUI - A Propos</title>
 </head>
 <body>
-	
-    <?php
-    include 'navbar.php';
-?>
 
-	
+  <?php
+  include 'navbar.php';
+  ?>
+
   <h1>
     WOUI
   </h1>
   <p>
-
-Afin de préserver le monde de la dévastation</br>
-Afin de rallier tous les peuples à notre nation</br>
-Afin d'écraser l'amour et la vérité</br>
-Afin d'étendre notre pouvoir jusqu'à la voie lactée</br>
-Jessie !</br>
-James !</br>
-La Team Rocket plus rapide que la lumière</br>
-Rendez-vous tous, ou ce sera la guerre</br>
-Miaouss, oui, la guerre !</br>
+    Afin de préserver le monde de la dévastation<br>
+    Afin de rallier tous les peuples à notre nation<br>
+    Afin d'écraser l'amour et la vérité<br>
+    Afin d'étendre notre pouvoir jusqu'à la voie lactée<br>
+    Jessie !<br>
+    James !<br>
+    La Team Rocket plus rapide que la lumière<br>
+    Rendez-vous tous, ou ce sera la guerre<br>
+    Miaouss, oui, la guerre !<br>
 	</p>
 </body>
-  
+</html>
