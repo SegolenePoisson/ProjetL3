@@ -38,7 +38,7 @@ $result->execute([$creator_Id, $_POST['choice2']]);
 
 if(isset($_POST['choice3'])) {
   $sql = 'INSERT INTO answers(pollId, answer) VALUES (?, ?)';
-  $result = $bdd->exec($sql);
+  $result = $bdd->prepare($sql);
   $result->execute([$creator_Id, $_POST['choice3']]);
 }
 
