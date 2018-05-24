@@ -1,7 +1,7 @@
 <?php
 session_start();
 $_SESSION["current_page"] = "poll";
-if(isset($_SESSION["pseudo"])){
+if(!isset($_SESSION["pseudo"])){
   ?>
   <!DOCTYPE html>
   <html lang="en">
@@ -60,7 +60,7 @@ if(isset($_SESSION["pseudo"])){
         <label for="choice3">Answer 3 : </label>
         <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
 
-        <input type="submit" value="Envoyer" />
+        <input type="submit" value="Create poll" />
 
       </form>
       <p>* this field is required.<br/></p>
