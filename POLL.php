@@ -96,7 +96,7 @@ else{
       ?>
       <h1>New poll</h1>
       
-      <p>To create a new poll, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php">create one !</a><br/></p>
+      <p>To create a new poll, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php">create one</a> !<br/></p>
     </body>
   </html>
   <?php
