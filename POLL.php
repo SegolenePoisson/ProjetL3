@@ -21,9 +21,20 @@ $_SESSION["current_page"] = "poll";
   <!-- Classe css -->
   <link rel="stylesheet" href="class1.css" />
   <style>
-    label, legend {
+    label{
       color: white;
     }
+    form{
+      width: 50%; /* On a indiqué une largeur (obligatoire) */
+      margin: auto;
+      padding-top: 50px;
+      text-align: center;
+      line-height: 1.5;
+    }
+    p{
+      font-size: 12px;
+    }
+    ;
   </style>
   <title>WOUI</title>
 </head>
@@ -33,25 +44,24 @@ $_SESSION["current_page"] = "poll";
     <?php 
     include 'navbar.php';
     ?>
+    <h1>Nouveau sondage</h1>
     <form method="post" action="create_poll.php">
  
-      <fieldset>
-       <legend>Nouveau sondage</legend> <!-- Titre du fieldset -->
+      <label for="question">Question* : </label>
+      <input type="text" name="question" id="question" size="35" placeholder="Ex : Où voulez vous manger demain soir ?" /><br/>
 
-       <label for="question">Question : </label>
-       <input type="text" name="question" id="question" placeholder="Ex : Où voulez vous manger demain soir ?" /><br/>
+      <label for="choice1">Réponse 1* : </label>
+      <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Au restaurant." required /><br/>
 
-       <label for="choice1">Réponse 1 : </label>
-       <input type="text" name="choice1" id="choice1" placeholder="Ex : Au restaurant." required /><br/>
- 
-       <label for="choice2">Réponse 2 : </label>
-       <input type="text" name="choice2" id="choice2" placeholder="Ex : A la maison." required /><br/>
+      <label for="choice2">Réponse 2* : </label>
+      <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : A la maison." required /><br/>
 
-       <label for="choice3">Réponse 3 (champ facultatif) : </label>
-       <input type="text" name="choice3" id="choice3" placeholder="Ex : Chez mamie."/><br/>
+      <label for="choice3">Réponse 3 : </label>
+      <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Chez mamie."/><br/>
 
-      </fieldset>
       <input type="submit" value="Envoyer" />
+
     </form>
+    <p>Le caractère * désigne un champ obligatoire.<br/></p>
   </body>
 </html>
