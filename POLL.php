@@ -45,25 +45,25 @@ if(isset($_SESSION["pseudo"])){
       <?php 
       include 'navbar.php';
       ?>
-      <h1>Nouveau sondage</h1>
+      <h1>New poll</h1>
       <form method="post" action="create_poll.php">
    
         <label for="question">Question* : </label>
-        <input type="text" name="question" id="question" size="35" placeholder="Ex : Où voulez vous manger demain soir ?" /><br/>
+        <input type="text" name="question" id="question" size="35" placeholder="Ex : What's you favorite color ?" /><br/>
 
-        <label for="choice1">Réponse 1* : </label>
-        <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Au restaurant." required /><br/>
+        <label for="choice1">Answer 1* : </label>
+        <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Blue." required /><br/>
 
-        <label for="choice2">Réponse 2* : </label>
-        <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : A la maison." required /><br/>
+        <label for="choice2">Answer 2* : </label>
+        <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : Red." required /><br/>
 
-        <label for="choice3">Réponse 3 : </label>
-        <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Chez mamie."/><br/>
+        <label for="choice3">Answer 3 : </label>
+        <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
 
         <input type="submit" value="Envoyer" />
 
       </form>
-      <p>Le caractère * désigne un champ obligatoire.<br/></p>
+      <p>* this field is required.<br/></p>
     </body>
   </html>
   <?php
