@@ -1,7 +1,7 @@
 <?php
 session_start();
 $_SESSION["current_page"] = "poll";
-if(!isset($_SESSION["pseudo"])){
+if(isset($_SESSION["pseudo"])){
   ?>
   <!DOCTYPE html>
   <html lang="en">
