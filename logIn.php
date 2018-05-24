@@ -55,5 +55,6 @@ crossorigin="anonymous"></script>
       <div class="col-md-4"></div>
     </div>
   </div>
+  <p>No account yet ? <a href="SignUp.php">Sign up !</a>
 </body>
 </html>
