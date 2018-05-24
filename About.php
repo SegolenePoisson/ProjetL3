@@ -35,15 +35,9 @@ crossorigin="anonymous"></script>
     WOUI
   </h1>
   <p>
-    Afin de préserver le monde de la dévastation<br>
-    Afin de rallier tous les peuples à notre nation<br>
-    Afin d'écraser l'amour et la vérité<br>
-    Afin d'étendre notre pouvoir jusqu'à la voie lactée<br>
-    Jessie !<br>
-    James !<br>
-    La Team Rocket plus rapide que la lumière<br>
-    Rendez-vous tous, ou ce sera la guerre<br>
-    Miaouss, oui, la guerre !<br>
+    Etudiants en troisième année à l'<a href="https://www.univ-rennes1.fr/">université de Rennes 1</a>, ce site constitue notre projet de fin d'année.<br>
+    Il s'agit d'un travail en cours, nous l'enrichirons dans les semaines à venir !
 	</p>
+  <p>Valentin Petit, Kévin Chertier, Antoine Mousserion, Romain Olivo, Luc Powell et Ségolène Poisson.</p>
 </body>
 </html>
