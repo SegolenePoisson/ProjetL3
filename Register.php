@@ -27,29 +27,22 @@ session_start();
    
   <?php
 	
-	mysql_connect("localhost", "root", "root");
-	mysql_select_db("poll");
+	$bdd = new PDO('mysql:host=localhost;dbname=poll', "root", "");
 	
 	if(isset($_POST["name"], $_POST["email"], $_POST["username"])){
 		$email = $_POST["email"];
 		$username = $_POST["username"];
 		$password = $_POST["password"];
 		
-		$bdd = mysql_query("SELECT username FROM `poll`.`user` WHERE username = '$password'");
+		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `poll`.`user` WHERE `username` = '$password'");
+		$verif->execute();
 
-		if(mysql_num_rows($bdd)==0){
-			mysql_query("INSERT INTO `poll`.`user` (`id`, `username`, `password`, `email`) VALUES (NULL ,'$username' ,'$password' ,'$email')");
-		}
-		else{
-			mysql_error();
+		if($verif ->rowCount() == 0){
+			$ajout = $bdd->prepare("INSERT INTO `poll`.`user` (`id`, `username`, `password`, `email`) VALUES (NULL ,'$username' ,'$password' ,'$email')");
+			$ajout->execute();
 		}
 	}
-	else {
-		mysql_error();
-	}
-	
-  	mysql_close();
-	
+
   ?>
   <h1>Bienvenue sur WOUI<br> votre sondage personnalisé</h1>
   <p>"Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
