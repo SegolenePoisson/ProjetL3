@@ -33,12 +33,13 @@ session_start();
 		$email = $_POST["email"];
 		$username = $_POST["username"];
 		$password = $_POST["password"];
+		$name = $_POST["name"];
 		
 		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `poll`.`user` WHERE `username` = '$password'");
 		$verif->execute();
 
 		if($verif ->rowCount() == 0){
-			$ajout = $bdd->prepare("INSERT INTO `poll`.`user` (`id`, `username`, `password`, `email`) VALUES (NULL ,'$username' ,'$password' ,'$email')");
+			$ajout = $bdd->prepare("INSERT INTO `poll`.`user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL , '$name', '$username' ,'$password' ,'$email')");
 			$ajout->execute();
 		}
 	}
