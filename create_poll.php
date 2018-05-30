@@ -23,7 +23,7 @@ $sql = 'SELECT id FROM user WHERE username=?';
 $result = $bdd->prepare($sql);
 $result->execute([$_SESSION['pseudo']]);
 while($row = $result->fetchColumn()) {
-  $creator_Id=$row['id'];
+  $creator_Id=$row;
 }
 
 $sql = 'INSERT INTO polls(id, creatorId, question) VALUES (?, ?, ?)';
