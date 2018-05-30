@@ -33,16 +33,16 @@ $result->execute([$id_poll, $creator_Id, $_POST['question']]);
 
 $sql = 'INSERT INTO answers(pollId, answer) VALUES (?, ?)';
 $result = $bdd->prepare($sql);
-$result->execute([$creator_Id, $_POST['choice1']]);
+$result->execute([$id_poll, $_POST['choice1']]);
 
 $sql = 'INSERT INTO answers(pollId, answer) VALUES (?, ?)';
 $result = $bdd->prepare($sql);
-$result->execute([$creator_Id, $_POST['choice2']]);
+$result->execute([$id_poll, $_POST['choice2']]);
 
 if(isset($_POST['choice3'])) {
   $sql = 'INSERT INTO answers(pollId, answer) VALUES (?, ?)';
   $result = $bdd->prepare($sql);
-  $result->execute([$creator_Id, $_POST['choice3']]);
+  $result->execute([$id_poll, $_POST['choice3']]);
 }
 
 ?>
