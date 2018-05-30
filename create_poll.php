@@ -48,4 +48,7 @@ if(isset($_POST['choice3']) && $_POST['choice3'] <> "") {
   $result->execute([$id_poll, $_POST['choice3']]);
 }
 
+  header('Location: poll.php');
+  exit();
+
 ?>
