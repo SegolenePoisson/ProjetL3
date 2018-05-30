@@ -17,7 +17,7 @@
     $N = count($answers);
       for($i=0; $i < $N; $i++){
         //Verification du double vote (pour chaque option cochée)
-        $sql = "SELECT * FROM votes WHERE userID = ? AND  answerId = ?"
+        $sql = "SELECT * FROM votes WHERE userID = ? AND answerId = ?"
         $result = $bdd->prepare($sql);
         $result->execute([$idUser,$answers[$i]]);
 
