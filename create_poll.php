@@ -42,7 +42,7 @@ $sql = 'INSERT INTO answers(pollId, answer) VALUES (?, ?)';
 $result = $bdd->prepare($sql);
 $result->execute([$id_poll, $_POST['choice2']]);
 
-if(isset($_POST['choice3']) && $_POST['choice3'] <> "")) {
+if(isset($_POST['choice3']) && $_POST['choice3'] <> "") {
   $sql = 'INSERT INTO answers(pollId, answer) VALUES (?, ?)';
   $result = $bdd->prepare($sql);
   $result->execute([$id_poll, $_POST['choice3']]);
