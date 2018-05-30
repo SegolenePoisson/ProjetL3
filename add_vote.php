@@ -15,11 +15,18 @@
     }
 
     $N = count($answers);
-       for($i=0; $i < $N; $i++){
-         $sql = "INSERT INTO votes (userID, answerId) VALUES (?,?)";
-         $result = $bdd->prepare($sql);
-         $result->execute([$idUser,$answers[$i]]);
-       }
+      for($i=0; $i < $N; $i++){
+        //Verification du double vote (pour chaque option cochée)
+        $sql = "SELECT * FROM votes WHERE userID = ? AND  answerId = ?"
+        $result = $bdd->prepare($sql);
+        $result->execute([$idUser,$answers[$i]]);
+
+        if ($result->rowCount() == 0){
+          $sql = "INSERT INTO votes (userID, answerId) VALUES (?,?)";
+          $result = $bdd->prepare($sql);
+          $result->execute([$idUser,$answers[$i]]);
+        }
+      }
 
     echo("Your vote have been submited.");
 
