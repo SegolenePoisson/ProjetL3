@@ -23,7 +23,7 @@
     <div class="container-fluid">
       <ul class="nav navbar-nav">
         <li <?php if ($_SESSION["current_page"] == "home"){ echo 'class="active"';}?> ><a href="index.php">Home</a></li>
-        <li <?php if ($_SESSION["current_page"] == "poll"){ echo 'class="active"';}?> ><a href="new_poll.php">StrawPoll</a></li>
+        <li <?php if ($_SESSION["current_page"] == "poll"){ echo 'class="active"';}?> ><a href="POLL.php">StrawPoll</a></li>
         <li <?php if ($_SESSION["current_page"] == "about"){ echo 'class="active"';}?> ><a href="about.php">About Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
@@ -45,15 +45,16 @@
         </li> 
 
         <li>
-          <a href="logIn.php"><?php
+           <?php
           if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['pseudo'])) {
-            echo '<span class="glyphicon glyphicon-log-out"></span> Log Out';
+
+            echo ' <a href="disconect.php"> <span class="glyphicon glyphicon-log-out"></span> Log Out </a>';
           }
           else {
-            echo '<span class="glyphicon glyphicon-log-in">  </span> Log in';
+            echo '<a href="logIn.php"> <span class="glyphicon glyphicon-log-out"></span> Log In </a>';
           }
           ?>
-          </a>
+          
         </li>
       </ul>
     </div>
