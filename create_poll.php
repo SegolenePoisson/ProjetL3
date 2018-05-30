@@ -18,7 +18,6 @@ $creator_Id = NULL;
 while($row = $result->fetchColumn()) {
   $creator_Id=$row['id'];
 }
-
 $sql = 'SELECT id FROM user WHERE username=?';
 $result = $bdd->prepare($sql);
 $result->execute([$_SESSION['pseudo']]);
