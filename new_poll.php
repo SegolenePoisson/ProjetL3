@@ -1,8 +1,7 @@
  <?php
  session_start();
 $_SESSION["current_page"] = "poll";
-if(isset($_SESSION["pseudo"])){
-  ?>
+?>
   <!DOCTYPE html>
   <html lang="en">
 
@@ -41,7 +40,9 @@ if(isset($_SESSION["pseudo"])){
     <title>WOUI</title>
   </head>
 
-     
+  <?php
+if(isset($_SESSION["pseudo"])){
+  ?>
     <body>
       <?php 
       include 'navbar.php';
@@ -67,34 +68,17 @@ if(isset($_SESSION["pseudo"])){
       <p>* this field is required.<br/></p>
     </body>
   </html>
+
  <?php
   }
 else{
   ?>
-  <!DOCTYPE html>
-  <html lang="en">
- 
-  <head>
-    <meta charset="utf-8">
-    <!-- For proper scaling on mobile -->
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- JQuery form google -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- BOOTSTRAP -->
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-    <!-- Optional theme -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-    <!-- Latest compiled and minified JavaScript -->
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-    <!-- Classe css -->
-    <link rel="stylesheet" href="class1.css" />
-    <title>WOUI</title>
-  </head>  
     <body>
+
       <?php 
       include 'navbar.php';
       ?>
+      
       <h1>New poll</h1>
       
       <p>To create a new poll, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php">create one</a> !<br/></p>

@@ -1,4 +1,4 @@
-# ProjetL3
+ProjetL3
 
 L'objectif est de créer un outil en ligne de génération de sondages à petite échelle.
 L'utilisateur s'inscrit, créé un sondage personnalisé, par exemple :
