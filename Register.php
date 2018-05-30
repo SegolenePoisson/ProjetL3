@@ -20,23 +20,23 @@ session_start();
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Classe css -->
 	<link rel="stylesheet" href="class1.css" />
-    
+
 	<title>WOUI</title>
 </head>
 <body>
-   
+
   <?php
-  
+
   include 'navbar.php';
-	
+
 	$bdd = new PDO('mysql:host=localhost;dbname=poll', "root", "");
-	
+
 	if(isset($_POST["name"], $_POST["email"], $_POST["username"])){
 		$email = $_POST["email"];
 		$username = $_POST["username"];
 		$password = $_POST["password"];
 		$name = $_POST["name"];
-		
+
 		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `poll`.`user` WHERE `username` = '$password'");
 		$verif->execute();
 
@@ -48,7 +48,6 @@ session_start();
 
   ?>
   <h1>Bienvenue sur WOUI<br> votre sondage personnalisé</h1>
-  <p>"Votre compte a été créé avec succès."</p>
+  <p>Votre compte a été créé avec succès.</p>
 </body>
 </html>
-
