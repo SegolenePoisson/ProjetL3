@@ -40,11 +40,12 @@ $_SESSION["current_page"] = "home";
       $_SESSION["logged_in"] = true; 
       $_SESSION["pseudo"] = $pseudo;
     }
+  }
   include 'navbar.php';
-}
   ?>
   <h1>Bienvenue sur WOUI<br>votre sondage personnalisé</h1>
   <p>WOUI permet de créer des sondages pour faciliter l'organisation et la prise de décision dans un groupe de personnes.</br>
   Vous souhaitez fixer une date pour un repas entre amis ? En choisir le menu ? WOUI vous aide à trouver la meilleure solution !</br></p>
 </body>
 </html>
+
