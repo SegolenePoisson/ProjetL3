@@ -23,7 +23,7 @@
     <div class="container-fluid">
       <ul class="nav navbar-nav">
         <li <?php if ($_SESSION["current_page"] == "home"){ echo 'class="active"';}?> ><a href="index.php">Home</a></li>
-        <li <?php if ($_SESSION["current_page"] == "poll"){ echo 'class="active"';}?> ><a href="POLL.php">StrawPoll</a></li>
+        <li <?php if ($_SESSION["current_page"] == "poll"){ echo 'class="active"';}?> ><a href="poll.php?id=123">StrawPoll</a></li>
         <li <?php if ($_SESSION["current_page"] == "about"){ echo 'class="active"';}?> ><a href="about.php">About Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
