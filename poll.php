@@ -49,7 +49,7 @@ $_SESSION["current_page"] = "profile";
         $nb = 1;
         while ($donnees = $reponse->fetch()) {
           echo  '"opt'.$nb.'"';
-          echo '<input type="checkbox" name = "selected[]" value = "opt'.$nb.'"/>'. $donnees['answer'] .'<br>';
+          echo '<input type="checkbox" name = "selected[]" value = "'.$donnees['id'].'"/>'. $donnees['answer'] .'<br>';
           $nb++;
         }
       }
