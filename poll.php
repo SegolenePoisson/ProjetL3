@@ -20,39 +20,45 @@ $_SESSION["current_page"] = "profile";
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Classe css -->
 	<link rel="stylesheet" href="class1.css" />
-    
+
 	<title>WOUI</title>
 </head>
 <body>
-  
+
   <?php
   include 'navbar.php';
   ?>
 
 <div class="container">
   <div class="row justify-content-md-center">
- 
+
        <?php
        if(isset($_GET['id'])) {
        $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
        echo '<form action="/action_page.php">';
-       $reponse = $bdd->query('SELECT * FROM polls WHERE polls.id =' . $_GET['id']);
-       $donnees = $reponse->fetch();
-       echo 'Question :'. $donnees['question'] .'<br>';
 
-          
-          
-            $reponse = $bdd->query('SELECT * FROM answers WHERE answers.pollId =' . $_GET['id']);
+       $sql = 'SELECT * FROM polls WHERE polls.id =?';
+       $reponse = $bdd->prepare($sql);
+       $reponse->execute([$_GET['id']]);
+       $donnees = $reponse->fetch();
+       echo 'Question : '. $donnees['question'] .'<br>';
+
+
+
+            $sql ='SELECT * FROM answers WHERE answers.pollId =?';
+            $reponse = $bdd->prepare($sql);
+            $reponse->execute([$_GET['id']]);
+
             while ($donnees = $reponse->fetch()) {
 
               echo '<input type="checkbox">'. $donnees['answer'] .'<br>';
-            } 
+            }
           }
         ?>
         <input type="submit" value="Submit">
       </form>
 
-      
+
     </div>
   </div>
 
