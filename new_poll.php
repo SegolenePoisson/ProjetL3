@@ -63,6 +63,7 @@ if(isset($_SESSION["pseudo"])){
         <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
 
         <input type="submit" value="Create poll" />
+        
 
       </form>
       <p>* this field is required.<br/></p>
@@ -78,7 +79,7 @@ else{
       <?php 
       include 'navbar.php';
       ?>
-      
+
       <h1>New poll</h1>
       
       <p>To create a new poll, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php">create one</a> !<br/></p>
