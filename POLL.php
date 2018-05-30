@@ -49,7 +49,7 @@ if(isset($_SESSION["pseudo"])){
       <form method="post" action="create_poll.php">
    
         <label for="question">Question* : </label>
-        <input type="text" name="question" id="question" size="35" placeholder="Ex : What's you favorite color ?" /><br/>
+        <input type="text" name="question" id="question" size="35" placeholder="Ex : What's you favorite color ?" required /><br/>
 
         <label for="choice1">Answer 1* : </label>
         <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Blue." required /><br/>

@@ -11,7 +11,7 @@ while ($result->rowCount() > 0) {
   $id_poll=rand(10000000, 99999999);
   $sql = 'SELECT * FROM polls WHERE id=?';
   $result = $bdd->prepare($sql);
-  $result->execute([$id_poll])
+  $result->execute([$id_poll]);
 }
 
 $creator_Id = NULL;
