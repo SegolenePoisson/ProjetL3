@@ -35,7 +35,7 @@ $_SESSION["current_page"] = "profile";
        <?php
        if(isset($_GET['id'])) {
        $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
-       echo '<form action="/action_page.php">';
+       echo '<form action="add_vote.php">';
 
        $sql = 'SELECT * FROM polls WHERE polls.id =?';
        $reponse = $bdd->prepare($sql);
