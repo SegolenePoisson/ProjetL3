@@ -32,35 +32,32 @@ $_SESSION["current_page"] = "profile";
 <div class="container">
   <div class="row justify-content-md-center">
 
-       <?php
-       if(isset($_GET['id'])) {
-       $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
-       echo '<form action="add_vote.php">';
+    <?php
+      if(isset($_GET['id'])) {
+        $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
+        echo '<form action="add_vote.php">';
 
-       $sql = 'SELECT * FROM polls WHERE polls.id =?';
-       $reponse = $bdd->prepare($sql);
-       $reponse->execute([$_GET['id']]);
-       $donnees = $reponse->fetch();
-       echo 'Question : '. $donnees['question'] .'<br>';
+        $sql = 'SELECT * FROM polls WHERE polls.id =?';
+        $reponse = $bdd->prepare($sql);
+        $reponse->execute([$_GET['id']]);
+        $donnees = $reponse->fetch();
+        echo 'Question : '. $donnees['question'] .'<br>';
 
-
-
-            $sql ='SELECT * FROM answers WHERE answers.pollId =?';
-            $reponse = $bdd->prepare($sql);
-            $reponse->execute([$_GET['id']]);
-
-            while ($donnees = $reponse->fetch()) {
-
-              echo '<input type="checkbox">'. $donnees['answer'] .'<br>';
-            }
-          }
-        ?>
-        <input type="submit" value="Submit">
-      </form>
+        $sql ='SELECT * FROM answers WHERE answers.pollId =?';
+        $reponse = $bdd->prepare($sql);
+        $reponse->execute([$_GET['id']]);
+        $nb = 1;
+        while ($donnees = $reponse->fetch()) {
+          echo '<input type="checkbox" name = "selected[]" value = "opt'.$nb.'"/>'. $donnees['answer'] .'<br>';
+        }
+      }
+    ?>
+    <input type="submit" name = "submit" value="Submit"/>
+    </form>
 
 
-    </div>
   </div>
+</div>
 
 </body>
 </html>
