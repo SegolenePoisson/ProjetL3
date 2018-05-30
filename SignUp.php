@@ -40,7 +40,7 @@ session_start();
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="name" id="name"  placeholder="Enter your Name"/>
+                <input type="text" class="form-control" name="name" id="name" required placeholder="Enter your Name"/>
               </div>
             </div>
           </div>
@@ -49,8 +49,8 @@ session_start();
             <label for="email" class="cols-sm-2 control-label">Your Email</label>
             <div class="cols-sm-10">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                <input type="email" class="form-control" name="email" id="email"  placeholder="Enter your Email"/>
+                <span id="checkemail" class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
+                <input type="email" class="form-control" name="email" id="email" required placeholder="Enter your Email"/>
               </div>
             </div>
           </div>
@@ -60,7 +60,7 @@ session_start();
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                <input type="text" class="form-control" name="username" id="username"  placeholder="Enter your Username"/>
+                <input type="text" class="form-control" name="username" id="username" required placeholder="Enter your Username"/>
               </div>
             </div>
           </div>
@@ -70,7 +70,7 @@ session_start();
             <div class="cols-sm-10">
               <div class="input-group">
                 <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="password" id="password"  placeholder="Enter your Password"/>
+                <input type="password" class="form-control" name="password" id="password" required placeholder="Enter your Password"/>
               </div>
             </div>
           </div>
@@ -79,8 +79,8 @@ session_start();
             <label for="confirm" class="cols-sm-2 control-label">Confirm Password</label>
             <div class="cols-sm-10">
               <div class="input-group">
-                <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                <input type="password" class="form-control" name="confirm" id="confirm"  placeholder="Confirm your Password"/>
+                <span id="confirmpassword" class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
+                <input type="password" class="form-control" name="confirm" id="confirm" required placeholder="Confirm your Password"/>
               </div>
             </div>
           </div>
@@ -95,7 +95,30 @@ session_start();
     </div>
   </div>
   
-  <script type="text/javascript" src="assets/js/bootstrap.js"></script>
+  <script>
+    // Contrôle du courriel en fin de saisie
+document.getElementById("email").addEventListener("blur", function (e) {
+    // Correspond à une chaîne de la forme xxx@yyy.zzz
+    var regexEmail = /.+@.+\..+/;
+    var validEmail = "";
+    if (!regexEmail.test(e.target.value)) {
+        validEmail = "Invalid email address";
+    }
+    document.getElementById("checkemail").textContent = validEmail;
+});
+document.getElementById("confirm").addEventListener("blur", function (e) {
+    var samepasswords = "";
+    if(e.target.value !== document.querySelector("form").password.value){
+      samePasswords = "Not the same passwords"
+    }
+    document.getElementById("confirmpassword").textContent = samePasswords;
+});
+document.querySelector("form").addEventListener("submit", function (e) {
+  if(document.getElementById("confirmpassword").textContent !== document.getElementById("checkemail").textContent){
+    e.preventDefault();
+  }
+});
+  </script>
   <p>Already an account ? <a href="logIn.php">Log in !</a></p>
 </body>
 </html>
