@@ -35,7 +35,7 @@ $_SESSION["current_page"] = "profile";
     <?php
       if(isset($_GET['id'])) {
         $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
-        echo '<form action="add_vote.php">';
+        echo '<form action="add_vote.php" method = "post">';
 
         $sql = 'SELECT * FROM polls WHERE polls.id =?';
         $reponse = $bdd->prepare($sql);
@@ -48,7 +48,9 @@ $_SESSION["current_page"] = "profile";
         $reponse->execute([$_GET['id']]);
         $nb = 1;
         while ($donnees = $reponse->fetch()) {
+          echo  '"opt'.$nb.'"';
           echo '<input type="checkbox" name = "selected[]" value = "opt'.$nb.'"/>'. $donnees['answer'] .'<br>';
+          $nb++;
         }
       }
     ?>
