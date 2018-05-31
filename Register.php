@@ -28,8 +28,7 @@ session_start();
   <?php
 
   include 'navbar.php';
-
-	$bdd = new PDO('mysql:host=localhost;dbname=poll', "root", "");
+	include 'db_connect.php';
 
 	if(isset($_POST["name"], $_POST["email"], $_POST["username"])){
 		$email = $_POST["email"];

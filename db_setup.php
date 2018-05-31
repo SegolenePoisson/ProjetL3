@@ -1,6 +1,6 @@
 <?php
 
-$bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
+include 'db_connect.php';
 $sql = "CREATE TABLE `user` (
  `id` int(25) NOT NULL AUTO_INCREMENT,
  `username` varchar(255) NOT NULL,

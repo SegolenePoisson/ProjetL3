@@ -1,6 +1,6 @@
 <?php
 session_start();
-$bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
+include 'db_connect.php';
 
 $id_poll=rand(10000000, 99999999);
 echo $id_poll;
