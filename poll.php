@@ -48,7 +48,6 @@ $_SESSION["current_page"] = "poll";
         $reponse->execute([$_GET['id']]);
         $nb = 1;
         while ($donnees = $reponse->fetch()) {
-          echo  '"opt'.$nb.'"';
           echo '<input type="checkbox" name = "selected[]" value = "'.$donnees['id'].'"/>'. $donnees['answer'] .'<br>';
           $nb++;
         }
