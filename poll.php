@@ -31,32 +31,32 @@ $_SESSION["current_page"] = "poll";
 
 <div class="container">
   <div class="row justify-content-md-center">
+    <div class="poll">
+      <?php
+        if(isset($_GET['id'])) {
+          include 'db_connect.php';
+          echo '<form action="add_vote.php" method = "post">';
 
-    <?php
-      if(isset($_GET['id'])) {
-        include 'db_connect.php';
-        echo '<form action="add_vote.php" method = "post">';
+          $sql = 'SELECT * FROM polls WHERE polls.id =?';
+          $reponse = $bdd->prepare($sql);
+          $reponse->execute([$_GET['id']]);
+          $donnees = $reponse->fetch();
+          echo 'Question : '. $donnees['question'] .'<br>';
 
-        $sql = 'SELECT * FROM polls WHERE polls.id =?';
-        $reponse = $bdd->prepare($sql);
-        $reponse->execute([$_GET['id']]);
-        $donnees = $reponse->fetch();
-        echo 'Question : '. $donnees['question'] .'<br>';
-
-        $sql ='SELECT * FROM answers WHERE answers.pollId =?';
-        $reponse = $bdd->prepare($sql);
-        $reponse->execute([$_GET['id']]);
-        $nb = 1;
-        while ($donnees = $reponse->fetch()) {
-          echo '<input type="checkbox" name = "selected[]" value = "'.$donnees['id'].'"/>'. $donnees['answer'] .'<br>';
-          $nb++;
+          $sql ='SELECT * FROM answers WHERE answers.pollId =?';
+          $reponse = $bdd->prepare($sql);
+          $reponse->execute([$_GET['id']]);
+          $nb = 1;
+          while ($donnees = $reponse->fetch()) {
+            echo '<input type="checkbox" name = "selected[]" value = "'.$donnees['id'].'"/>'. $donnees['answer'] .'<br>';
+            $nb++;
+          }
         }
-      }
-    ?>
-    <input type="submit" name = "submit" value="Submit"/>
-    </form>
+      ?>
+      <input type="submit" name = "submit" value="Submit"/>
+      </form>
 
-
+    </div>
   </div>
 </div>
 
