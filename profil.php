@@ -44,7 +44,7 @@ $_SESSION["current_page"] = "profile";
         $res->execute([$donnees["id"]]);
         echo "<ul>";
         while ($answers = $res->fetch()) {
-          echo "<li>".$answers["answer"]." (".$answers["nbVote"].")<li/>";
+          echo "<li>".$answers["answer"]." (".$answers["nbVote"].")</li>";
         }
         echo "</ul>";
     	echo "</div><br/>";
