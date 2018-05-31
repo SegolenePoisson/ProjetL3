@@ -40,3 +40,9 @@ p {
 .navbar-nav > li:hover {
     background-color: black;
 }
+.poll {
+  background-color: #95c2e5;
+  padding-left: 50px;
+  width: 320px;
+  height: auto;
+}

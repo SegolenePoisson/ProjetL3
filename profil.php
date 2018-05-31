@@ -20,20 +20,40 @@ $_SESSION["current_page"] = "profile";
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 	<!-- Classe css -->
 	<link rel="stylesheet" href="class1.css" />
-    
+
 	<title>WOUI</title>
 </head>
 <body>
-  
+
   <?php
   include 'navbar.php';
-  ?>
+  include 'db_connect.php';
+  $sql = 'SELECT id FROM user WHERE username=?';
+  $result = $bdd->prepare($sql);
+  $result->execute([$_SESSION['pseudo']]);
+  $creator_Id = $result->fetchColumn();
 
-  <p>
-	Ici, on balancera les infos de chaque personne <br>
-	Accès à la BDD<br>
-	JS de prévu ?<br>
-	</p>
+  $sql = 'SELECT * FROM polls WHERE creatorId=?';
+  $result = $bdd->prepare($sql);
+  $result->execute([$creator_Id]);
+    while ($donnees = $result->fetch()) {
+      echo "<div class='poll'>";
+    	echo  $donnees["question"];
+        $sql = 'SELECT answer,count(distinct userid) as nbVote FROM votes,answers WHERE pollid = ? AND answerId = answers.id GROUP BY answerid';
+        $res = $bdd->prepare($sql);
+        $res->execute([$donnees["id"]]);
+        echo "<ul>";
+        while ($answers = $res->fetch()) {
+          echo "<li>".$answers["answer"]." (".$answers["nbVote"].")<li/>";
+        }
+        echo "</ul>";
+    	echo "</div><br/>";
+    }
+  //echo $creator_Id;
+  echo "<p>";
+	echo   "Ici, sont disponibles les infos de chaque personne";
+	echo "</p>";
+  ?>
 
 </body>
 </html>
