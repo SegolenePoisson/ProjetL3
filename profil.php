@@ -39,12 +39,14 @@ $_SESSION["current_page"] = "profile";
     while ($donnees = $result->fetch()) {
       echo "<div class='poll'>";
     	echo  $donnees["question"];
-        $sql = 'SELECT answer,count(distinct userid) as nbVote FROM votes,answers WHERE pollid = ? AND answerId = answers.id GROUP BY answerid';
+        $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = ?';
         $res = $bdd->prepare($sql);
         $res->execute([$donnees["id"]]);
         echo "<ul>";
         while ($answers = $res->fetch()) {
-          echo "<li>".$answers["answer"]." (".$answers["nbVote"].")</li>";
+          echo "<li>".$answers["answer"].";
+
+          echo"</li>";
         }
         echo "</ul>";
     	echo "</div><br/>";
