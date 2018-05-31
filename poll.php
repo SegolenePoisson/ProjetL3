@@ -41,20 +41,27 @@ $_SESSION["current_page"] = "poll";
           $reponse = $bdd->prepare($sql);
           $reponse->execute([$_GET['id']]);
           $donnees = $reponse->fetch();
-          echo 'Question : '. $donnees['question'] .'<br>';
+          if ( $reponse->rowCount()>0){
+            echo 'Question : '. $donnees['question'] .'<br>';
 
-          $sql ='SELECT * FROM answers WHERE answers.pollId =?';
-          $reponse = $bdd->prepare($sql);
-          $reponse->execute([$_GET['id']]);
-          $nb = 1;
-          while ($donnees = $reponse->fetch()) {
-            echo '<input type="checkbox" name = "selected[]" value = "'.$donnees['id'].'"/>'. $donnees['answer'] .'<br>';
-            $nb++;
+            $sql ='SELECT * FROM answers WHERE answers.pollId =?';
+            $reponse = $bdd->prepare($sql);
+            $reponse->execute([$_GET['id']]);
+            $nb = 1;
+            while ($donnees = $reponse->fetch()) {
+              echo '<input type="checkbox" name = "selected[]" value = "'.$donnees['id'].'"/>'. $donnees['answer'] .'<br>';
+              $nb++;
+            }
+
+            echo "<input type='submit' name = 'submit' value='Submit'/>";
+            echo "</form>";
+          }else{
+            echo "This poll doesn't exist, please check the provided Id.";
           }
         }
       ?>
-      <input type="submit" name = "submit" value="Submit"/>
-      </form>
+
+
 
     </div>
   </div>
