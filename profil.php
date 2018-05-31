@@ -45,8 +45,12 @@ $_SESSION["current_page"] = "profile";
         echo "<ul>";
         while ($answers = $res->fetch()) {
           echo "<li>".$answers["answer"];
-
-          echo"</li>";
+          $sql = 'SELECT count(*) as nb FROM votes WHERE answerId = ?';
+          $count = $bdd->prepare($sql);
+          $count->execute([$answers["id"]]);
+          $cpt = $count->fetch();
+          echo " (".$cpt["nb"].")";
+          echo "</li>";
         }
         echo "</ul>";
     	echo "</div><br/>";
