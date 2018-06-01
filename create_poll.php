@@ -48,7 +48,9 @@ if(isset($_POST['choice3']) && $_POST['choice3'] <> "") {
   $result->execute([$id_poll, $_POST['choice3']]);
 }
 
-  header('Location: poll.php');
+	// Redirection direct après création du poll Vers la page de vote
+	
+  header('Location: poll.php?id='.$id_poll);
   exit();
 
 ?>

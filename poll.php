@@ -52,7 +52,6 @@ $_SESSION["current_page"] = "poll";
               echo '<input type="checkbox" name = "selected[]" value = "'.$donnees['id'].'"/>'. $donnees['answer'] .'<br>';
               $nb++;
             }
-
             echo "<input type='submit' name = 'submit' value='Submit'/>";
             echo "</form>";
           }else{
