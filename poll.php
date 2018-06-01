@@ -30,7 +30,7 @@ $_SESSION["current_page"] = "poll";
   ?>
 
 <div class="container">
-  <div class="row justify-content-md-center">
+  <div class="row justify-content-center">
     <div class="poll">
       <?php
         if(isset($_GET['id'])) {
@@ -42,7 +42,9 @@ $_SESSION["current_page"] = "poll";
           $reponse->execute([$_GET['id']]);
           $donnees = $reponse->fetch();
           if ( $reponse->rowCount()>0){
-            echo 'Question : '. $donnees['question'] .'<br>';
+
+            echo '<div class="question">'.'Question : '. $donnees['question'] .'</div>'.'<br>';
+
 
             $sql ='SELECT * FROM answers WHERE answers.pollId =?';
             $reponse = $bdd->prepare($sql);

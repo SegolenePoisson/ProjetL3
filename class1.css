@@ -24,7 +24,16 @@ p {
 
 .container {
 	padding-top: 100px;
-	margin: 0 auto auto 0;
+	text-align: center;
+	  margin-left: auto;
+  margin-right: auto;
+	width: 500px; 
+}
+.question {
+	color: black;
+	text-align: center;
+	text-transform: uppercase;
+
 }
 
 .divperso {
@@ -44,6 +53,7 @@ p {
 .poll {
   background-color: #95c2e5;
   padding-left: 50px;
-  width: 320px;
+  width: 500px;
   height: auto;
+
 }
