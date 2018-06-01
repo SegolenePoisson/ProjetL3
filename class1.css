@@ -30,6 +30,7 @@ p {
 	width: 500px; 
 }
 .question {
+	
 	color: black;
 	text-align: center;
 	text-transform: uppercase;
@@ -50,10 +51,16 @@ p {
 .navbar-nav > li:hover {
     background-color: black;
 }
-.poll {
-  background-color: #95c2e5;
-  padding-left: 50px;
-  width: 500px;
-  height: auto;
 
+.poll {
+  	padding : 10px;
+ 	background-color: #95c2e5;
+ 	padding-left: 50px;
+ 	width: 500px;
+ 	height: auto
+}
+
+input[type="checkbox"]{
+	margin-right : 10px;
+	color : red;
 }
