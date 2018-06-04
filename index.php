@@ -25,12 +25,12 @@ $_SESSION["current_page"] = "home";
 </head>
 <body>
   <?php
-  $bdd = new PDO('mysql:host=localhost;dbname=poll;charset=utf8', 'root', '');
+  include 'db_connect.php';
 
-  if(isset($_POST["pseudo"], $_POST["password"])) 
+  if(isset($_POST["pseudo"], $_POST["password"]))
   {
-    $pseudo = $_POST["pseudo"]; 
-    $password = $_POST["password"]; 
+    $pseudo = $_POST["pseudo"];
+    $password = $_POST["password"];
 
     $result = $bdd->prepare('SELECT username, password FROM user WHERE username = ?');
     $result->execute([$pseudo]);
@@ -45,7 +45,7 @@ $_SESSION["current_page"] = "home";
 
 
       if(check($data['password'], $password)) {
-        $_SESSION["logged_in"] = true; 
+        $_SESSION["logged_in"] = true;
         $_SESSION["pseudo"] = $pseudo;
       }
     }
@@ -57,4 +57,3 @@ $_SESSION["current_page"] = "home";
   Vous souhaitez fixer une date pour un repas entre amis ? En choisir le menu ? WOUI vous aide à trouver la meilleure solution !</br></p>
 </body>
 </html>
-

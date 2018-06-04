@@ -28,8 +28,7 @@ session_start();
   <?php
 
   include 'navbar.php';
-
-	$bdd = new PDO('mysql:host=localhost;dbname=poll', "root", "");
+  include 'db_connect.php';
 
 	if(isset($_POST["name"], $_POST["email"], $_POST["username"])){
 		$email = $_POST["email"];
@@ -40,12 +39,12 @@ session_start();
     include 'encryption.php';
 
     $password = encrypt($_POST["password"]);
-		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `poll`.`user` WHERE `username` = '$username'");
-		$verif->execute();
+		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `poll`.`user` WHERE `username` = ?");
+		$verif->execute([$username]);
 
 		if($verif ->rowCount() == 0){
-			$ajout = $bdd->prepare("INSERT INTO `poll`.`user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL , '$name', '$username' ,'$password' ,'$email')");
-			$ajout->execute();
+			$ajout = $bdd->prepare("INSERT INTO `poll`.`user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,'?','?','?','?')");
+			$ajout->execute(['$name', '$username' ,'$password' ,'$email']);
 		}
 	}
 

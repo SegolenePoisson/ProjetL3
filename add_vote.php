@@ -15,7 +15,6 @@
     while($row = $result->fetchColumn()) {
       $idUser=$row;
     }
-
     $N = count($answers);
     for($i=1; $i < $N; $i++){
       //Verification du double vote (pour chaque option cochée)
@@ -30,7 +29,7 @@
       }
     }
 
-    header('Location: poll.php?id='.$answers[0]'&r');
+    header('Location: poll.php?id='.$answers[0].'&r');
     echo("Your vote have been submited.");
     exit();
   }
