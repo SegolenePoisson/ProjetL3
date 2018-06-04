@@ -43,8 +43,8 @@ session_start();
 		$verif->execute([$username]);
 
 		if($verif ->rowCount() == 0){
-			$ajout = $bdd->prepare("INSERT INTO `poll`.`user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,'?','?','?','?')");
-			$ajout->execute(['$name', '$username' ,'$password' ,'$email']);
+			$ajout = $bdd->prepare("INSERT INTO `poll`.`user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,?,?,?,?)");
+			$ajout->execute([$username ,$name, $password ,$email]);
 		}
 	}
 
