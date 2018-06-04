@@ -88,6 +88,7 @@ session_start();
           <br>
 
           <div class="form-group ">
+            <span id="submit"></span>
             <input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Register"></input>
           </div>
         </form>
@@ -96,28 +97,50 @@ session_start();
   </div>
   
   <script>
-    // Contrôle du courriel en fin de saisie
-document.getElementById("email").addEventListener("blur", function (e) {
-    // Correspond à une chaîne de la forme xxx@yyy.zzz
-    var regexEmail = /.+@.+\..+/;
-    var validEmail = "";
-    if (!regexEmail.test(e.target.value)) {
-        validEmail = "Invalid email address";
+
+    function checkEmail() {
+      var email = document.getElementById("email"),
+          regexEmail = /.+@.+\..+/;
+
+      if(email.value){
+        document.getElementById("checkemail").textContent = (regexEmail.test(email.value)) ? "" : "Invalid email address";
+        document.getElementById("submit").textContent = "";
+      }
     }
-    document.getElementById("checkemail").textContent = validEmail;
-});
-document.getElementById("confirm").addEventListener("blur", function (e) {
-    var samepasswords = "";
-    if(e.target.value !== document.querySelector("form").password.value){
-      samePasswords = "Not the same passwords"
+
+    function comparePasswords() {
+      var password = document.getElementById("password");
+      var valuePassword = password.value, 
+          valueConfirm = document.getElementById("confirm").value;
+
+      if (valuePassword && valueConfirm) { // Si les deux champs contiennent quelque chose
+          document.getElementById("confirmpassword").textContent = (valuePassword === valueConfirm) ? "" : "Not the same passwords";
+          document.getElementById("submit").textContent = "";
+      } 
     }
-    document.getElementById("confirmpassword").textContent = samePasswords;
-});
-document.querySelector("form").addEventListener("submit", function (e) {
-  if(document.getElementById("confirmpassword").textContent !== document.getElementById("checkemail").textContent){
-    e.preventDefault();
-  }
-});
+        
+    var password = document.getElementById("password"),
+        confirm = document.getElementById("confirm"),
+        email = document.getElementById("email");
+      
+    if(email){
+      email.addEventListener("blur", checkEmail, false);
+    }
+
+    if (password && confirm) {
+      password.addEventListener("keyup", comparePasswords, false);
+      confirm.addEventListener("keyup", comparePasswords, false);  
+      password.addEventListener("blur", comparePasswords, false);  
+      confirm.addEventListener("blur", comparePasswords, false);  
+    }
+
+    document.querySelector("form").addEventListener("submit", function (e) {
+      if(document.getElementById("confirmpassword").textContent !== document.getElementById("checkemail").textContent){
+        e.preventDefault(); // pour empecher l'envoi si erreur dans le formulaire
+        document.getElementById("submit").textContent = "Invalid email or different passwords, please check your informations.";
+      }
+    });
+
   </script>
   <p>Already an account ? <a href="logIn.php">Log in !</a></p>
 </body>
