@@ -28,15 +28,19 @@ session_start();
   <?php
 
   include 'navbar.php';
-	include 'db_connect.php';
+
+	$bdd = new PDO('mysql:host=localhost;dbname=poll', "root", "");
 
 	if(isset($_POST["name"], $_POST["email"], $_POST["username"])){
 		$email = $_POST["email"];
 		$username = $_POST["username"];
-		$password = $_POST["password"];
 		$name = $_POST["name"];
 
-		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `poll`.`user` WHERE `username` = '$password'");
+
+    include 'encryption.php';
+
+    $password = encrypt($_POST["password"]);
+		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `poll`.`user` WHERE `username` = '$username'");
 		$verif->execute();
 
 		if($verif ->rowCount() == 0){
