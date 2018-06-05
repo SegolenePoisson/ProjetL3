@@ -44,6 +44,12 @@ $_SESSION["current_page"] = "poll";
             $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = ?';
             $res = $bdd->prepare($sql);
             $res->execute([$donnees["id"]]);
+
+            $sql = "SELECT count(*) as nbtotal FROM votes,answers WHERE answerId = answers.id and pollid = ?";
+            $result = $bdd->prepare($sql);
+            $result->execute([$_GET['id']]);
+            $totalcount = $result->fetch();
+            $nbtotal = $totalcount["nbtotal"];
             echo "<ul>";
             while ($answers = $res->fetch()) {
               echo "<li>".$answers["answer"];
@@ -51,10 +57,43 @@ $_SESSION["current_page"] = "poll";
               $count = $bdd->prepare($sql);
               $count->execute([$answers["id"]]);
               $cpt = $count->fetch();
+              $datapoints[] = ['label'=>$answers['answer'], 'y'=>$cpt["nb"]*100/$nbtotal];
               echo " (".$cpt["nb"].")";
               echo "</li>";
             }
             echo "</ul>";
+            ?>
+            <script>
+            window.onload = function () {
+
+            var chart = new CanvasJS.Chart("chartContainer", {
+            	animationEnabled: true,
+            	exportEnabled: false,
+            	title:{
+            		text: "<?php echo $donnees["question"]; ?>"
+            	},
+            	subtitles: [{
+            		text: ""
+            	}],
+            	data: [{
+            		type: "pie",
+            		showInLegend: "true",
+            		legendText: "{label}",
+            		indexLabelFontSize: 16,
+            		indexLabel: "{label} - #percent%",
+            		yValueFormatString: "#,##%",
+            		dataPoints: <?php echo json_encode($datapoints, JSON_NUMERIC_CHECK); ?>
+            	}]
+            });
+            chart.render();
+
+            }
+            </script>
+
+            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
+            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
+
+            <?php
             echo "</div><br/>";
           }else{
             echo '<form action="add_vote.php" method = "post">';

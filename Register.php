@@ -39,11 +39,11 @@ session_start();
     include 'encryption.php';
 
     $password = encrypt($_POST["password"]);
-		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `poll`.`user` WHERE `username` = ?");
+		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `user` WHERE `username` = ?");
 		$verif->execute([$username]);
 
 		if($verif ->rowCount() == 0){
-			$ajout = $bdd->prepare("INSERT INTO `poll`.`user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,?,?,?,?)");
+			$ajout = $bdd->prepare("INSERT INTO `user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,?,?,?,?)");
 			$ajout->execute([$username ,$name, $password ,$email]);
 		}
 	}

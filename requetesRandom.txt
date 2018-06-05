@@ -10,6 +10,8 @@ afficher le nombre de votes des réponses d'un sondage
 afficher tous les sondages où un utilisateur à voté
   SELECT * WHERE
 
+afficher le nombre de vote total d'un poll
+SELECT count(*) as nbtotal FROM votes,answers WHERE answerId = answers.id and pollid = ?
 
 
 
@@ -26,4 +28,4 @@ ajouter un vote à une réponse
   INSERT INTO votes (userID, answerId) VALUES (?,?)
 
 supprimer une réponse, et ses votes associés
-  DELETE FROM 
+  DELETE FROM
