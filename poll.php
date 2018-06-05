@@ -72,6 +72,7 @@ $_SESSION["current_page"] = "poll";
             	title:{
             		text: "<?php echo $donnees["question"]; ?>"
             	},
+              backgroundColor: "#95c2e5",
             	subtitles: [{
             		text: ""
             	}],
