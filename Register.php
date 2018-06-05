@@ -51,5 +51,6 @@ session_start();
   ?>
   <h1>Bienvenue sur WOUI<br> votre sondage personnalisé</h1>
   <p>Votre compte a été créé avec succès.</p>
+  <?php header("refresh:5;url=login.php");?> 
 </body>
 </html>

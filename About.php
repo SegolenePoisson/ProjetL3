@@ -35,7 +35,7 @@ crossorigin="anonymous"></script>
     WOUI
   </h1>
   <p>
-    Etudiants en troisième année à l'<a href="https://www.univ-rennes1.fr/">université de Rennes 1</a>, ce site constitue notre projet de fin d'année.<br>
+    Etudiants en troisième année à l'<a href="https://www.univ-rennes1.fr/">université de Rennes 1</a> <br>ce site constitue notre projet de fin d'année.<br>
     Il s'agit d'un travail en cours, nous l'enrichirons dans les semaines à venir !
 	</p>
   <p>Valentin Petit, Kévin Chertier, Antoine Mousserion, Romain Olivo, Luc Powell et Ségolène Poisson.</p>
