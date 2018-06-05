@@ -96,7 +96,7 @@ session_start();
     </div>
   </div>
   
-  <script src="register.js"></script>
   <p>Already an account ? <a href="logIn.php">Log in !</a></p>
+  <script src="register.js"></script>
 </body>
 </html>
