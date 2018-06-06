@@ -1,11 +1,11 @@
 body {
-    background-attachment: fixed;
-    background-image: url("wallpaperSite.jpg");
+    	background-attachment: fixed;
+    	background-image: url("wallpaperSite.jpg");
 }
 
 h1 {
-	color: white ;
-	font-weight: bold ;
+	color: white;
+	font-weight: bold;
 	padding-top: 50px;
 	text-align: center;
 }
@@ -25,8 +25,8 @@ p {
 .container {
 	padding-top: 100px;
 	text-align: center;
-	  margin-left: auto;
-  margin-right: auto;
+	margin-left: auto;
+  	margin-right: auto;
 	width: 500px;
 }
 .question {
@@ -49,19 +49,19 @@ p {
 }
 
 .navbar-nav > li:hover {
-    background-color: black;
+    	background-color: black;
 }
 
 .poll {
-  color : black;
-  padding : 10px;
+  	color: black;
+  	padding: 10px;
  	background-color: #95c2e5;
  	padding-left: 50px;
  	width: auto;
- 	height: auto
+ 	height: auto;
 }
 
 input[type="checkbox"]{
-	margin-right : 10px;
-	color : red;
+	margin-right: 10px;
+	color: red;
 }
