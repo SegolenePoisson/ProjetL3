@@ -37,7 +37,7 @@ p {
 	width: 500px; 
 }
 .question {
-	
+
 	color: black;
 	text-align: center;
 	text-transform: uppercase;
@@ -60,10 +60,11 @@ p {
 }
 
 .poll {
-  	padding : 10px;
+  color : black;
+  padding : 10px;
  	background-color: #95c2e5;
  	padding-left: 50px;
- 	width: 500px;
+ 	width: auto;
  	height: auto
 }
 

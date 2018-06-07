@@ -37,8 +37,8 @@ crossorigin="anonymous"></script>
 
   <div class="container" >
     <div class="row" id="pwd-container">
-      <div class="col-md-4"></div>
-      <div class="col-md-4">
+      
+      <div class="col-md">
         <section class="login-form">
           <form method="post" action="index.php" role="login">
             <input type="text" name="pseudo" required class="form-control input-lg" name="username" placeholder="Username" 
@@ -52,7 +52,7 @@ crossorigin="anonymous"></script>
           </form>
         </section>  
       </div>
-      <div class="col-md-4"></div>
+      
     </div>
   </div>
   <p>Don't have an account ? <a href="SignUp.php">Sign up !</a>
