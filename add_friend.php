@@ -41,5 +41,4 @@ echo'test2';
   }
 
   ?>
-
   <?php header("url=friend.php");?> 
