@@ -41,7 +41,7 @@ crossorigin="anonymous"></script>
       <div class="col-md">
         <section class="login-form">
           <form method="post" action="index.php" role="login">
-            <input type="text" name="pseudo" required class="form-control input-lg" name="username" placeholder="Username" 
+            <input type="text" name="username" required class="form-control input-lg" name="username" placeholder="Username" 
   required="" />
             <br>
             <input type="password" class="form-control input-lg" name="password" placeholder="Password" 

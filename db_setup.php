@@ -43,4 +43,16 @@ $sql = "CREATE TABLE `votes` (
 
 $bdd->exec($sql);
 
+$sql = "CREATE TABLE `poll`.`friends` (
+ `id` INT NOT NULL AUTO_INCREMENT ,
+ `friend1` INT NOT NULL ,
+  `friend2` INT NOT NULL ,
+   PRIMARY KEY (`id`)
+) ENGINE = InnoDB DEFAULT CHARSET=latin1";
+
+$bdd->exec($sql);
+
+
+
+
 ?>

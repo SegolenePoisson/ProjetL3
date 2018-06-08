@@ -11,7 +11,7 @@
     $idUser=null;
     $sql = 'SELECT id FROM user WHERE username=?';
     $result = $bdd->prepare($sql);
-    $result->execute([$_SESSION['pseudo']]);
+    $result->execute([$_SESSION['username']]);
     while($row = $result->fetchColumn()) {
       $idUser=$row;
     }
