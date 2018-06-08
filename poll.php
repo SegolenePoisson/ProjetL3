@@ -29,6 +29,37 @@ $_SESSION["current_page"] = "poll";
   include 'navbar.php';
   include 'db_connect.php';
   ?>
+  <div id="readroot" style="display: none">
+
+  <input type="button" value="Remove review"
+    onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
+
+  <input name="cd" value="title" />
+
+  <select name="rankingsel">
+    <option>Rating</option>
+    <option value="excellent">Excellent</option>
+    <option value="good">Good</option>
+    <option value="ok">OK</option>
+    <option value="poor">Poor</option>
+    <option value="bad">Bad</option>
+  </select><br /><br />
+
+  <textarea rows="5" cols="20" name="review">Short review</textarea>
+  <br />Radio buttons included to test them in Explorer:<br />
+  <input type="radio" name="something" value="test1" />Test 1<br />
+  <input type="radio" name="something" value="test2" />Test 2
+
+</div>
+
+<form method="post" action="/cgi-bin/show_params.cgi">
+
+  <span id="writeroot"></span>
+
+  <input type="button" id="moreFields" value="Give me more fields!" />
+  <input type="submit" value="Send form" />
+
+</form>
 
   <div class="container">
     <div class="row justify-content-center">

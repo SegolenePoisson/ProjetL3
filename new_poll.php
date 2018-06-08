@@ -40,13 +40,16 @@ $_SESSION["current_page"] = "poll";
   <title>WOUI</title>
 </head>
 
+
 <?php
 if(isset($_SESSION["pseudo"])){
 
   echo "<body>";
 
+
   include 'navbar.php';
   ?>
+  
   <h1>New poll</h1>
   <form method="post" action="create_poll.php">
 
