@@ -27,13 +27,13 @@ $_SESSION["current_page"] = "home";
   <?php
   include 'db_connect.php';
 
-  if(isset($_POST["pseudo"], $_POST["password"]))
+  if(isset($_POST["username"], $_POST["password"]))
   {
-    $pseudo = $_POST["pseudo"];
+    $username = $_POST["username"];
     $password = $_POST["password"];
 
     $result = $bdd->prepare('SELECT username, password FROM user WHERE username = ?');
-    $result->execute([$pseudo]);
+    $result->execute([$username]);
 
     if ($result->rowCount() > 0)
     {
@@ -46,7 +46,7 @@ $_SESSION["current_page"] = "home";
 
       if(check($data['password'], $password)) {
         $_SESSION["logged_in"] = true;
-        $_SESSION["pseudo"] = $pseudo;
+        $_SESSION["username"] = $username;
       }
     }
   }

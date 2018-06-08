@@ -24,16 +24,17 @@
       <ul class="nav navbar-nav">
         <li <?php if ($_SESSION["current_page"] == "home"){ echo 'class="active"';}?> ><a href="index.php">Home</a></li>
         <li <?php if ($_SESSION["current_page"] == "poll"){ echo 'class="active"';}?> ><a href="new_poll.php">StrawPoll</a></li>
+        <li <?php if ($_SESSION["current_page"] == "friend"){ echo 'class="active"';}?> ><a href="friend.php">Friends</a></li>
         <li <?php if ($_SESSION["current_page"] == "about"){ echo 'class="active"';}?> ><a href="about.php">About Us</a></li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
       <!---------- GESTION LOG IN / LOG OUT / SIGN UP ----------->
         <li>
   	      <a <?php
-          if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['pseudo'])) {
+          if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['username'])) {
             echo 'href="profil.php" >';
             echo '<span class="glyphicon glyphicon-user"></span>';
-            echo $_SESSION['pseudo'];
+            echo $_SESSION['username'];
           }
           else {
             echo'href="SignUp.php">';
@@ -46,7 +47,7 @@
 
         <li>
            <?php
-          if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['pseudo'])) {
+          if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['username'])) {
 
             echo ' <a href="disconect.php"> <span class="glyphicon glyphicon-log-out"></span> Log Out </a>';
           }

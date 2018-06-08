@@ -31,7 +31,7 @@ $_SESSION["current_page"] = "profile";
   include 'db_connect.php';
   $sql = 'SELECT id FROM user WHERE username=?';
   $result = $bdd->prepare($sql);
-  $result->execute([$_SESSION['pseudo']]);
+  $result->execute([$_SESSION['username']]);
   $creator_Id = $result->fetchColumn();
 
   $sql = 'SELECT * FROM polls WHERE creatorId=?';

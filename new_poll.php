@@ -42,7 +42,7 @@ $_SESSION["current_page"] = "poll";
 
 
 <?php
-if(isset($_SESSION["pseudo"])){
+if(isset($_SESSION["username"])){
 
   echo "<body>";
 
