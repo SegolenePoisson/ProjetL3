@@ -2,25 +2,8 @@
 session_start();
 include 'db_connect.php';
 
-$id_poll=rand(10000000, 99999999);
-echo $id_poll;
-$sql = 'SELECT * FROM polls WHERE id=?';
-$result = $bdd->prepare($sql);
-$result->execute([$id_poll]);
-
-while ($result->rowCount() > 0) {
-  $id_poll=rand(10000000, 99999999);
-  echo $id_poll;
-  $sql = 'SELECT * FROM polls WHERE id=?';
-  $result = $bdd->prepare($sql);
-  $result->execute([$id_poll]);
-}
-
+$id_poll = uniqid('');
 $creator_Id = NULL;
-
-while($row = $result->fetchColumn()) {
-  $creator_Id=$row['id'];
-}
 
 $sql = 'SELECT id FROM user WHERE username=?';
 $result = $bdd->prepare($sql);
@@ -49,7 +32,7 @@ if(isset($_POST['choice3']) && $_POST['choice3'] <> "") {
 }
 
 	// Redirection direct après création du poll Vers la page de vote
-	
+
   header('Location: poll.php?id='.$id_poll);
   exit();
 

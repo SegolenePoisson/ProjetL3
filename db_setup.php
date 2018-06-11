@@ -14,7 +14,7 @@ $sql = "CREATE TABLE `user` (
 $bdd->exec($sql);
 
 $sql = "CREATE TABLE `polls` (
- `id` int(25) NOT NULL,
+ `id` varchar(255) NOT NULL,
  `creatorId` int(25) NOT NULL,
  `question` varchar(255) NOT NULL,
  PRIMARY KEY (`id`),
@@ -25,7 +25,7 @@ $bdd->exec($sql);
 
 $sql = "CREATE TABLE `answers` (
  `id` int(25) NOT NULL AUTO_INCREMENT,
- `pollId` int(25) NOT NULL,
+ `pollId` varchar(255) NOT NULL,
  `answer` varchar(255) NOT NULL,
  PRIMARY KEY (`id`),
  UNIQUE KEY `id` (`id`)
