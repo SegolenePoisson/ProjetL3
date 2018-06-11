@@ -1,60 +1,57 @@
-<?php
-session_start();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <!-- For proper scaling on mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- JQuery form google -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- BOOTSTRAP -->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" 
-integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" 
-crossorigin="anonymous">
-  <!-- Optional theme -->
-  <link rel="stylesheet" 
-href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" 
-integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" 
-crossorigin="anonymous">
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" 
-integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" 
-crossorigin="anonymous"></script>
-  <script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
-  <script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
-	<!-- Classe css -->
-	<link rel="stylesheet" href="class1.css" />
-	<title>WOUI</title>
-</head>
-<body>
-  <?php
-  include 'navbar.php';
-  ?>
+<?php
+session_start();
+include 'header.php';
+echo "<body>";
+include 'navbar.php';
+?>
 
-  <div class="container" >
-    <div class="row" id="pwd-container">
-      
-      <div class="col-md">
-        <section class="login-form">
-          <form method="post" action="index.php" role="login">
-            <input type="text" name="username" required class="form-control input-lg" name="username" placeholder="Username" 
-  required="" />
-            <br>
-            <input type="password" class="form-control input-lg" name="password" placeholder="Password" 
-  required="" />
-            <div class="pwstrength_viewport_progress"></div>
-            <br>
-            <button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>
-          </form>
-        </section>  
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center teal-text text-lighten-2">Woui</h1>
+      <div class="row center">
+
       </div>
-      
+      <div class="row center">
+        <p>Pas de compte ? <a href="SignUp.php"class="waves-effect waves-light btn">Inscrivez vous !</a>
+        </div>
+      </div>
+    </div>
+    <div class="parallax"><img src="img/background1.jpg"></div>
+  </div>
+
+
+  <div class="container">
+    <div class = "customcont">
+      <div class="row center">
+        <div class="row" id="pwd-container">
+
+          <h5 class="header center teal-text text-lighten-2">Connexion</h5>
+
+          <section class="login-form">
+            <form method="post" action="index.php" role="login">
+              <input type="text" name="username" required class="form-control input-lg" placeholder="Username"
+              required="" />
+              <br>
+              <input type="password" class="form-control input-lg" name="password" placeholder="Password"
+              required="" />
+              <div class="pwstrength_viewport_progress"></div>
+              <br>
+              <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Log in</button>
+            </form>
+          </section>
+        </div>
+      </div>
     </div>
   </div>
-  <p>Don't have an account ? <a href="SignUp.php">Sign up !</a>
+
+
+
+  <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+  <script src="js/materialize.js"></script>
+  <script src="js/init.js"></script>
 </body>
 </html>

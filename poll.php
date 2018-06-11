@@ -1,38 +1,20 @@
-<?php
-session_start();
-$_SESSION["current_page"] = "poll";
-?>
 
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <!-- For proper scaling on mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- JQuery form google -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- BOOTSTRAP -->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <!-- Classe css -->
-  <link rel="stylesheet" href="class1.css" />
+<?php
+session_start();
+$_SESSION["current_page"] = "poll";
+include 'header.php';
+echo "<body>";
 
-  <title>WOUI</title>
-</head>
-<body>
 
-  <?php
-  include 'navbar.php';
-  include 'db_connect.php';
-  ?>
-  <div id="readroot" style="display: none">
+include 'navbar.php';
+include 'db_connect.php';
+?>
+<div id="readroot" style="display: none">
 
   <input type="button" value="Remove review"
-    onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
+  onclick="this.parentNode.parentNode.removeChild(this.parentNode);" /><br /><br />
 
   <input name="cd" value="title" />
 
@@ -61,7 +43,10 @@ $_SESSION["current_page"] = "poll";
 
 </form>
 
-  <div class="container">
+
+
+<div class="container">
+  <div class = "customcont">
     <div class="row justify-content-center">
       <div class="poll">
         <?php
@@ -97,27 +82,27 @@ $_SESSION["current_page"] = "poll";
             <script>
             window.onload = function () {
 
-            var chart = new CanvasJS.Chart("chartContainer", {
-            	animationEnabled: true,
-            	exportEnabled: false,
-            	title:{
-            		text: "<?php echo $donnees["question"]; ?>"
-            	},
-              backgroundColor: "#95c2e5",
-            	subtitles: [{
-            		text: ""
-            	}],
-            	data: [{
-            		type: "pie",
-            		showInLegend: "true",
-            		legendText: "{label}",
-            		indexLabelFontSize: 16,
-            		indexLabel: "{label} - #percent%",
-            		yValueFormatString: "#,##%",
-            		dataPoints: <?php echo json_encode($datapoints, JSON_NUMERIC_CHECK); ?>
-            	}]
-            });
-            chart.render();
+              var chart = new CanvasJS.Chart("chartContainer", {
+                animationEnabled: true,
+                exportEnabled: false,
+                title:{
+                  text: "<?php echo $donnees["question"]; ?>"
+                },
+                backgroundColor: "#95c2e5",
+                subtitles: [{
+                  text: ""
+                }],
+                data: [{
+                  type: "pie",
+                  showInLegend: "true",
+                  legendText: "{label}",
+                  indexLabelFontSize: 16,
+                  indexLabel: "{label} - #percent%",
+                  yValueFormatString: "#,##%",
+                  dataPoints: <?php echo json_encode($datapoints, JSON_NUMERIC_CHECK); ?>
+                }]
+              });
+              chart.render();
 
             }
             </script>
@@ -142,10 +127,13 @@ $_SESSION["current_page"] = "poll";
               //on passe l'id du poll en premier argument
               echo '<input id="selected[]" name="selected[]" type="hidden" value="'.$_GET["id"].'">';
               while ($donnees = $reponse->fetch()) {
-                echo '<input type="checkbox" name = "selected[]" value = "'.$donnees['id'].'"/>'. $donnees['answer'] .'<br>';
+                echo "<label>";
+                echo '<input type="checkbox" class="filled-in" name = "selected[]" value = "'.$donnees['id'].'"/>';
+                echo "<span>".$donnees['answer']."</span><br>";
+                  echo "</label>";
                 $nb++;
               }
-              echo "<input type='submit' name = 'submit' value='Submit'/>";
+              echo "<input type='submit' class='waves-effect waves-light btn' name = 'submit' value='Submit'/>";
               echo "</form>";
             }else{
               echo "This poll doesn't exist, please check the provided Id.";
@@ -157,5 +145,9 @@ $_SESSION["current_page"] = "poll";
     </div>
   </div>
 
+</div>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
 </body>
 </html>
