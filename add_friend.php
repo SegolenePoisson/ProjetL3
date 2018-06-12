@@ -22,10 +22,8 @@
 
 
 
-echo'test1';
     if($verif1 ->rowCount() == 1 && $verif2 ->rowCount() == 1){
 
-echo'test2';
     $result = $bdd->prepare('SELECT id FROM user WHERE username = ?');
     $result->execute([$username]);
     $friend1 = $result->fetch();
@@ -34,11 +32,17 @@ echo'test2';
     $result->execute([$username_friend]);
     $friend2 = $result->fetch();
 
+    $test = $bdd->prepare('SELECT id FROM friends WHERE friend1 = ? AND friend2 = ?');
+    $test->execute([$friend1['id'] ,$friend2['id']]);
+
+
+    if($test ->rowCount() < 1){
+
 
       $ajout = $bdd->prepare("INSERT INTO `friends` (`id`, `friend1`, `friend2`) VALUES (NULL ,?,?)");
       $ajout->execute([$friend1['id'] ,$friend2['id']]);
     }
   }
-
+}
+  header("refresh:0;url=friend.php");
   ?>
-  <?php header("url=friend.php");?> 
