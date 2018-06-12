@@ -41,7 +41,7 @@ include "navbar.php";
         <h5 class="header col s12 light"Une approche personalisée pour répondre à vos questions.</h5>
         </div>
         <div class="row center">
-          <a href="" id="create_button" class="btn-large waves-effect waves-light teal lighten-1">Créer votre sondage</a>
+          <a href="new_poll.php" id="create_button" class="btn-large waves-effect waves-light teal lighten-1">Créer votre sondage</a>
         </div>
         <br><br>
 
