@@ -30,18 +30,21 @@ session_start();
   include 'navbar.php';
   include 'db_connect.php';
 
+  
+  /* Check if user put a name, an email and an username during SignUp */
 	if(isset($_POST["name"], $_POST["email"], $_POST["username"])){
 		$email = $_POST["email"];
 		$username = $_POST["username"];
 		$name = $_POST["name"];
 
-
     include 'encryption.php';
-
+	
+	/* Check if username isn't use */
     $password = encrypt($_POST["password"]);
 		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `user` WHERE `username` = ?");
 		$verif->execute([$username]);
 
+		
 		if($verif ->rowCount() == 0){
 			$ajout = $bdd->prepare("INSERT INTO `user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,?,?,?,?)");
 			$ajout->execute([$username ,$name, $password ,$email]);
