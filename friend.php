@@ -76,7 +76,13 @@ $_SESSION["current_page"] = "friend";
   		echo '<div class="col-sm-12">
             <div class="col-sm-2">
               <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
+
+
             </div>
+            
+            <button type="submit" class="btn btn-danger btn" onclick="remove_friend()">Remove Friend</button>
+
+            <button type="submit" class="btn btn-info btn">Add Note</button>
             <div class="col-sm-8">
               <h4>';
                echo $tmp['username'];
