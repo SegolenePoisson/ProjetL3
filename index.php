@@ -68,8 +68,8 @@ include "navbar.php";
 
           <div class="col s12 m4">
             <div class="icon-block">
-              <h2 class="center brown-text"><i class="material-icons">group</i></h2>
-              <h5 class="center">Sondage en profondeur</h5>
+              <h2 class="center brown-text"><i class="material-icons">edit</i></h2>
+              <h5 class="center">Sondage personalisé</h5>
 
               <p class="light">Nous mettons à votre disposition un outill modulaire de création de sondage à questions multiple. Choisissez entre les différents types de questions et les modes de votes pour concocter le sondage parfait.</p>
             </div>
