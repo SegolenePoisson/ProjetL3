@@ -87,9 +87,8 @@ include 'db_connect.php';
 
      <h1>Add Friends</h1>
     <p>To add friends, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php">create one</a> !<br/></p>
-  }
-  ?>
-  <?php
+   <?php
+  
   }
   ?>
 </div>
