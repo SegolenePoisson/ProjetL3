@@ -28,15 +28,26 @@ include 'navbar.php';
       <?php
       if(isset($_SESSION["username"])){
         ?>
+      <br><br>
+      <h5 class="header center teal-text text-lighten-2">Nouveau sondage</h5>
+      <div class="input-field inline">
+        <input id="title" type="text" class="validate" placeholder="Title">
+      </div>
 
-
-        <div class = "container">
-          <br><br>
-          <h5 class="header center teal-text text-lighten-2">Nouveau sondage</h5>
-          
-            <div id= "left_area">
+        <div class = "row">
+            <div id = "left_area" class="col s2">
               <div id = "list_area">
-                
+                <div class="divider"></div>
+                <div class="section">
+                  <p>question1</p><br>
+                  <input type="button" class="waves-effect waves-light btn" value="Delete" />
+                </div>
+                <div class="divider"></div>
+                  <div class="section">
+                  <p>question2</p><br>
+                  <input type="button" class="waves-effect waves-light btn" value="Delete" />
+                </div>
+                <div class="divider"></div>
               </div>
               <div id = "cmd_area">
                 <input type="button" class="waves-effect waves-light btn" value="Add question" /><br>
@@ -45,11 +56,13 @@ include 'navbar.php';
               </div>
             </div>
             <div id = "main_area">
-              <div id = "option_area">
-
+              <div id = "option_area" class="col s3">
+                <h5>Options</h5>
+                <p>truc</p>
               </div>
-              <div id = "right_area">
-
+              <div id = "right_area" class="col s7">
+                <h5>Question</h5>
+                <p>truc</p>
               </div>
             </div>
 
