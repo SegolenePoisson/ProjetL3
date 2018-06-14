@@ -8,7 +8,19 @@
   echo "<body>";
   include "navbar.php";
   include 'db_connect.php';
+?>
 
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center teal-text text-lighten-2">Woui</h1>
+    </div>
+  </div>
+  <div class="parallax"><img src="img/background1.jpg"></div>
+</div>
+
+<?php
   $sql = 'SELECT id FROM user WHERE username=?';
   $result = $bdd->prepare($sql);
   $result->execute([$_SESSION['username']]);
@@ -40,7 +52,9 @@
   echo "<p>";
 	echo   "Ici, sont disponibles les infos de chaque personne";
 	echo "</p>";
-  ?>
-
+?>
+    <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="js/materialize.js"></script>
+    <script src="js/init.js"></script>
 </body>
 </html>
