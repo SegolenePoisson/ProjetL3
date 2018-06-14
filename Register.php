@@ -36,18 +36,24 @@ session_start();
 		$email = $_POST["email"];
 		$username = $_POST["username"];
 		$name = $_POST["name"];
+		
 
     include 'encryption.php';
 	
 	/* Check if username isn't use */
     $password = encrypt($_POST["password"]);
-		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `user` WHERE `username` = ?");
-		$verif->execute([$username]);
+		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `user` WHERE `username` = :user");
+		$verif->bindParam(':user', $username);
+		$verif->execute();
 
 		
 		if($verif ->rowCount() == 0){
-			$ajout = $bdd->prepare("INSERT INTO `user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,?,?,?,?)");
-			$ajout->execute([$username ,$name, $password ,$email]);
+			$ajout = $bdd->prepare("INSERT INTO `user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,:user, :name, :pw, :mail)");
+			$ajout->bindParam(':user', $username);
+			$ajout->bindParam(':name', $name);
+			$ajout->bindParam(':pw', $password);
+			$ajout->bindParam(':mail', $email);			
+			$ajout->execute();
 		}
 	}
 
