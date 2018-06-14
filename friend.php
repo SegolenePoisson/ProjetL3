@@ -7,7 +7,6 @@ $_SESSION["current_page"] = "friend";
 include 'header.php';
 echo "<body>";
 include 'navbar.php';
-include 'db_connect.php';
 ?>
 
 <div id="index-banner" class="parallax-container">
@@ -23,88 +22,73 @@ include 'db_connect.php';
 
 <div class="container">
 <div class= "customcont">
-  <?php
-  	if(isset($_SESSION["username"])){
-  		$username = $_SESSION["username"];
-
-    echo ' <div class="container">
-            <div class="col-md">
-          <section class="login-form">
-            <form method="post" action="add_friend.php" role="login">
-              <input type="text" name="username" required class="form-control input-lg" name="username" placeholder="Username"
-    required="" />
-              <br>
-
-              <button type="submit" class="btn btn-lg btn-primary btn-block">Add Friend</button>
-            </form>
-          </section>
-        </div>
-
-             <div class="top">
-           <h2>Friends List</h2>
-       </div>';
-
-
-    $id_user = $bdd->prepare('SELECT  id
-  						FROM    user
-  						WHERE   username = ?');
-    $id_user->execute([$username]);
-    $id_user = $id_user->fetch();
-
-
-
-    $friend_list = $bdd->prepare('SELECT  friend2
-  						FROM    friends
-  						WHERE   friend1 = ?');
-    $friend_list->execute([$id_user['id']]);
-
-    if($friend_list ->rowCount() > 0){
-    	echo '<div class="row">
-    	<div class="shadow">';
-
-    	while($friend = $friend_list->fetch()){
-    		$tmp = $bdd->prepare('SELECT  username
-  						FROM    user
-  						WHERE   id = ?');
-    		$tmp->execute([$friend['friend2']]);
-    		$tmp = $tmp->fetch();
-    		echo '<div class="col-sm-12">
-              <div class="col-sm-2">
-                <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
-              </div>
-              <div class="col-sm-8">
-                <h4>';
-                 echo $tmp['username'];
-                 echo'</h4>
-           </div>
-            </div>
-        	<div class="clearfix"></div>
-        		<hr />';
-
-    	}
-    	echo '</div>
-    		</div>';
-
-    }
-    else {
-    	echo ' <p>you have no friends... Try adding some ! </p> </div>';
-    }
-    ?>
-
-
-
-
-  <?php
-  }else{
-    ?>
-
-  	 <h1>Add Friends</h1>
-    <p>To add friends, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php">create one</a> !<br/></p>
-  }
+<?php
+if(isset($_SESSION["username"])){
   ?>
-  <?php
-  }
-  ?>
+
+
+
+
+
+  <div class="col-md">
+  <section class="login-form">
+  <form method="post" action="add_friend.php" role="login">
+  <input type="text" name="username" required class="form-control input-lg" name="username" placeholder="Username"
+  required="" />
+  <br>
+
+  <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Add Friend</button>
+</form>
+</section>
+</div>
+
+<div class="top">
+<h2>Friends List</h2>
+</div>
+
+
+
+<div class="row">
+<div class="shadow">
+<div class="col-sm-12">
+<div class="col-sm-2">
+<img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
+</div>
+<div class="col-sm-8">
+<h4>Rahul Jain</h4>
+</div>
+</div>
+
+
+
+<div class="clearfix"></div>
+<hr />
+<div class="col-sm-12">
+<div class="col-sm-2">
+<img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
+</div>
+<div class="col-sm-8">
+<h4>Ram Ranga Swami</h4>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<?php
+}else{
+?>
+<br><br>
+<h5 class="header center teal-text text-lighten-2">Add Friends</h5>
+<p>To add friends, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php" class = "waves-effect waves-light btn">create one</a> <br></p>
+<br>
+<br>
+<br>
+
+<?php
+}
+?>
 </div>
 </div>
 
