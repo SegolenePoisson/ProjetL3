@@ -1,6 +1,6 @@
 function checkEmail() {
   var email = document.getElementById("email"),
-      regexEmail = /.+@.+\..+/;
+      regexEmail = /^[a-z0-9._-]+@[a-z0-9._-]+\.[a-z]{2,6}$/;
 
   if(email.value){
     document.getElementById("checkemail").textContent = (regexEmail.test(email.value)) ? "" : "Invalid email address";
