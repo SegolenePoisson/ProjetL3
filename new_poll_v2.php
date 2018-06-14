@@ -35,14 +35,21 @@ include 'navbar.php';
           <h5 class="header center teal-text text-lighten-2">Nouveau sondage</h5>
           
             <div id= "left_area">
-              
+              <div id = "list_area">
+                
+              </div>
+              <div id = "cmd_area">
+                <input type="button" class="waves-effect waves-light btn" value="Add question" /><br>
+                <input type="button" class="waves-effect waves-light btn" value="Preview" /><br>
+                <input type="button" class="waves-effect waves-light btn" value="Create poll" />
+              </div>
             </div>
             <div id = "main_area">
               <div id = "option_area">
-                
+
               </div>
               <div id = "right_area">
-                
+
               </div>
             </div>
 
