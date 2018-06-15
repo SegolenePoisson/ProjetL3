@@ -61,8 +61,29 @@ include 'navbar.php';
                 <p>truc</p>
               </div>
               <div id = "right_area" class="col s7">
-                <h5>Question</h5>
-                <p>truc</p>
+               <div class = "container">
+          <br><br>
+          <h5 class="header center teal-text text-lighten-2">Nouveau sondage</h5>
+          <form method="post" action="create_poll.php">
+
+            <label for="question">Question* : </label>
+            <input type="text" name="question" id="question" size="35" placeholder="Ex : What's you favorite color ?" required /><br/>
+
+            <label for="choice1">Answer 1* : </label>
+            <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Blue." required /><br/>
+
+            <label for="choice2">Answer 2* : </label>
+            <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : Red." required /><br/>
+
+            <label for="choice3">Answer 3 : </label>
+            <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
+
+            <input type="submit" class="waves-effect waves-light btn" value="Create poll" />
+
+
+          </form>
+          <p>* champ requis.<br/></p>
+        </div>
               </div>
             </div>
 
