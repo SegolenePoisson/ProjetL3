@@ -77,14 +77,12 @@ include 'navbar.php';
                         <span style="padding-left: 25px; color : black;">Calendrier</span>
                       </label>
                     </p>
-
                     <br>
-
                 <p>truc</p> <br>
                 <p>truc</p> <br>
                 <!-- Switch -->
                   <div class="switch">
-                   <label>
+                   <label style ="color : black; font-size: 1rem">
                      réponse unique
                    <input type="checkbox">
                     <span class="lever"></span>
@@ -117,7 +115,7 @@ include 'navbar.php';
             <label for="choice3">Answer 3 : </label>
             <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
 
-            <input type="submit" class="waves-effect waves-light btn" value="Create poll" />
+            <input type="submit" class="waves-effect waves-light btn" value="Valider" />
 
 
           </form>
