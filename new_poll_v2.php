@@ -58,7 +58,7 @@ include 'navbar.php';
             <div id = "main_area">
               <div id = "option_area" class="col s3">
                 <h5>Options</h5><br>
-
+                    <!--------- Choix du poll ------>
                     <p class="col s12 m6 l4" style = "padding: 0 0;">
                       <label>
                         <input  class="with-gap" name="group1" type="radio" checked />
@@ -83,7 +83,7 @@ include 'navbar.php';
                 <!-- Switch -->
                   <div class="switch">
                    <label style ="color : black; font-size: 1rem">
-                     réponse unique
+                    réponse unique
                    <input type="checkbox">
                     <span class="lever"></span>
                     réponse multiple
@@ -91,9 +91,9 @@ include 'navbar.php';
                  </div> 
 
                  <br>
-
+                <!-- choix du nb de rep si multiples -->
                  <div class="input-field col s7" style= " float :right;">
-                  <input placeholder="Nombre de réponses" id="nb_Rep" type="text" class="validate">
+                  <input placeholder="Nombre de réponses" id="nb_rep" type="text" class="validate">
                   <label for="nb_rep"">Nombre de réponses</label>
                 </div>
 
