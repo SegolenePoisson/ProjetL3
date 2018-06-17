@@ -62,3 +62,17 @@ footer.page-footer {
 h5{
   color: #000;
 }
+
+#option_area {
+  box-sizing: border-box;
+    border: 2px solid grey;
+    float: left;
+    padding-bottom : 5px;
+}
+
+.span_form{
+ padding-left: 15px;
+}
+.switch {
+  padding : 1 1;
+}

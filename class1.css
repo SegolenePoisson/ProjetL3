@@ -37,7 +37,6 @@ p {
 	width: 500px; 
 }
 .question {
-
 	color: black;
 	text-align: center;
 	text-transform: uppercase;
@@ -71,3 +70,9 @@ p {
 input[type="checkbox"]{
 	margin-right : 10px;
 }
+
+#option_area{
+	
+	background-color: blue;
+}
+

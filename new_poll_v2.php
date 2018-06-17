@@ -57,12 +57,70 @@ include 'navbar.php';
             </div>
             <div id = "main_area">
               <div id = "option_area" class="col s3">
-                <h5>Options</h5>
-                <p>truc</p>
+                <h5>Options</h5><br>
+                    <!--------- Choix du poll ------>
+                    <p class="col s12 m6 l4" style = "padding: 0 0;">
+                      <label>
+                        <input  class="with-gap" name="group1" type="radio" checked />
+                        <span style="padding-left: 25px; color : black;">Questions</span>
+                      </label>
+                    </p>
+                    <p class="col s12 m6 l4" style = "padding: 0 0;">
+                      <label>
+                        <input class="with-gap" name="group1" type="radio" />
+                        <span style="padding-left: 25px; color : black;"> Texte </span>
+                      </label>
+                    </p>
+                    <p class="col s12 m6 l4" style = "padding: 0 0;">
+                      <label>
+                        <input class="with-gap" name="group1" type="radio"  />
+                        <span style="padding-left: 25px; color : black;">Calendrier</span>
+                      </label>
+                    </p>
+                    <br>
+                <p>truc</p> <br>
+                <p>truc</p> <br>
+                <!-- Switch -->
+                  <div class="switch">
+                   <label style ="color : black; font-size: 1rem">
+                    réponse unique
+                   <input type="checkbox">
+                    <span class="lever"></span>
+                    réponse multiple
+                   </label>
+                 </div> 
+
+                 <br>
+                <!-- choix du nb de rep si multiples -->
+                 <div class="input-field col s7" style= " float :right;">
+                  <input placeholder="Nombre de réponses" id="nb_rep" type="text" class="validate">
+                  <label for="nb_rep"">Nombre de réponses</label>
+                </div>
+
               </div>
               <div id = "right_area" class="col s7">
-                <h5>Question</h5>
-                <p>truc</p>
+               <div class = "container">
+          <br><br>
+          <form method="post" action="create_poll.php">
+
+            <label for="question">Question* : </label>
+            <input type="text" name="question" id="question" size="35" placeholder="Ex : What's you favorite color ?" required /><br/>
+
+            <label for="choice1">Answer 1* : </label>
+            <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Blue." required /><br/>
+
+            <label for="choice2">Answer 2* : </label>
+            <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : Red." required /><br/>
+
+            <label for="choice3">Answer 3 : </label>
+            <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
+
+            <input type="submit" class="waves-effect waves-light btn" value="Valider" />
+
+
+          </form>
+          <p>* champ requis.<br/></p>
+        </div>
               </div>
             </div>
 

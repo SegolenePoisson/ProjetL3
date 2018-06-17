@@ -3,7 +3,7 @@
     <a href="index.php" class="brand-logo"><img src="img/logo.svg" height=70 width = 70></img></a>
     <ul id="nav-mobile" class="right hide-on-med-and-down">
       <li><a href="friend.php">Amis</a></li>
-      <li><a href="new_poll.php">Sondage</a></li>
+      <li><a href="new_poll_v2.php">Sondage</a></li>
       <li><a <?php
       if(isset($_SESSION['logged_in']) && $_SESSION['logged_in']==true && isset($_SESSION['username'])) {
         echo 'href="profil.php">';
