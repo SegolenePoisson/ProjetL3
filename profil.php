@@ -34,22 +34,30 @@ $_SESSION["current_page"] = "profile";
   $result->execute([$_SESSION['username']]);
   $creator_Id = $result->fetchColumn();
 
-  $sql = 'SELECT * FROM polls WHERE creatorId=?';
+  $sql = 'SELECT * FROM polls WHERE creatorId= :userID';
   $result = $bdd->prepare($sql);
-  $result->execute([$creator_Id]);
+  $result->bindParam(':userID', $creator_Id);
+  $result->execute();
+  
     while ($donnees = $result->fetch()) {
       echo "<div class='poll'>";
     	echo  $donnees["question"];
-        $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = ?';
+		
+        $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = :IDpoll';
         $res = $bdd->prepare($sql);
-        $res->execute([$donnees["id"]]);
+		$res->bindParam(':IDpoll', $donnees["id"]);
+        $res->execute();
+		
         echo "<ul>";
         while ($answers = $res->fetch()) {
           echo "<li>".$answers["answer"];
-          $sql = 'SELECT count(*) as nb FROM votes WHERE answerId = ?';
+		  
+          $sql = 'SELECT count(*) as nb FROM votes WHERE answerId = :IDanswer';
           $count = $bdd->prepare($sql);
-          $count->execute([$answers["id"]]);
+		  $count->bindParam(':IDanswer', $answers["id"]);
+          $count->execute();
           $cpt = $count->fetch();
+		  
           echo " (".$cpt["nb"].")";
           echo "</li>";
         }
