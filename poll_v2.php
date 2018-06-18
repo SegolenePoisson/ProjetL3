@@ -35,7 +35,7 @@ include 'db_connect.php';
             $sql ='SELECT * FROM modules WHERE pollId =?';
             $mod = $bdd->prepare($sql);
             $mod->execute([$_GET['id']]);
-            echo "<form  action='add_vote.php' method='post' >";
+            echo "<form  action='add_vote_v2.php' method='post' >";
             while ($donnees = $mod->fetch()) {
               $nbmod++;
               echo  '<div id = "option_area" class="col s8 offset-s2 ">';
