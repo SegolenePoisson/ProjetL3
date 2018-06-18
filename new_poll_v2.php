@@ -115,12 +115,11 @@ include 'navbar.php';
             </div>
 
             <div id="texte">
-              <textarea id="textarea" class="materialize-textarea" data-length="120"></textarea>
-              <label for="textarea">Textarea</label>
+              <textarea disabled id="textarea" placeholder="Textarea" class="materialize-textarea" data-length="120"></textarea>
             </div>
             
             <div id="date">
-              <input id="date_choice" type="date" class="datepicker">
+              <input disabled id="date_choice" type="date" class="datepicker">
             </div>
 
             <input type="submit" class="waves-effect waves-light btn" value="Valider" />
