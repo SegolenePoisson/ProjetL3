@@ -16,104 +16,131 @@ include 'db_connect.php';
 <div class="container">
   <div class = "customcont">
     <div class="row justify-content-center">
-      <div class="poll">
-        <?php
+
+      <?php
+      if(isset($_SESSION["username"])){
         if(isset($_GET['id'])) {
-          if(isset($_GET['r'])) {
-            $sql = 'SELECT * FROM polls WHERE id=?';
-            $result = $bdd->prepare($sql);
-            $result->execute([$_GET['id']]);
-            $donnees = $result->fetch();
-            echo  '<div class="question">'.$donnees["question"].'</div>';
-            $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = ?';
-            $res = $bdd->prepare($sql);
-            $res->execute([$donnees["id"]]);
 
-            $sql = "SELECT count(*) as nbtotal FROM votes,answers WHERE answerId = answers.id and pollid = ?";
-            $result = $bdd->prepare($sql);
-            $result->execute([$_GET['id']]);
-            $totalcount = $result->fetch();
-            $nbtotal = $totalcount["nbtotal"];
-            echo "<ul>";
-            while ($answers = $res->fetch()) {
-              echo "<li>".$answers["answer"];
-              $sql = 'SELECT count(*) as nb FROM votes WHERE answerId = ?';
-              $count = $bdd->prepare($sql);
-              $count->execute([$answers["id"]]);
-              $cpt = $count->fetch();
-              $datapoints[] = ['label'=>$answers['answer'], 'y'=>$cpt["nb"]*100/$nbtotal];
-              echo " (".$cpt["nb"].")";
-              echo "</li>";
-            }
-            echo "</ul>";
-            ?>
-            <script>
-            window.onload = function () {
-
-              var chart = new CanvasJS.Chart("chartContainer", {
-                animationEnabled: true,
-                exportEnabled: false,
-                title:{
-                  text: "<?php echo $donnees["question"]; ?>"
-                },
-                backgroundColor: "#95c2e5",
-                subtitles: [{
-                  text: ""
-                }],
-                data: [{
-                  type: "pie",
-                  showInLegend: "true",
-                  legendText: "{label}",
-                  indexLabelFontSize: 16,
-                  indexLabel: "{label} - #percent%",
-                  yValueFormatString: "#,##%",
-                  dataPoints: <?php echo json_encode($datapoints, JSON_NUMERIC_CHECK); ?>
-                }]
-              });
-              chart.render();
-
-            }
-            </script>
-
-            <div id="chartContainer" style="height: 370px; width: 100%;"></div>
-            <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
-
-            <?php
-            echo "</div><br/>";
+          $sql = 'SELECT * FROM avote,user WHERE username=? and userid=user.id and pollId=?';
+          $result = $bdd->prepare($sql);
+          $result->execute([$_SESSION["username"],$_GET["id"]]);
+          $donnees = $result->fetch();
+          if ( $result->rowCount()>0){
+            echo "Vous avez déjà participé à ce sondage.";
           }else{
-            echo '<form action="add_vote.php" method = "post">';
-            $sql = 'SELECT * FROM polls WHERE polls.id =?';
-            $reponse = $bdd->prepare($sql);
-            $reponse->execute([$_GET['id']]);
-            $donnees = $reponse->fetch();
-            if ( $reponse->rowCount()>0){
-              echo '<div class="question">'. $donnees['question'] .'</div><br>';
-              $sql ='SELECT * FROM answers WHERE answers.pollId =?';
-              $reponse = $bdd->prepare($sql);
-              $reponse->execute([$_GET['id']]);
-              $nb = 1;
-              //on passe l'id du poll en premier argument
-              echo '<input id="selected[]" name="selected[]" type="hidden" value="'.$_GET["id"].'">';
-              while ($donnees = $reponse->fetch()) {
-                echo "<label>";
-                echo '<input type="checkbox" class="filled-in" name = "selected[]" value = "'.$donnees['id'].'"/>';
-                echo "<span>".$donnees['answer']."</span><br>";
-                  echo "</label>";
-                $nb++;
-              }
-              echo "<input type='submit' class='waves-effect waves-light btn' name = 'submit' value='Submit'/>";
-              echo "</form>";
-            }else{
-              echo "This poll doesn't exist, please check the provided Id.";
-            }
-          }
-        }
-        ?>
-      </div>
-    </div>
-  </div>
 
+
+          //getting ids
+          $sql = 'SELECT title,name FROM polls,user WHERE polls.id=? and creatorId= user.id';
+          $result = $bdd->prepare($sql);
+          $result->execute([$_GET['id']]);
+          $donnees = $result->fetch();
+          if ( $result->rowCount()>0){
+            echo  '<h5 class="header center teal-text text-lighten-2">'.$donnees["title"].'</h5>';
+            echo '<p class="center">Sondage par '.$donnees["name"].'</p>';
+
+            //Modules
+            $nbmod = 0;
+            $sql ='SELECT * FROM modules WHERE pollId =?';
+            $mod = $bdd->prepare($sql);
+            $mod->execute([$_GET['id']]);
+            echo "<form  action='add_vote.php' method='post' >";
+              $moduleList = array();
+
+            //boucle modules
+            while ($donnees = $mod->fetch()) {
+              $nbmod++;
+              echo  '<div id = "option_area" class="col s8 offset-s2 ">';
+              echo  ' <h6 class="center" >'.  $donnees["question"].'</h6>';
+
+              //options :
+              $sql ='SELECT * FROM options WHERE moduleId =? ';
+              $opt = $bdd->prepare($sql);
+              $opt->execute([$donnees["id"]]);
+              $options = $opt->fetch();
+
+              $moduleList[$donnees["id"]] = $options["type"];
+              //traitement différent en fonction du type de question
+              switch($options["type"]) {
+                case "text":
+                ?>
+                <div class="row">
+                  <div class="input-field col s12">
+                    <textarea name= <?php echo "module".$nbmod; ?> class="materialize-textarea"></textarea>
+                    <label for="module">Réponse</label>
+                  </div>
+                </div>
+                <?php
+                break;
+                case "check":
+
+                $sql ='SELECT * FROM answers WHERE moduleId =?';
+                $ans = $bdd->prepare($sql);
+                $ans->execute([$donnees["id"]]);
+
+
+                while($answers = $ans->fetch()){
+                  ?>
+
+                <label>
+                  <input name = <?php echo "module".$nbmod."[]"; ?> type="checkbox" value = "<?php echo $answers["id"];?>"/>
+                  <span><?php echo $answers["data"];?></span>
+                </label>
+                <br>
+
+                <?php
+                }
+
+                break;
+                case "radio":
+                $sql ='SELECT * FROM answers WHERE moduleId =?';
+                $ans = $bdd->prepare($sql);
+                $ans->execute([$donnees["id"]]);
+
+
+                while($answers = $ans->fetch()){
+                  ?>
+
+                <label>
+                  <input name = <?php echo "module".$nbmod."[]"; ?> type="radio" value = "<?php echo $answers["id"];?>"/>
+                  <span><?php echo $answers["data"];?></span>
+                </label>
+                <br>
+
+                <?php
+                }
+                break;
+                case "doodle":
+                echo "todo";
+                break;
+                default:
+                echo "default";
+              }
+              echo "</div>";
+            }
+            echo (serialize($moduleList));
+            echo '<input name="modules" type="hidden" value="'.base64_encode(serialize($moduleList)). '">';
+              echo '<input name="pollid" type="hidden" value="'.$_GET["id"]. '">';
+
+            echo '<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Valider</button>';
+            echo "</form>";
+            echo "</div>";
+
+        }
+        else{
+          echo "Ce sondage n'existe pas, veuillez réessayer.";
+        }
+      }
+    }else{
+      echo "Veuillez vous connecter pour afficher cette page.";
+    }
+  }
+    ?>
+  </div>
 </div>
+</div>
+
+
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
