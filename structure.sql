@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 --
 -- Table structure for table `answers`
 --
+CREATE TABLE `avote` ( `id` INT NOT NULL AUTO_INCREMENT , `pollId` INT(255) NOT NULL , `userid` INT(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
 
 CREATE TABLE `answers` (
   `id` int(11) NOT NULL,

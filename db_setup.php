@@ -14,6 +14,10 @@ $sql = "CREATE TABLE `user` (
 
 $bdd->exec($sql);
 
+$sql = "CREATE TABLE `avote` ( `id` INT NOT NULL AUTO_INCREMENT , `pollId` INT(255) NOT NULL , `userid` INT(255) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB";
+
+$bdd->exec($sql);
+
 $sql = "CREATE TABLE `polls` (
  `id` varchar(255) NOT NULL,
  `creatorId` int(25) NOT NULL,

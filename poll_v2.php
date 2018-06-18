@@ -20,7 +20,16 @@ include 'db_connect.php';
       <?php
       if(isset($_SESSION["username"])){
         if(isset($_GET['id'])) {
-          // echo $_GET['id'];
+
+          $sql = 'SELECT * FROM avote,user WHERE username=? and userid=user.id and pollId=?';
+          $result = $bdd->prepare($sql);
+          $result->execute([$_SESSION["username"],$_GET["id"]]);
+          $donnees = $result->fetch();
+          if ( $result->rowCount()>0){
+            echo "Vous avez déjà participé à ce sondage.";
+          }else{
+
+
           //getting ids
           $sql = 'SELECT title,name FROM polls,user WHERE polls.id=? and creatorId= user.id';
           $result = $bdd->prepare($sql);
@@ -30,12 +39,15 @@ include 'db_connect.php';
             echo  '<h5 class="header center teal-text text-lighten-2">'.$donnees["title"].'</h5>';
             echo '<p class="center">Sondage par '.$donnees["name"].'</p>';
 
-            //<!--> Modules <-->
+            //Modules
             $nbmod = 0;
             $sql ='SELECT * FROM modules WHERE pollId =?';
             $mod = $bdd->prepare($sql);
             $mod->execute([$_GET['id']]);
             echo "<form  action='add_vote_v2.php' method='post' >";
+              $moduleList = array();
+
+            //boucle modules
             while ($donnees = $mod->fetch()) {
               $nbmod++;
               echo  '<div id = "option_area" class="col s8 offset-s2 ">';
@@ -47,13 +59,14 @@ include 'db_connect.php';
               $opt->execute([$donnees["id"]]);
               $options = $opt->fetch();
 
+              $moduleList[$donnees["id"]] = $options["type"];
               //traitement différent en fonction du type de question
               switch($options["type"]) {
                 case "text":
                 ?>
                 <div class="row">
                   <div class="input-field col s12">
-                    <textarea id= <?php echo "module".$nbmod; ?> class="materialize-textarea"></textarea>
+                    <textarea name= <?php echo "module".$nbmod; ?> class="materialize-textarea"></textarea>
                     <label for="module">Réponse</label>
                   </div>
                 </div>
@@ -70,7 +83,7 @@ include 'db_connect.php';
                   ?>
 
                 <label>
-                  <input name = <?php echo "module".$nbmod; ?> type="checkbox" />
+                  <input name = <?php echo "module".$nbmod."[]"; ?> type="checkbox" value = "<?php echo $answers["id"];?>"/>
                   <span><?php echo $answers["data"];?></span>
                 </label>
                 <br>
@@ -89,7 +102,7 @@ include 'db_connect.php';
                   ?>
 
                 <label>
-                  <input name = <?php echo "module".$nbmod; ?> type="radio" />
+                  <input name = <?php echo "module".$nbmod."[]"; ?> type="radio" value = "<?php echo $answers["id"];?>"/>
                   <span><?php echo $answers["data"];?></span>
                 </label>
                 <br>
@@ -105,6 +118,10 @@ include 'db_connect.php';
               }
               echo "</div>";
             }
+            echo (serialize($moduleList));
+            echo '<input name="modules" type="hidden" value="'.base64_encode(serialize($moduleList)). '">';
+              echo '<input name="pollid" type="hidden" value="'.$_GET["id"]. '">';
+
             echo '<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Valider</button>';
             echo "</form>";
             echo "</div>";
@@ -117,6 +134,7 @@ include 'db_connect.php';
     }else{
       echo "Veuillez vous connecter pour afficher cette page.";
     }
+  }
     ?>
   </div>
 </div>
