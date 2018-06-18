@@ -52,16 +52,18 @@ $_SESSION["current_page"] = "friend";
 
   $id_user = $bdd->prepare('SELECT  id
 						FROM    user
-						WHERE   username = ?');
-  $id_user->execute([$username]);
+						WHERE   username = :username');
+  $id_user->bindParam(':username', $username);
+  $id_user->execute();
   $id_user = $id_user->fetch();
 
 
 
   $friend_list = $bdd->prepare('SELECT  friend2
 						FROM    friends
-						WHERE   friend1 = ?');
-  $friend_list->execute([$id_user['id']]);
+						WHERE   friend1 = :friends');
+  $friend_list->bindParam(':friends', $id_user['id']);
+  $friend_list->execute();
 
   if($friend_list ->rowCount() > 0){
   	echo '<div class="row">
