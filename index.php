@@ -32,17 +32,14 @@ $_SESSION["current_page"] = "home";
     $username = $_POST["username"];
     $password = $_POST["password"];
 
-    $result = $bdd->prepare('SELECT username, password FROM user WHERE username = ?');
-    $result->execute([$username]);
+    $result = $bdd->prepare('SELECT username, password FROM user WHERE username = :user');
+	$result->bindParam(':user', $username);
+    $result->execute();
 
-    if ($result->rowCount() > 0)
-    {
-
+    if ($result->rowCount() > 0){
+		
       include 'encryption.php';
       $data = $result->fetch();
-
-
-
 
       if(check($data['password'], $password)) {
         $_SESSION["logged_in"] = true;
