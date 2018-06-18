@@ -44,10 +44,27 @@ include 'db_connect.php';
               WHERE   username = ?');
     $id_user->execute([$username]);
     $id_user = $id_user->fetch();
+
+
+
     $friend_list = $bdd->prepare('SELECT  friend2
               FROM    friends
-              WHERE   friend1 = ?');
+              WHERE   friend1 = ?
+              AND status = "accepted"');
     $friend_list->execute([$id_user['id']]);
+
+    $pending_friend_list = $bdd->prepare('SELECT  friend2
+              FROM    friends
+              WHERE   friend1 = ?
+              AND status = "pending"');
+    $pending_friend_list->execute([$id_user['id']]);
+
+    $pending_friend_requests = $bdd->prepare('SELECT  id, friend1
+              FROM    friends
+              WHERE   friend2 = ?
+              AND status = "pending"');
+    $pending_friend_requests->execute([$id_user['id']]);
+
     if($friend_list ->rowCount() > 0){
       echo '<div class="row">
       <div class="shadow">';
@@ -70,11 +87,85 @@ include 'db_connect.php';
           <div class="clearfix"></div>
             <hr />';
       }
+    }
+    else {
+      echo ' <p>you have no friends... Try adding some ! </p>';
+    }
+
+
+        if($pending_friend_list ->rowCount() > 0){
+      echo'<h2>Pending Friend Requests</h2>';
+      echo '<div class="row">
+      <div class="shadow">';
+      while($friend = $pending_friend_list->fetch()){
+        $tmp = $bdd->prepare('SELECT  username
+              FROM    user
+              WHERE   id = ?');
+        $tmp->execute([$friend['friend2']]);
+        $tmp = $tmp->fetch();
+        echo '<div class="col-sm-12">
+              <div class="col-sm-2">
+                <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
+              </div>
+              <div class="col-sm-8">
+                <h4>';
+                 echo $tmp['username'];
+                 echo'</h4>
+           </div>
+            </div>
+          <div class="clearfix"></div>
+            <hr />';
+      }
       echo '</div>
         </div>';
     }
-    else {
-      echo ' <p>you have no friends... Try adding some ! </p> </div>';
+
+
+
+
+        if($pending_friend_requests ->rowCount() > 0){
+      echo'<h2>People are waiting for your awnser !</h2>';
+      echo '<div class="row">
+      <div class="shadow">';
+      while($friend = $pending_friend_requests->fetch()){
+        $tmp = $bdd->prepare('SELECT  username
+              FROM    user
+              WHERE   id = ?');
+        $tmp->execute([$friend['friend1']]);
+        $tmp = $tmp->fetch();
+        echo '<div class="col-sm-12">
+              <div class="col-sm-2">
+
+                <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px" align="left">';
+
+                 echo '<br>'. $tmp['username'] .'
+
+          <br> 
+          <br> 
+          <form method="post" action="accept_friend.php">
+              <br>
+              <button type="submit" class="btn btn-lg btn-primary btn-block" name="accept" value="'.$friend["id"].'">Accept</button>
+            </form>
+
+            <form method="post" action="deny_friend.php">
+              <br>
+              <button type="submit" class="btn btn-lg btn-primary btn-block" name="deny" value="'.$friend["id"].'">Deny</button>
+            </form>
+            </div>
+
+              </div>
+              <div class="col-sm-8">
+                <h4>';
+                 
+
+                 echo'</h4>
+           </div>
+            </div>
+          <div class="clearfix"></div>
+            <hr />';
+      }
+      echo '</div>
+        </div>';
     }
     ?>
 
