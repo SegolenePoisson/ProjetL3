@@ -15,34 +15,38 @@ while($row = $result->fetchColumn()) {
   $creator_Id=$row;
 }
 
-$sql = 'INSERT INTO polls(id, creatorId, question) VALUES (?, ?, ?)';
+$sql = 'INSERT INTO polls(id, creatorId, question) VALUES (:id_poll, :creator_id, :question)';
+
 $result = $bdd->prepare($sql);
-$result->execute([$id_poll, $creator_Id, $_POST['question']]);
+$result->bindParam(':id_poll', $id_poll);
+$result->bindParam(':creator_id', $creator_Id);
+$result->bindParam(':question', $_POST['question']);
+$result->execute();
 
 
 $sql = 'INSERT INTO answers(pollId, answer) VALUES (:poll, :choix)';
-$result = $bdd->prepare($sql);
 
+$result = $bdd->prepare($sql);
 $result->bindParam(':poll', $id_poll);
 $result->bindParam(':choix', $_POST['choice1']);
-
 $result->execute();
+
 
 $sql = 'INSERT INTO answers(pollId, answer) VALUES (:poll, :choix)';
-$result = $bdd->prepare($sql);
 
+$result = $bdd->prepare($sql);
 $result->bindParam(':poll', $id_poll);
 $result->bindParam(':choix', $_POST['choice2']);
-
 $result->execute();
 
+
 if(isset($_POST['choice3']) && $_POST['choice3'] <> "") {
+	
   $sql = 'INSERT INTO answers(pollId, answer) VALUES (:poll, :choix)';
-  $result = $bdd->prepare($sql);
   
+  $result = $bdd->prepare($sql);
   $result->bindParam(':poll', $id_poll);
   $result->bindParam(':choix', $_POST['choice3']);
-  
   $result->execute();
 }
 
