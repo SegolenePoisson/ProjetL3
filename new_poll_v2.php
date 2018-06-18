@@ -38,16 +38,13 @@ include 'navbar.php';
             <div id = "left_area" class="col s2">
               <div id = "list_area">
                 <div class="divider"></div>
-                <div class="section">
-                  <p>question1</p><br>
+
+                <div class="section" id="module">
+                  <p>Question</p><br>
                   <input type="button" class="waves-effect waves-light btn" value="Delete" />
+                  <div class="divider"></div>
                 </div>
-                <div class="divider"></div>
-                  <div class="section">
-                  <p>question2</p><br>
-                  <input type="button" class="waves-effect waves-light btn" value="Delete" />
-                </div>
-                <div class="divider"></div>
+                
               </div>
               <div id = "cmd_area">
                 <input type="button" class="waves-effect waves-light btn" value="Add question" /><br>
@@ -61,19 +58,19 @@ include 'navbar.php';
                     <!--------- Choix du poll ------>
                     <p class="col s12 m6 l4" style = "padding: 0 0;">
                       <label>
-                        <input  class="with-gap" name="group1" type="radio" checked />
+                        <input id="opt_rep" class="with-gap" name="group1" type="radio" checked />
                         <span style="padding-left: 25px; color : black;">Questions</span>
                       </label>
                     </p>
                     <p class="col s12 m6 l4" style = "padding: 0 0;">
                       <label>
-                        <input class="with-gap" name="group1" type="radio" />
+                        <input id="opt_texte" class="with-gap" name="group1" type="radio" />
                         <span style="padding-left: 25px; color : black;"> Texte </span>
                       </label>
                     </p>
                     <p class="col s12 m6 l4" style = "padding: 0 0;">
                       <label>
-                        <input class="with-gap" name="group1" type="radio"  />
+                        <input id="opt_date" class="with-gap" name="group1" type="radio"  />
                         <span style="padding-left: 25px; color : black;">Calendrier</span>
                       </label>
                     </p>
@@ -83,37 +80,48 @@ include 'navbar.php';
                 <!-- Switch -->
                   <div class="switch">
                    <label style ="color : black; font-size: 1rem">
-                    réponse unique
-                   <input type="checkbox">
+                    <!-- réponse unique -->
+                   <input type="checkbox" id="rep_mult">
                     <span class="lever"></span>
-                    réponse multiple
+                    réponses multiples
                    </label>
                  </div> 
 
                  <br>
                 <!-- choix du nb de rep si multiples -->
                  <div class="input-field col s7" style= " float :right;">
-                  <input placeholder="Nombre de réponses" id="nb_rep" type="text" class="validate">
-                  <label for="nb_rep"">Nombre de réponses</label>
+                  <input placeholder="" id="nb_rep" type="text" class="validate">
+                  <label for="nb_rep"">Nombre de réponses max. (opt)</label>
                 </div>
 
               </div>
               <div id = "right_area" class="col s7">
                <div class = "container">
           <br><br>
-          <form method="post" action="create_poll.php">
+          <form id="poll" method="post" action="create_poll.php">
 
             <label for="question">Question* : </label>
             <input type="text" name="question" id="question" size="35" placeholder="Ex : What's you favorite color ?" required /><br/>
 
-            <label for="choice1">Answer 1* : </label>
-            <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Blue." required /><br/>
+            <div id="rep">
+              <label for="choice1">Answer 1* : </label>
+              <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Blue." required /><br/>
 
-            <label for="choice2">Answer 2* : </label>
-            <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : Red." required /><br/>
+              <label for="choice2">Answer 2* : </label>
+              <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : Red." required /><br/>
 
-            <label for="choice3">Answer 3 : </label>
-            <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
+              <label for="choice3">Answer 3 : </label>
+              <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
+            </div>
+
+            <div id="texte">
+              <textarea id="textarea" class="materialize-textarea" data-length="120"></textarea>
+              <label for="textarea">Textarea</label>
+            </div>
+            
+            <div id="date">
+              <input type="text" class="datepicker">
+            </div>
 
             <input type="submit" class="waves-effect waves-light btn" value="Valider" />
 
@@ -123,7 +131,7 @@ include 'navbar.php';
         </div>
               </div>
             </div>
-
+          <script src="js/new_poll.js"></script>
         </div>
 
       <?php
@@ -147,5 +155,6 @@ include 'navbar.php';
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
+
 </body>
 </html>
