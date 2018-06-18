@@ -1,10 +1,3 @@
-document.addEventListener('DOMContentLoaded', function() {
-    var elems = document.querySelectorAll('.datepicker');
-    var instances = M.Datepicker.init(elems, options);
-  }); //initialization for datepicker
-
-
-
 var textarea = document.getElementById("texte").parentNode.removeChild(document.getElementById("texte")),
 	calendar = document.getElementById("date").parentNode.removeChild(document.getElementById("date"));
 

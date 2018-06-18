@@ -120,7 +120,7 @@ include 'navbar.php';
             </div>
             
             <div id="date">
-              <input type="text" class="datepicker">
+              <input id="date_choice" type="date" class="datepicker">
             </div>
 
             <input type="submit" class="waves-effect waves-light btn" value="Valider" />
