@@ -67,33 +67,47 @@ $_SESSION["current_page"] = "poll";
         <?php
         if(isset($_GET['id'])) {
           if(isset($_GET['r'])) {
-            $sql = 'SELECT * FROM polls WHERE id=?';
+			  
+            $sql = 'SELECT * FROM polls WHERE id= :ID';
             $result = $bdd->prepare($sql);
-            $result->execute([$_GET['id']]);
+			$result->bindParam(':ID', $_GET['id']);
+            $result->execute();
             $donnees = $result->fetch();
+			
             echo  '<div class="question">'.$donnees["question"].'</div>';
-            $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = ?';
+			
+            $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = :IDpoll';
             $res = $bdd->prepare($sql);
-            $res->execute([$donnees["id"]]);
+			$res->bindParam(':IDpoll', $donnees["id"]);
+            $res->execute();
 
-            $sql = "SELECT count(*) as nbtotal FROM votes,answers WHERE answerId = answers.id and pollid = ?";
+            $sql = "SELECT count(*) as nbtotal FROM votes,answers WHERE answerId = answers.id and pollid = :IDpoll";
             $result = $bdd->prepare($sql);
-            $result->execute([$_GET['id']]);
+			$result->bindParam(':IDpoll', $_GET['id']);
+            $result->execute();
+			
             $totalcount = $result->fetch();
             $nbtotal = $totalcount["nbtotal"];
+			
             echo "<ul>";
+			
             while ($answers = $res->fetch()) {
               echo "<li>".$answers["answer"];
-              $sql = 'SELECT count(*) as nb FROM votes WHERE answerId = ?';
+			  
+              $sql = 'SELECT count(*) as nb FROM votes WHERE answerId = :IDanswer';
               $count = $bdd->prepare($sql);
-              $count->execute([$answers["id"]]);
+			  $count->bindParam(':IDanswer', $answers["id"]);
+              $count->execute();
+			  
               $cpt = $count->fetch();
               $datapoints[] = ['label'=>$answers['answer'], 'y'=>$cpt["nb"]*100/$nbtotal];
+			  
               echo " (".$cpt["nb"].")";
               echo "</li>";
             }
             echo "</ul>";
             ?>
+			
             <script>
             window.onload = function () {
 
@@ -127,26 +141,35 @@ $_SESSION["current_page"] = "poll";
 
             <?php
             echo "</div><br/>";
+			
           }else{
             echo '<form action="add_vote.php" method = "post">';
-            $sql = 'SELECT * FROM polls WHERE polls.id =?';
+			
+            $sql = 'SELECT * FROM polls WHERE polls.id = :IDpoll';
             $reponse = $bdd->prepare($sql);
-            $reponse->execute([$_GET['id']]);
+			$reponse->bindParam(':IDpoll', $_GET['id']);
+            $reponse->execute();
             $donnees = $reponse->fetch();
+			
             if ( $reponse->rowCount()>0){
               echo '<div class="question">'. $donnees['question'] .'</div><br>';
+			  
               $sql ='SELECT * FROM answers WHERE answers.pollId =?';
               $reponse = $bdd->prepare($sql);
               $reponse->execute([$_GET['id']]);
               $nb = 1;
+			  
               //on passe l'id du poll en premier argument
               echo '<input id="selected[]" name="selected[]" type="hidden" value="'.$_GET["id"].'">';
+			  
               while ($donnees = $reponse->fetch()) {
                 echo '<input type="checkbox" name = "selected[]" value = "'.$donnees['id'].'"/>'. $donnees['answer'] .'<br>';
                 $nb++;
               }
+			  
               echo "<input type='submit' name = 'submit' value='Submit'/>";
               echo "</form>";
+			  
             }else{
               echo "This poll doesn't exist, please check the provided Id.";
             }
