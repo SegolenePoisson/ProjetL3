@@ -70,9 +70,11 @@ $_SESSION["current_page"] = "friend";
   	while($friend = $friend_list->fetch()){
   		$tmp = $bdd->prepare('SELECT  username
 						FROM    user
-						WHERE   id = ?');
-  		$tmp->execute([$friend['friend2']]);
+						WHERE   id = :friend');
+		$tmp->bindParam(':friend' ,$friend['friend2']);
+  		$tmp->execute();
   		$tmp = $tmp->fetch();
+		
   		echo '<div class="col-sm-12">
             <div class="col-sm-2">
               <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
