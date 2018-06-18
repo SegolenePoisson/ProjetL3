@@ -5,9 +5,12 @@ include 'db_connect.php';
 $id_poll = uniqid('');
 $creator_Id = NULL;
 
-$sql = 'SELECT id FROM user WHERE username=?';
+$sql = 'SELECT id FROM user WHERE username=:user';
 $result = $bdd->prepare($sql);
-$result->execute([$_SESSION['username']]);
+
+$result->bindParam(':user', $_SESSION['username']);
+$result->execute();
+
 while($row = $result->fetchColumn()) {
   $creator_Id=$row;
 }
@@ -17,18 +20,30 @@ $result = $bdd->prepare($sql);
 $result->execute([$id_poll, $creator_Id, $_POST['question']]);
 
 
-$sql = 'INSERT INTO answers(pollId, answer) VALUES (?, ?)';
+$sql = 'INSERT INTO answers(pollId, answer) VALUES (:poll, :choix)';
 $result = $bdd->prepare($sql);
-$result->execute([$id_poll, $_POST['choice1']]);
 
-$sql = 'INSERT INTO answers(pollId, answer) VALUES (?, ?)';
+$result->bindParam(':poll', $id_poll);
+$result->bindParam(':choix', $_POST['choice1']);
+
+$result->execute();
+
+$sql = 'INSERT INTO answers(pollId, answer) VALUES (:poll, :choix)';
 $result = $bdd->prepare($sql);
-$result->execute([$id_poll, $_POST['choice2']]);
+
+$result->bindParam(':poll', $id_poll);
+$result->bindParam(':choix', $_POST['choice2']);
+
+$result->execute();
 
 if(isset($_POST['choice3']) && $_POST['choice3'] <> "") {
-  $sql = 'INSERT INTO answers(pollId, answer) VALUES (?, ?)';
+  $sql = 'INSERT INTO answers(pollId, answer) VALUES (:poll, :choix)';
   $result = $bdd->prepare($sql);
-  $result->execute([$id_poll, $_POST['choice3']]);
+  
+  $result->bindParam(':poll', $id_poll);
+  $result->bindParam(':choix', $_POST['choice3']);
+  
+  $result->execute();
 }
 
 	// Redirection direct après création du poll Vers la page de vote

@@ -49,10 +49,13 @@ session_start();
 		
 		if($verif ->rowCount() == 0){
 			$ajout = $bdd->prepare("INSERT INTO `user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,:user, :name, :pw, :mail)");
+			
+			/* Mise des parametres de la requete */
 			$ajout->bindParam(':user', $username);
 			$ajout->bindParam(':name', $name);
 			$ajout->bindParam(':pw', $password);
-			$ajout->bindParam(':mail', $email);			
+			$ajout->bindParam(':mail', $email);
+			
 			$ajout->execute();
 		}
 	}
