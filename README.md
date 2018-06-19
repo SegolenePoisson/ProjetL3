@@ -27,3 +27,7 @@ Le système de vote fera l'objet de plusieurs amélioration/versions. On pourrai
   <dd>Gestion de la liste d'amis, ajout avec confirmation.</dd>
   <dd>Création d'un comtpe administrateur.</dd>
 </dl>
+
+---
+
+**Cf dossier "info" plus plus de détails.**
