@@ -1,4 +1,4 @@
-ProjetL3
+# ProjetL3
 
 L'objectif est de créer un outil en ligne de génération de sondages à petite échelle.
 L'utilisateur s'inscrit, créé un sondage personnalisé, par exemple :
@@ -15,3 +15,5 @@ Le système de vote fera l'objet de plusieurs amélioration/versions. On pourrai
 ----
 
 v0 - 24/05/2018 : système d'inscription, d'authentification, création d'un sondage dans la bdd, création de sa page associée.
+
+v1 - 19/06/2018 : création d'un sondage à plusieurs modules, chaque module étant une question différente d'un même sondage, avec plusieurs options de réponse (réponse simple, ouverte, à choix multiple ou date) ; gestion de la liste d'amis, ajout avec confirmation.
