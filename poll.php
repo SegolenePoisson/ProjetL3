@@ -118,9 +118,9 @@ include 'db_connect.php';
               }
               echo "</div>";
             }
-            echo (serialize($moduleList));
-            echo '<input name="modules" type="hidden" value="'.base64_encode(serialize($moduleList)). '">';
-              echo '<input name="pollid" type="hidden" value="'.$_GET["id"]. '">';
+          //echo (serialize($moduleList));
+               echo '<input name="modules" type="hidden" value="'.base64_encode(serialize($moduleList)). '">';
+               echo '<input name="pollid" type="hidden" value="'.$_GET["id"]. '">';
 
             echo '<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Valider</button>';
             echo "</form>";

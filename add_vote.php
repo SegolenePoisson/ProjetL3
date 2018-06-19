@@ -24,7 +24,7 @@ while($row = $result->fetchColumn()) {
 
         $sql = "INSERT INTO answers (moduleId, data) VALUES (?,?)";
         $result = $bdd->prepare($sql);
-        $result->execute([(int)$idUser,$_POST["module".$key]]);
+        $result->execute([(int)$key,$_POST["module".$key]]);
 
         $sql = 'SELECT id FROM answers WHERE data=?';
         $result = $bdd->prepare($sql);

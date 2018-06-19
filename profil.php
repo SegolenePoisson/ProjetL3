@@ -31,27 +31,27 @@
   $result->execute([$creator_Id]);
     while ($donnees = $result->fetch()) {
       echo "<div class='poll'>";
-    	echo  $donnees["question"];
-        $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = ?';
-        $res = $bdd->prepare($sql);
-        $res->execute([$donnees["id"]]);
-        echo "<ul>";
-        while ($answers = $res->fetch()) {
-          echo "<li>".$answers["answer"];
-          $sql = 'SELECT count(*) as nb FROM votes WHERE answerId = ?';
-          $count = $bdd->prepare($sql);
-          $count->execute([$answers["id"]]);
-          $cpt = $count->fetch();
-          echo " (".$cpt["nb"].")";
-          echo "</li>";
-        }
-        echo "</ul>";
+    	echo  $donnees["title"];
+        // $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = ?';
+        // $res = $bdd->prepare($sql);
+        // $res->execute([$donnees["id"]]);
+        // echo "<ul>";
+        // while ($answers = $res->fetch()) {
+        //   echo "<li>".$answers["answer"];
+        //   $sql = 'SELECT count(*) as nb FROM votes WHERE answerId = ?';
+        //   $count = $bdd->prepare($sql);
+        //   $count->execute([$answers["id"]]);
+        //   $cpt = $count->fetch();
+        //   echo " (".$cpt["nb"].")";
+        //   echo "</li>";
+        // }
+        // echo "</ul>";
     	echo "</div><br/>";
     }
   //echo $creator_Id;
-  echo "<p>";
-	echo   "Ici, sont disponibles les infos de chaque personne";
-	echo "</p>";
+  // echo "<p>";
+	// echo   "Ici, sont disponibles les infos de chaque personne";
+	// echo "</p>";
 ?>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>

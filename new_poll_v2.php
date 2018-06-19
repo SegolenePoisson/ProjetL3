@@ -44,12 +44,12 @@ include 'navbar.php';
                   <input type="button" class="waves-effect waves-light btn" value="Delete" />
                   <div class="divider"></div>
                 </div>
-                
+
               </div>
               <div id = "cmd_area">
-                <input type="button" class="waves-effect waves-light btn" value="Add question" /><br>
-                <input type="button" class="waves-effect waves-light btn" value="Preview" /><br>
-                <input type="button" class="waves-effect waves-light btn" value="Create poll" />
+                <input type="button" class="waves-effect waves-light btn" value="Ajouter une question" /><br>
+                <input type="button" class="waves-effect waves-light btn" value="Prévisualiser" /><br>
+                <input type="button" class="waves-effect waves-light btn" value="Finir et envoyer" />
               </div>
             </div>
             <div id = "main_area">
@@ -75,8 +75,8 @@ include 'navbar.php';
                       </label>
                     </p>
                     <br>
-                <p>truc</p> <br>
-                <p>truc</p> <br>
+                <!-- <p>truc</p> <br>
+                <p>truc</p> <br> -->
                 <!-- Switch -->
                   <div class="switch">
                    <label style ="color : black; font-size: 1rem">
@@ -85,14 +85,14 @@ include 'navbar.php';
                     <span class="lever"></span>
                     réponses multiples
                    </label>
-                 </div> 
+                 </div>
 
                  <br>
                 <!-- choix du nb de rep si multiples -->
-                 <div class="input-field col s7" style= " float :right;">
+                 <!-- <div class="input-field col s7" style= " float :right;">
                   <input placeholder="" id="nb_rep" type="text" class="validate">
-                  <label for="nb_rep"">Nombre de réponses max. (opt)</label>
-                </div>
+                  <label for="nb_rep">Nombre de réponses max. (opt)</label>
+                </div> -->
 
               </div>
               <div id = "right_area" class="col s7">
@@ -104,25 +104,25 @@ include 'navbar.php';
             <input type="text" name="question" id="question" size="35" placeholder="Ex : What's you favorite color ?" required /><br/>
 
             <div id="rep">
-              <label for="choice1">Answer 1* : </label>
+              <label for="choice1">Réponse 1* : </label>
               <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Blue." required /><br/>
 
-              <label for="choice2">Answer 2* : </label>
+              <label for="choice2">Réponse 2* : </label>
               <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : Red." required /><br/>
 
-              <label for="choice3">Answer 3 : </label>
+              <label for="choice3">Réponse 3 : </label>
               <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
             </div>
 
             <div id="texte">
               <textarea disabled id="textarea" placeholder="Textarea" class="materialize-textarea" data-length="120"></textarea>
             </div>
-            
+
             <div id="date">
               <input disabled id="date_choice" type="date" class="datepicker">
             </div>
 
-            <input type="submit" class="waves-effect waves-light btn" value="Valider" />
+            <input type="submit" class="waves-effect waves-light btn" value="Ajouter" />
 
 
           </form>
