@@ -11,7 +11,9 @@ Pour se connecter, saisir le pseudonyme choisi lors de l'inscription ainsi que l
 Ajouter un ami permet de faciliter le partage des sondages.
 Il faut posséder un compte et y être connecté pour ajouter des amis (voir section 1.).
 
-Dans la barre de navigation, en haut à droite, cliquer sur "**Amis**". Entrer le pseudonyme d'un ami possédant un compte puis cliquer sur "**Add friend**". L'ami est maintenant ajouté à la liste d'amis.
+Dans la barre de navigation, en haut à droite, cliquer sur "**Amis**". Entrer le pseudonyme d'un ami **possédant un compte** puis cliquer sur "**Add friend**". Une demande d'ami est envoyée et le message "*Pending Friend Requests*" s'affiche sur la page suivi de la liste des demandes d'ami en attente de réponse. Si l'ami concerné accepte la demande, il est alors ajouté à la liste d'amis.
+
+Quand une demande d'ami est reçue, un message apparaît dans la page "**Amis**" ("*People are waiting for your awnser !*") ainsi que le pseudonyme de la personne ayant fait la demande, accompagné de deux boutons : l'un permettant d'accepter la demande ("**Accept**") et l'autre pour la refuser ("**Deny**").
 
 ## 3. Créer un sondage.
 Il faut posséder un compte et y être connecté pour pouvoir créer un sondage (voir section 1.).
