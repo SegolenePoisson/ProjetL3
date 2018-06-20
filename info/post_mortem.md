@@ -7,5 +7,5 @@
 ce qui fonctionne, ce qui ne fonctionne pas
 
 ## Axes d'amélioration
--remplacer php par js
+-remplacer php par js  
 -liste d'amis : accepter une demande ajoute l'ami qui l'a envoyée (actuellement à sens unique)
