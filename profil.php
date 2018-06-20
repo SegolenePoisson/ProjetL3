@@ -8,19 +8,7 @@
   echo "<body>";
   include "navbar.php";
   include 'db_connect.php';
-?>
 
-<div id="index-banner" class="parallax-container">
-  <div class="section no-pad-bot">
-    <div class="container">
-      <br><br>
-      <h1 class="header center teal-text text-lighten-2">Woui</h1>
-    </div>
-  </div>
-  <div class="parallax"><img src="img/background1.jpg"></div>
-</div>
-
-<?php
   $sql = 'SELECT id FROM user WHERE username=?';
   $result = $bdd->prepare($sql);
   $result->execute([$_SESSION['username']]);
@@ -30,29 +18,32 @@
   $result = $bdd->prepare($sql);
   $result->execute([$creator_Id]);
     while ($donnees = $result->fetch()) {
-      echo "<div class='poll'>";
-    	echo  $donnees["title"];
-        // $sql = 'SELECT answers.answer,answers.id FROM answers WHERE  pollid = ?';
-        // $res = $bdd->prepare($sql);
-        // $res->execute([$donnees["id"]]);
-        // echo "<ul>";
-        // while ($answers = $res->fetch()) {
-        //   echo "<li>".$answers["answer"];
-        //   $sql = 'SELECT count(*) as nb FROM votes WHERE answerId = ?';
-        //   $count = $bdd->prepare($sql);
-        //   $count->execute([$answers["id"]]);
-        //   $cpt = $count->fetch();
-        //   echo " (".$cpt["nb"].")";
-        //   echo "</li>";
-        // }
-        // echo "</ul>";
-    	echo "</div><br/>";
+      ?>
+      <div class="row">
+      <div class="col s12 m3">
+        <div class="card blue-grey darken-1">
+          <div class="card-content white-text">
+            <div class="card-title"><?php echo $donnees["title"].""?></div>
+             <blockquote>
+            <?php
+            $sql = "SELECT modules.*,options.type as type FROM modules,options WHERE pollId = ? and modules.id = moduleID";
+            $res = $bdd->prepare($sql);
+            $res->execute([$donnees["id"]]);
+            while ($mod = $res->fetch()){
+              echo $mod["question"].'<br>';
+            }
+            ?>
+          </blockquote>
+          </div>
+          <div class="card-action">
+            <a href=<?php echo '"results.php?id='.$donnees["id"].'"';?>>Voir les resultats</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <?php
     }
-  //echo $creator_Id;
-  // echo "<p>";
-	// echo   "Ici, sont disponibles les infos de chaque personne";
-	// echo "</p>";
-?>
+    ?>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
     <script src="js/init.js"></script>
