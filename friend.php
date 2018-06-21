@@ -25,20 +25,20 @@ include 'db_connect.php';
   <?php
     if(isset($_SESSION["username"])){
       $username = $_SESSION["username"];
-    echo ' <div class="container">
-            <div class="col-md">
-          <section class="login-form">
-            <form method="post" action="add_friend.php" role="login">
-              <input type="text" name="username" required class="form-control input-lg" name="username" placeholder="Username"
-    required="" />
+    echo " <div class='container'>
+            <div class='col-md'>
+          <section class='login-form'>
+            <form method='post' action='add_friend.php' role='login'>
+              <input type='text' name='username' required class='form-control input-lg' name='username' placeholder='Pseudo'
+    required='' />
               <br>
-              <button type="submit" class="btn btn-lg btn-primary btn-block">Add Friend</button>
+              <button type='submit' class='btn btn-lg btn-primary btn-block'>Ajouter cet ami</button>
             </form>
           </section>
         </div>
-             <div class="top">
-           <h2>Friends List</h2>
-       </div>';
+             <div class='top'>
+           <h2>Liste d'amis</h2>
+       </div>";
     $id_user = $bdd->prepare('SELECT  id
               FROM    user
               WHERE   username = ?');
@@ -89,7 +89,7 @@ include 'db_connect.php';
       }
     }
     else {
-      echo ' <p>you have no friends... Try adding some ! </p>';
+      echo " <p>Vous n'avez pas encore d'ami ! Essayez d'en ajouter ! </p>";
     }
 
 
