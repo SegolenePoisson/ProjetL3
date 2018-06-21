@@ -11,22 +11,32 @@ echo "<body>";
 include 'navbar.php';
 include 'db_connect.php';
 
-if(isset($_POST["name"], $_POST["email"], $_POST["username"])){
-  $email = $_POST["email"];
-  $username = $_POST["username"];
-  $name = $_POST["name"];
 
+/* Vérification de la validité du captcha */
+if ($_POST["captcha"] != $_SESSION['captcha']){
+		echo "Mauvais captcha";
+		header("refresh:0;url=signup.php");
+}
+else{
+	/* Verifie si les champs du formulaire d'inscription ont été remplis */
+	if(isset($_POST["name"], $_POST["email"], $_POST["username"], $_POST["test"])){
 
-  include 'encryption.php';
+		$email = $_POST["email"];
+		$username = $_POST["username"];
+		$name = $_POST["name"];
+	  
+		include 'encryption.php';
 
-  $password = encrypt($_POST["password"]);
-  $verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `user` WHERE `username` = ?");
-  $verif->execute([$username]);
+		/* Recupere dans la base de donnee si le nom d'utilisateur est deja utilise ou non */
+		$password = encrypt($_POST["password"]);
+		$verif = $bdd->prepare("SELECT SQL_CALC_FOUND_ROWS `username` FROM `user` WHERE `username` = ?");
+		$verif->execute([$username]);
 
-  if($verif ->rowCount() == 0){
-    $ajout = $bdd->prepare("INSERT INTO `user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,?,?,?,?)");
-    $ajout->execute([$username ,$name, $password ,$email]);
-  }
+		if($verif ->rowCount() == 0){
+			$ajout = $bdd->prepare("INSERT INTO `user` (`id`, `username`, `name`, `password`, `email`) VALUES (NULL ,?,?,?,?)");
+			$ajout->execute([$username ,$name, $password ,$email]);
+		}
+	}
 }
 
 ?>
