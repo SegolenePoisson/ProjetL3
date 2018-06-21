@@ -129,7 +129,7 @@ include 'db_connect.php';
 
 
         if($pending_friend_requests ->rowCount() > 0){
-      echo'<h2> Ces personnes vous ont ajouté en ami !</h2>';
+      echo'<h2> Ces personnes veulent vous ajouter en ami :</h2>';
       echo '<div class="row">
       <div class="shadow">';
       while($friend = $pending_friend_requests->fetch()){
@@ -145,8 +145,8 @@ include 'db_connect.php';
 
                  echo '<br>'. $tmp['username'] .'
 
-          <br> 
-          <br> 
+          <br>
+          <br>
           <form method="post" action="accept_friend.php">
               <br>
               <button type="submit" class="btn btn-lg btn-primary btn-block" name="accept" value="'.$friend["id"].'">Accepter</button>
@@ -161,7 +161,7 @@ include 'db_connect.php';
               </div>
               <div class="col-sm-8">
                 <h4>';
-                 
+
 
                  echo'</h4>
            </div>
@@ -184,7 +184,7 @@ include 'db_connect.php';
      <h1>Add Friends</h1>
     <p>To add friends, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php">create one</a> !<br/></p>
    <?php
-  
+
   }
   ?>
 </div>
