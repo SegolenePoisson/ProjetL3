@@ -77,7 +77,7 @@ $sql = "CREATE TABLE `friends` (
 `id` int(11) NOT NULL AUTO_INCREMENT,
 `friend1` int(11) NOT NULL,
 `friend2` int(11) NOT NULL,
-`status` enum('pending','accepted','','') NOT NULL DEFAULT 'pending',
+`status` enum('pending','accepted','') NOT NULL DEFAULT 'pending',
 PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1";
 
