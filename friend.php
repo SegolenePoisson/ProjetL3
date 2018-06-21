@@ -21,7 +21,7 @@ include 'db_connect.php';
 
 
 <div class="container">
-<div class= "customcont">
+  <div class= "customcont">
   <?php
     if(isset($_SESSION["username"])){
       $username = $_SESSION["username"];
@@ -77,7 +77,10 @@ include 'db_connect.php';
         echo '<div class="col-sm-12">
               <div class="col-sm-2">
                 <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
+
               </div>
+               <button type="submit" class="btn btn-danger btn">Remove Friend
+               </button>
               <div class="col-sm-8">
                 <h4>';
                  echo $tmp['username'];
@@ -87,6 +90,8 @@ include 'db_connect.php';
           <div class="clearfix"></div>
             <hr />';
       }
+      echo '</div>
+      </div>';
     }
     else {
       echo " <p>Vous n'avez pas encore d'ami ! Essayez d'en ajouter ! </p>";
@@ -94,7 +99,7 @@ include 'db_connect.php';
 
 
         if($pending_friend_list ->rowCount() > 0){
-      echo'<h2>Pending Friend Requests</h2>';
+      echo"<h2>Requêtes d'amis en attente</h2>";
       echo '<div class="row">
       <div class="shadow">';
       while($friend = $pending_friend_list->fetch()){
@@ -124,7 +129,7 @@ include 'db_connect.php';
 
 
         if($pending_friend_requests ->rowCount() > 0){
-      echo'<h2>People are waiting for your awnser !</h2>';
+      echo'<h2> Ces personnes vous ont ajouté en ami !</h2>';
       echo '<div class="row">
       <div class="shadow">';
       while($friend = $pending_friend_requests->fetch()){
@@ -144,12 +149,12 @@ include 'db_connect.php';
           <br> 
           <form method="post" action="accept_friend.php">
               <br>
-              <button type="submit" class="btn btn-lg btn-primary btn-block" name="accept" value="'.$friend["id"].'">Accept</button>
+              <button type="submit" class="btn btn-lg btn-primary btn-block" name="accept" value="'.$friend["id"].'">Accepter</button>
             </form>
 
             <form method="post" action="deny_friend.php">
               <br>
-              <button type="submit" class="btn btn-lg btn-primary btn-block" name="deny" value="'.$friend["id"].'">Deny</button>
+              <button type="submit" class="btn btn-lg btn-primary btn-block" name="deny" value="'.$friend["id"].'">Refuser</button>
             </form>
             </div>
 
