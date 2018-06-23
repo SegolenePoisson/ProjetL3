@@ -20,4 +20,5 @@ ce qui fonctionne, ce qui ne fonctionne pas
 Les fichiers sont disponibles en ligne à l'adresse <https://github.com/SegolenePoisson/ProjetL3>.
 Schéma des liens entre les pages.
 
-#Dévellopement sur serveur local : différent logiciel utilisé : Xampp, WamppServer (ne pas avoir les deux, possibilités de conflits)
+#Développement sur serveur local : différent logiciel utilisables pour le serveur : Xampp, WamppServer (ne pas avoir les deux, possibilités de conflits)
+Pour obtenir les tables de la base de données, executer db_setup.php, ou dans phpmyadmin, utiliser la fonction import et le fichier structure.sql, qui permet d'avoir un exemple de sondage.
