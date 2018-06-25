@@ -47,7 +47,7 @@ include 'navbar.php';
 
               </div>
               <div id = "cmd_area">
-                <input type="button" class="waves-effect waves-light btn" value="Ajouter un module" /><br>
+                <input type="button" class="waves-effect waves-light btn" id="add_mod" value="Ajouter un module" /><br>
                 <!--
                 <input type="button" class="waves-effect waves-light btn" value="Prévisualiser" /><br>
                 -->
