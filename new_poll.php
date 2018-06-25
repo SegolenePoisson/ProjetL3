@@ -47,8 +47,10 @@ include 'navbar.php';
 
               </div>
               <div id = "cmd_area">
-                <input type="button" class="waves-effect waves-light btn" value="Ajouter une question" /><br>
+                <input type="button" class="waves-effect waves-light btn" value="Ajouter un module" /><br>
+                <!--
                 <input type="button" class="waves-effect waves-light btn" value="Prévisualiser" /><br>
+                -->
                 <input type="button" class="waves-effect waves-light btn" value="Finir et envoyer" />
               </div>
             </div>
@@ -101,28 +103,31 @@ include 'navbar.php';
           <form id="poll" method="post" action="create_poll.php">
 
             <label for="question">Question* : </label>
-            <input type="text" name="question" id="question" size="35" placeholder="Ex : What's you favorite color ?" required /><br/>
+            <input type="text" name="question" id="question" placeholder="Entrez votre question." required /><br/>
 
             <div id="rep">
-              <label for="choice1">Réponse 1* : </label>
-              <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Blue." required /><br/>
+              <label for="choice1">Réponse* : </label>
+              <input type="text" name="choice1" id="choice1" placeholder="Première réponse." required /><br/>
 
-              <label for="choice2">Réponse 2* : </label>
-              <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : Red." required /><br/>
+              <label for="choice2">Réponse* : </label>
+              <input type="text" name="choice2" id="choice2" placeholder="Deuxième réponse." required /><br/>
 
-              <label for="choice3">Réponse 3 : </label>
-              <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
+              <!--<div id="add_answer">
+                <label for="choice3">Réponse : </label>
+                <input type="text" name="choice3" id="choice3" placeholder="Réponse."/><br/>
+              </div>
+              <input type="button" class="waves-effect waves-teal btn-flat" id="add_button" value="Ajouter un champ de réponse" />-->
             </div>
 
             <div id="texte">
-              <textarea disabled id="textarea" placeholder="Textarea" class="materialize-textarea" data-length="120"></textarea>
+              <textarea disabled id="textarea" placeholder="Réponse ouverte." class="materialize-textarea" data-length="120"></textarea>
             </div>
 
             <div id="date">
               <input disabled id="date_choice" type="date" class="datepicker">
             </div>
 
-            <input type="submit" class="waves-effect waves-light btn" value="Ajouter" />
+            <input type="submit" class="waves-effect waves-light btn" value="Ajouter le module" />
 
 
           </form>
