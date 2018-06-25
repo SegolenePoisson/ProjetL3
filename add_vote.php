@@ -13,7 +13,7 @@ $result->execute([$_SESSION['username']]);
 while($row = $result->fetchColumn()) {
   $idUser=$row;
 }
-
+  //pour chaque module de la liste
   foreach ($mod as $key => &$value) {
     $answer = $_POST["module".$key];
 
@@ -22,18 +22,19 @@ while($row = $result->fetchColumn()) {
         case "text":
         echo $_POST["module".$key];
 
+        //insertion de la réponse ouverte dans la table
         $sql = "INSERT INTO answers (moduleId, data) VALUES (?,?)";
         $result = $bdd->prepare($sql);
         $result->execute([(int)$key,$_POST["module".$key]]);
-
+        //récupération de l'id de la réponse ajoutée
         $sql = 'SELECT id FROM answers WHERE data=?';
         $result = $bdd->prepare($sql);
-        $result->execute([$_POST["module".$key]]);
+        $result->execute([$_POST["module".$key]);
         while($row = $result->fetchColumn()) {
           echo $row;
           $textId=$row;
         }
-
+        //on ajoute le vote en lui même
         $sql = "INSERT INTO votes (userID, answerId) VALUES (?,?)";
         $result = $bdd->prepare($sql);
         $result->execute([$idUser,$textId]);
@@ -44,6 +45,7 @@ while($row = $result->fetchColumn()) {
         $N = count($answer);
         for($i=0; $i < $N; $i++){
           echo $answer[$i]." ";
+          //on insère le vote dans la table
           $sql = "INSERT INTO votes (userID, answerId) VALUES (?,?)";
           $result = $bdd->prepare($sql);
           $result->execute([$idUser,$answer[$i]]);
@@ -56,6 +58,7 @@ while($row = $result->fetchColumn()) {
       }
       echo "<br>";
   }
+  //on ajoute l'utilisateur dans la liste des votants 
   $sql = "INSERT INTO avote (userId, pollId) VALUES (?,?)";
   $result = $bdd->prepare($sql);
   $result->execute([$idUser,$_POST["pollid"]]);

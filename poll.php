@@ -20,7 +20,7 @@ include 'db_connect.php';
       <?php
       if(isset($_SESSION["username"])){
         if(isset($_GET['id'])) {
-
+          //vérification de vote précédent de cet utilisateur sur ce sondage
           $sql = 'SELECT * FROM avote,user WHERE username=? and userid=user.id and pollId=?';
           $result = $bdd->prepare($sql);
           $result->execute([$_SESSION["username"],$_GET["id"]]);
@@ -30,7 +30,7 @@ include 'db_connect.php';
           }else{
 
 
-          //getting ids
+          //récupération des informations du sondage
           $sql = 'SELECT title,name FROM polls,user WHERE polls.id=? and creatorId= user.id';
           $result = $bdd->prepare($sql);
           $result->execute([$_GET['id']]);
@@ -39,15 +39,16 @@ include 'db_connect.php';
             echo  '<h5 class="header center teal-text text-lighten-2">'.$donnees["title"].'</h5>';
             echo '<p class="center">Sondage par '.$donnees["name"].'</p>';
 
-            //Modules
+            //Traitements des Modules
             $nbmod = 0;
             $sql ='SELECT * FROM modules WHERE pollId =?';
             $mod = $bdd->prepare($sql);
             $mod->execute([$_GET['id']]);
             echo "<form  action='add_vote.php' method='post' >";
+              //ce tableau sert à garder en mémoire les types de modules.
               $moduleList = array();
 
-            //boucle modules
+            //boucle module
             while ($donnees = $mod->fetch()) {
               $nbmod++;
               echo  '<div id = "option_area" class="col s8 offset-s2 ">';
@@ -59,6 +60,7 @@ include 'db_connect.php';
               $opt->execute([$donnees["id"]]);
               $options = $opt->fetch();
 
+              //on ajoute le type du module actuel à la liste des modules.
               $moduleList[$donnees["id"]] = $options["type"];
               //traitement différent en fonction du type de question
               switch($options["type"]) {
@@ -74,6 +76,7 @@ include 'db_connect.php';
                 break;
                 case "check":
 
+                //selectionner toutes les réponses correspondants à ce module
                 $sql ='SELECT * FROM answers WHERE moduleId =?';
                 $ans = $bdd->prepare($sql);
                 $ans->execute([$donnees["id"]]);
@@ -118,8 +121,10 @@ include 'db_connect.php';
               }
               echo "</div>";
             }
-          //echo (serialize($moduleList));
+            //fin boucle module
+          //on encode la lsite des modules, avec leur type pour faciliter le traitement en aval, et on le passe en argument
                echo '<input name="modules" type="hidden" value="'.base64_encode(serialize($moduleList)). '">';
+               //ainsi que l'id du poll
                echo '<input name="pollid" type="hidden" value="'.$_GET["id"]. '">';
 
             echo '<button type="submit" class="btn btn-primary btn-lg btn-block login-button">Valider</button>';
