@@ -12,6 +12,11 @@ Nous avons opté pour les langages suivants :
 Nous étions tous à peu près débutants dans ces langages, nous les avions donc choisis entre autres pour l'abondance de documentation et de cours à leur sujet, en particulier sur [Openclassroom](https://openclassrooms.com/).
 ## 2. Architecture du projet
 (schéma liens entre les pages)
+### 2.1. Système d'authentification
+
+### 2.2. Création de sondages
+![Structure de la page de création d'un sondage](https://github.com/SegolenePoisson/ProjetL3/edit/framework/info/poll_modulaire.png "Structure de la page de création d'un sondage")
+### 2.3. Réponse à un sondage et résultats
 
 ## 3. Organisation du groupe
 Nous utilisions une application de chat vocal pour nous tenir au courrant et faire des points d'avancement : [Discord](https://discordapp.com/).  
