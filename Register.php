@@ -19,7 +19,7 @@ if ($_POST["captcha"] != $_SESSION['captcha']){
 }
 else{
 	/* Verifie si les champs du formulaire d'inscription ont été remplis */
-	if(isset($_POST["name"], $_POST["email"], $_POST["username"], $_POST["test"])){
+	if(isset($_POST["name"], $_POST["email"], $_POST["username"], $_POST["confirm"])){
 
 		$email = $_POST["email"];
 		$username = $_POST["username"];
