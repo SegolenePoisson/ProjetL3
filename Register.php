@@ -14,8 +14,8 @@ include 'db_connect.php';
 
 /* Vérification de la validité du captcha */
 if ($_POST["captcha"] != $_SESSION['captcha']){
-		echo "Mauvais captcha";
 		header("refresh:0;url=signup.php");
+		die();
 }
 else{
 	/* Verifie si les champs du formulaire d'inscription ont été remplis */
