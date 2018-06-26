@@ -13,6 +13,11 @@ Nous étions tous à peu près débutants dans ces langages, nous les avions don
 ## 2. Architecture du projet
 (schéma liens entre les pages)
 
+## 3. Organisation du groupe
+Nous utilisions une application de chat vocal pour nous tenir au courrant et faire des points d'avancement : [Discord](https://discordapp.com/).  
+Pour avoir une liste des tâches à effectuer et les assigner, nous utilisions [Trello](https://trello.com/b/PUTqpnMR/woui).  
+Et pour mettre le code en commun et gérer les versions, [Github](https://github.com/SegolenePoisson/ProjetL3/).
+
 >- Principe de mise en œuvre de la solution (comment)
 >- Règles d'architecture
 >- Modèle statique : organisation des packages, descriptions des classes principales et de leurs responsabilités (si cela a du sens dans votre projet)
