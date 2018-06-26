@@ -1,7 +1,8 @@
 # Manuel d'utilisation
+Ce manuel détaille l'utilisation des différentes fonctionnalités du site : créer un sondage, le partager, y répondre, consulter les résultats et gérer la liste d'amis.
 
 ## 1. Créer un compte et se connecter.
-Un compte est nécessaire pour utiliser les fonctionnalités du site : créer un sondage, le partager, y répondre, consulter les résultats et gérer la liste d'amis.
+Un compte est nécessaire pour utiliser les fonctionnalités du site.
 
 Sur la page d'acceuil, dans la barre de navigation, en haut à droite, cliquer sur "**S'inscrire**". Remplir le formulaire d'inscription : entrer un nom, une adresse mail valide, choisir un pseudonyme et un mot de passe (à entrer une deuxième fois pour confirmation dans le champ prévu à cet effet). Cliquer sur le bouton "**Register**". Le compte est alors créé. Une page d'information s'affiche indiquant "*Votre compte a été créé avec succès.*" avant d'être redirigée vers la page de connexion.
 
