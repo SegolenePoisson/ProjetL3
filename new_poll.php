@@ -79,7 +79,7 @@ include 'navbar.php';
                     <br>
                 <!-- <p>truc</p> <br>
                 <p>truc</p> <br> -->
-                <!-- Switch -->
+                <!-- Switch Reponses Multiples-->
                   <div class="switch">
                    <label style ="color : black; font-size: 1rem">
                     <!-- réponse unique -->
@@ -100,7 +100,7 @@ include 'navbar.php';
               <div id = "right_area" class="col s7">
                <div class = "container">
           <br><br>
-          <form id="poll" method="post" action="create_poll.php">
+          <form id="poll" method="post" action="confirm_poll.php">
 
             <label for="question">Question* : </label>
             <input type="text" name="question" id="question" placeholder="Entrez votre question." required /><br/>
@@ -112,22 +112,31 @@ include 'navbar.php';
               <label for="choice2">Réponse* : </label>
               <input type="text" name="choice2" id="choice2" placeholder="Deuxième réponse." required /><br/>
 
-              <!--<div id="add_answer">
+              <!--><div id="add_answer"><-->
                 <label for="choice3">Réponse : </label>
                 <input type="text" name="choice3" id="choice3" placeholder="Réponse."/><br/>
-              </div>
+
+              <!--></div>
               <input type="button" class="waves-effect waves-teal btn-flat" id="add_button" value="Ajouter un champ de réponse" />-->
+
+
+              <input name="ModuleType" type="hidden" value="check"> 
+
             </div>
 
             <div id="texte">
               <textarea disabled id="textarea" placeholder="Réponse ouverte." class="materialize-textarea" data-length="120"></textarea>
+                <input name="ModuleType" type="hidden" value="text">
             </div>
 
             <div id="date">
               <input disabled id="date_choice" type="date" class="datepicker">
+                <input name="ModuleType" type="hidden" value="doodle">
             </div>
 
-            <input type="submit" class="waves-effect waves-light btn" value="Ajouter le module" />
+            <!-->
+              <input type="submit" class="waves-effect waves-light btn" value="Ajouter le module" />
+            <-->
 
 
           </form>
