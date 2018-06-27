@@ -20,6 +20,9 @@ La figure suivante détaille les liens entre les différents fichiers du site : 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/liens_pages.jpg "Schéma des liens entre les pages")
 ### Modèle dynamique
 (paragraphe puis diagramme de séquence)
+
+![Diagramme de séquence général](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/nomDuDiagramme.png "Diagramme de séquence du générateur de sondage.")
+
 ### 2.1. Système d'authentification
 Le système d'authentification est géré, côté utilisateur, par 2 pages : login.php et signup.php.
 #### login.php
