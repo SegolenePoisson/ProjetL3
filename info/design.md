@@ -26,7 +26,7 @@ Le système de création d'un sondage a été imaginé comme détaillé à la fi
 ## 3. Organisation du groupe
 Nous utilisions une application de chat vocal pour nous tenir au courrant et faire des points d'avancement : [Discord](https://discordapp.com/).  
 Pour avoir une liste des tâches à effectuer et les assigner, nous utilisions Trello, [notre Trello](https://trello.com/b/PUTqpnMR/woui).  
-Et pour mettre le code en commun et gérer les versions, [Github](https://github.com/SegolenePoisson/ProjetL3/).
+Et pour mettre le code en commun et gérer les versions, [notre projet Github](https://github.com/SegolenePoisson/ProjetL3/).
 
 >- Principe de mise en œuvre de la solution (comment)
 >- Règles d'architecture
