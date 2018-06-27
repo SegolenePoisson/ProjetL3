@@ -31,7 +31,7 @@ En haut, un champ permet de donner un titre au sondage (ou un thème). A gauche 
 - "**Texte**" permet de créer un sondage à partir d'une question ouverte. Dans la partie droite contenant le formulaire, un champ permet d'entrer la question ouverte. Les sondés disposeront d'un cadre de texte pour y répondre librement.
 - "**Calendrier**" permet aux sondés de sélectionner une date sur un calendrier miniature pour répondre à la question renseignée dans le formulaire de création de sondage, dans le champ prévu à cet effet (*cette fonctionnalité n'est pas encore disponible*).
 
- A la fin du formulaire, une dernière option est proposée : "**Affichage des résultats aux sondés après le vote**", qui permet aux votants de voir les résultats actuels du sondage après avoir soumis leur vote.
+ A la fin du formulaire, une dernière option est proposée : "**Autoriser les votants à acceder aux réponses**", qui permet aux votants de voir les résultats actuels du sondage après avoir soumis leur vote.
  
 Une fois les options choisies et le formulaire rempli, cliquer sur "**Envoyer**" pour créer le sondage. Une page s'ouvre alors, indiquant que le sondage a bien été créé et mettant à disposition le lien de partage du sondage.
 
@@ -52,7 +52,7 @@ Pour répondre à un sondage, ouvrir le lien qui y est associé dans le navigate
 
 ![Capture d'écran de la page Réponse](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/img.jpg "Capture d'écran de la page de réponse à un sondage.")
 
-Il suffit de compléter les champs et/ou cocher les cases indiquées dans le formulaire de réponse, puis de cliquer sur le bouton "**Valider**". Le vote est alors pris en compte. Si le créateur du sondage avait choisi l'option "Affichage des résultats aux sondés après le vote", une page s'ouvre contenant les résultats actuels du sondage, elle est sinon redirigée vers la page d'accueil du site.
+Il suffit de compléter les champs et/ou cocher les cases indiquées dans le formulaire de réponse, puis de cliquer sur le bouton "**Valider**". Le vote est alors pris en compte. Si le créateur du sondage avait choisi l'option "Autoriser les votants à accéder aux réponses", une page s'ouvre contenant les résultats actuels du sondage, elle est sinon redirigée vers la page d'accueil du site.
 
 ### 1.5. Ajouter des amis.
 Ajouter un ami permet de faciliter le partage des sondages (*cette fonctionnalité n'est pas encore disponible*).
