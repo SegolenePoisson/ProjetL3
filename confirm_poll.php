@@ -4,6 +4,7 @@
 <?php
 session_start();
 $_SESSION["current_page"] = "poll";
+include 'db_connect.php';
 include 'header.php';
 echo "<body>";
 
@@ -38,24 +39,27 @@ include 'db_connect.php';
         $result = $bdd->prepare($sql);
         $result->execute([$_SESSION['username']]);
         $row = $result->fetchColumn();
+        echo $row;
         $idUser=$row;
 
         //poll
         //id, titre et displayresult
         if (isset($_POST['titre'])) {
-          $sql = "INSERT INTO poll (`id`,`creatorId`, `title`, `displayresult`) VALUES (?,?,?,?)";
+          $sql = "INSERT INTO polls(`id`,`creatorId`, `title`, `displayresult`) VALUES (?,?,?,?)";
           $result = $bdd->prepare($sql);
           $result->execute([$pollId,$idUser,$_POST['titre'],isset($_POST['rep'])]);
+          echo $pollId."titre";
         }else{
-          $sql = "INSERT INTO poll (`id`,`creatorId`, `displayresult`) VALUES (?,?)";
+          $sql = "INSERT INTO polls(`id`,`creatorId`, `displayresult`) VALUES (?,?)";
           $result = $bdd->prepare($sql);
           $result->execute([$pollId,$idUser,isset($_POST['rep'])]);
+          echo $pollId;
         }
 
 
         //module
         //pollId et question
-        $sql = "INSERT INTO modules (`pollId`,`question`) VALUES (?,?)";
+        $sql = "INSERT INTO modules(`pollId`,`question`) VALUES (?,?)";
         $result = $bdd->prepare($sql);
         $result->execute([$pollId,$_POST['question']]);
 
@@ -64,28 +68,36 @@ include 'db_connect.php';
         $result = $bdd->prepare($sql);
         $result->execute([$pollId,$_POST['question']]);
         $row = $result->fetchColumn();
+        echo "<br>".$row;
         $modId = $row;
 
         //Options
-        $sql = "INSERT INTO options (`moduleId`,`type`,`maxrep`) VALUES (?,?,?)";
+        $sql = "INSERT INTO options(`moduleId`,`type`,`maxrep`) VALUES (?,?,?)";
         $result = $bdd->prepare($sql);
-        $result->execute([$modId,$_POST['ModuleType'],$_POST['rep']]);
+        $result->execute([$modId,$_POST['ModuleType'],0]);
 
-        $i = 1;
-        $moreRes = true;
-        while($moreRes){
-          if(isset($_POST["choice".$i])){
-            if($_POST["choice".$i]!=""){
-              //add
-
+        //modules
+        switch($_POST['ModuleType']){
+          case "radio":
+          case "check":
+            $i = 1;
+            $moreRes = true;
+            while($moreRes){
+              if(isset($_POST["choice".$i])){
+                if($_POST["choice".$i]!=""){
+                  $sql = "INSERT INTO answers(`moduleId`,`data`) VALUES (?,?)";
+                  $result = $bdd->prepare($sql);
+                  $result->execute([$modId,$_POST["choice".$i]]);
+                }
+              }else{
+                $moreRes = false;
+              }
+              $i++;
             }
-
-          }else{
-            $moreRes = false;
-          }
-          $i++;
+          break;
+          default:
+          break;
         }
-
 
       }
       $path = dirname('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
