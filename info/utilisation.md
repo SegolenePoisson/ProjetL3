@@ -9,7 +9,7 @@ L'utilisateur doit créer un compte pour utiliser les fonctionnalités du site (
 
 ### 1.1. Créer un compte et se connecter.
 
-Sur la page d'acceuil, dans la barre de navigation, en haut à droite, cliquer sur "**S'inscrire**". 
+Sur la page d'accueil, dans la barre de navigation, en haut à droite, cliquer sur "**S'inscrire**". 
 
 ![Capture d'écran de la page S'inscrire](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/img.jpg "Capture d'écran de la page d'inscription.")
 
@@ -31,7 +31,11 @@ En haut, un champ permet de donner un titre au sondage (ou un thème). A gauche 
 - "**Texte**" permet de créer un sondage à partir d'une question ouverte. Dans la partie droite contenant le formulaire, un champ permet d'entrer la question ouverte. Les sondés disposeront d'un cadre de texte pour y répondre librement.
 - "**Calendrier**" permet aux sondés de sélectionner une date sur un calendrier miniature pour répondre à la question renseignée dans le formulaire de création de sondage, dans le champ prévu à cet effet (*cette fonctionnalité n'est pas encore disponible*).
 
- A la fin du formulaire, une dernière option est proposée : "**Autoriser les votants à acceder aux réponses**", qui permet aux votants de voir les résultats actuels du sondage après avoir soumis leur vote.
+ A la fin du formulaire, une dernière option est proposée : "**Autoriser les votants à 
+ 
+ 
+ 
+ eder aux réponses**", qui permet aux votants de voir les résultats actuels du sondage après avoir soumis leur vote.
  
 Une fois les options choisies et le formulaire rempli, cliquer sur "**Envoyer**" pour créer le sondage. Une page s'ouvre alors, indiquant que le sondage a bien été créé et mettant à disposition le lien de partage du sondage.
 
