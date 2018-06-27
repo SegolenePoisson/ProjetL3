@@ -83,6 +83,14 @@ include 'db_connect.php';
               }
 
 
+              $path = dirname('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
+              echo '<input type="text" value="'.$path.'/poll.php?id='.$_GET['id'].'" id="myInput">';
+
+              echo '<button class="waves-effect waves-light btn" onclick="copy()">Copier le lien de partage</button>';
+
+
+
+
 
 
             }else{
@@ -99,6 +107,14 @@ include 'db_connect.php';
     </div>
   </div>
 
+  <script>
+    function copy() {
+      var copyText = document.getElementById("myInput");
+      copyText.select();
+      document.execCommand("copy");
+      M.toast({html: 'Lien copié !'})
+   }
+  </script>
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
   <script src="js/init.js"></script>
