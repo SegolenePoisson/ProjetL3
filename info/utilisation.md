@@ -1,7 +1,8 @@
 # Manuel d'utilisation du générateur de sondage WOUI
-Ce manuel détaille l'utilisation des différentes fonctionnalités du site, côté utilisateur et côté administrateur (*cette fonctionnalité n'est pas encore disponible, pour plus d'informations, cliquer [ici](https://github.com/SegolenePoisson/ProjetL3/blob/framework/info/post_mortem.md)*.).  
+Ce manuel détaille l'utilisation des différentes fonctionnalités du site, côté utilisateur et côté administrateur (*cette fonctionnalité n'est pas encore disponible, pour plus d'informations, se reporter au [post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/framework/info/post_mortem.md)*.).  
 
 WOUI permet aux utilisateurs possédant un compte de créer des sondages à petite échelle. Une page spécifique est générée à la création du sondage, l'utilisateur partage le lien aux personnes qui y participent, lesquelles répondent directement sur cette page. Le sondage reste ouvert pendant une durée prédéfinie.
+
 ## 1. Manuel utilisateur
 
 L'utilisateur doit créer un compte pour utiliser les fonctionnalités du site (détaillées dans les parties suivantes) : créer un sondage, le partager, y répondre, consulter les résultats et gérer la liste d'amis.
