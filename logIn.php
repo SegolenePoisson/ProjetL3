@@ -16,7 +16,7 @@ include 'navbar.php';
 
       </div>
       <div class="row center">
-        <p>Pas de compte ? <a href="SignUp.php"class="waves-effect waves-light btn">Inscrivez vous !</a>
+        <p>Pas de compte ? <a href="SignUp.php"class="waves-effect waves-light btn">Inscrivez-vous !</a>
         </div>
       </div>
     </div>
@@ -33,14 +33,14 @@ include 'navbar.php';
 
           <section class="login-form">
             <form method="post" action="index.php" role="login">
-              <input type="text" name="username" required class="form-control input-lg" placeholder="Username"
+              <input type="text" name="username" required class="form-control input-lg" placeholder="Pseudonyme"
               required="" />
               <br>
-              <input type="password" class="form-control input-lg" name="password" placeholder="Password"
+              <input type="password" class="form-control input-lg" name="password" placeholder="Mot de passe"
               required="" />
               <div class="pwstrength_viewport_progress"></div>
               <br>
-              <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Log in</button>
+              <button type="submit" class="btn btn-primary btn-lg btn-block login-button">Se connecter</button>
             </form>
           </section>
         </div>

@@ -19,7 +19,7 @@ include 'navbar.php';
       </div>
       <div class="row center">
         <p>  Déjà un compte ?
-          <a href="login.php"class="waves-effect waves-light btn">Connecte toi !</a>
+          <a href="login.php"class="waves-effect waves-light btn">Connectez-vous !</a>
         </p>
       </div>
 
@@ -38,21 +38,21 @@ include 'navbar.php';
           <form class="form-horizontal" method="post" action="Register.php">
 
             <div class="form-group">
-              <label for="name" class="cols-sm-2 control-label">Ton nom</label>
+              <label for="name" class="cols-sm-2 control-label">Nom</label>
               <div class="cols-sm-10">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-user fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="name" id="name" required placeholder="Entre ton nom"/>
+                  <input type="text" class="form-control" name="name" id="name" required placeholder="Entrez votre nom"/>
                 </div>
               </div>
             </div>
 
             <div class="form-group">
-              <label for="email" class="cols-sm-2 control-label">Ton Email</label>
+              <label for="email" class="cols-sm-2 control-label">Mail</label>
               <div class="cols-sm-10">
                 <div class="input-group">
                   <span id="checkemail" class="input-group-addon"><i class="fa fa-envelope fa" aria-hidden="true"></i></span>
-                  <input type="email" class="form-control" name="email" id="email" required placeholder="Entre ton email"/>
+                  <input type="email" class="form-control" name="email" id="email" required placeholder="Entrez votre mail"/>
                 </div>
               </div>
             </div>
@@ -62,7 +62,7 @@ include 'navbar.php';
               <div class="cols-sm-10">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-users fa" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" name="username" id="username" required placeholder="Entre ton pseudonyme"/>
+                  <input type="text" class="form-control" name="username" id="username" required placeholder="Entrez votre pseudonyme"/>
                 </div>
               </div>
             </div>
@@ -72,7 +72,7 @@ include 'navbar.php';
               <div class="cols-sm-10">
                 <div class="input-group">
                   <span class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control" name="password" id="password" required placeholder="Entre ton mot de passe"/>
+                  <input type="password" class="form-control" name="password" id="password" required placeholder="Entrez votre mot de passe"/>
                 </div>
               </div>
             </div>
@@ -82,7 +82,7 @@ include 'navbar.php';
               <div class="cols-sm-10">
                 <div class="input-group">
                   <span id="confirmpassword" class="input-group-addon"><i class="fa fa-lock fa-lg" aria-hidden="true"></i></span>
-                  <input type="password" class="form-control" name="confirm" id="confirm" required placeholder="Confirme ton mot de passe"/>
+                  <input type="password" class="form-control" name="confirm" id="confirm" required placeholder="Confirmez votre mot de passe"/>
                 </div>
               </div>
             </div>
@@ -105,7 +105,7 @@ include 'navbar.php';
 
             <div class="form-group ">
               <span id="submit"></span>
-              <input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="Register"></input>
+              <input type="submit" class="btn btn-primary btn-lg btn-block login-button" value="S'inscrire"></input>
             </div>			
           </form>
           <script src="js/register.js"></script>
