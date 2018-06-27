@@ -19,7 +19,7 @@ La figure suivante détaille les liens entre les différents fichiers du site : 
 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/liens_pages.jpg "Schéma des liens entre les pages")
 ### Modèle dynamique
-(paragraphe puis diagramme de séquence)
+Nous avons représenté les intéractions entre l'utilisateur, le client et le serveur, sous le format d'un diagramme de séquence.
 
 ![Diagramme de séquence général](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/DiagSéquenceWoui.png "Diagramme de séquence du générateur de sondage.")
 
