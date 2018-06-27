@@ -81,7 +81,7 @@ include 'db_connect.php';
                 <img src="https://www.infrascan.net/demo/assets/img/avatar5.png" class="img-circle" width="60px">
 
               </div>
-               <button type="submit" class="btn btn-danger btn">Remove Friend
+               <button type="submit" class="btn btn-danger btn">Supprimer cet ami
                </button>
               <div class="col-sm-8">
                 <h4>';

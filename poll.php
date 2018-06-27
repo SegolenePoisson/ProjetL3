@@ -68,7 +68,7 @@ include 'db_connect.php';
                 ?>
                 <div class="row">
                   <div class="input-field col s12">
-                    <textarea name= <?php echo "module".$nbmod; ?> class="materialize-textarea"></textarea>
+                    <textarea name= <?php echo "module".$donnees["id"]; ?> class="materialize-textarea"></textarea>
                     <label for="module">Réponse</label>
                   </div>
                 </div>
@@ -86,7 +86,7 @@ include 'db_connect.php';
                   ?>
 
                 <label>
-                  <input name = <?php echo "module".$nbmod."[]"; ?> type="checkbox" value = "<?php echo $answers["id"];?>"/>
+                  <input name = <?php echo "module".$donnees["id"]."[]"; ?> type="checkbox" value = "<?php echo $answers["id"];?>"/>
                   <span><?php echo $answers["data"];?></span>
                 </label>
                 <br>
@@ -105,7 +105,7 @@ include 'db_connect.php';
                   ?>
 
                 <label>
-                  <input name = <?php echo "module".$nbmod."[]"; ?> type="radio" value = "<?php echo $answers["id"];?>"/>
+                  <input name = <?php echo "module".$donnees["id"]."[]"; ?> type="radio" value = "<?php echo $answers["id"];?>"/>
                   <span><?php echo $answers["data"];?></span>
                 </label>
                 <br>
