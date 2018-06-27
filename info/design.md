@@ -19,7 +19,7 @@ La figure suivante détaille les liens entre les différents fichiers du site : 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/liens_pages.jpg "Schéma des liens entre les pages")
 ### 2.1. Système d'authentification
 ![Diagramme de sequence de requete de connexion](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/Diagramme_de_sequence_de_requete_de_connexion.png "Diagramme de sequence de requete de connexion")
-![Diagramme de sequence de requete d'inscription](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/Diagramme_de sequence_de_requete_d'inscription.png "Diagramme de sequence de requete d'inscription")
+![Diagramme de sequence de requete d'inscription](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/Diagramme_de_sequence_de_requete_d'inscription.png "Diagramme de sequence de requete d'inscription")
 
 
 ### 2.2. Création de sondages
