@@ -8,7 +8,6 @@ var optrep = document.getElementById("opt_rep"),
 	opttexte = document.getElementById("opt_texte"),
 	optdate = document.getElementById("opt_date");
 
-
 optrep.addEventListener("click", function() {
 	if(optrep.checked){
 		document.querySelector("form").replaceChild(answers, document.querySelector("form div"));
@@ -26,6 +25,7 @@ optdate.addEventListener("click", function() {
 });
 
 //--------------- Ajout d'un module
+/*
 var nbMod = 1;
 
 var mod = document.getElementById("module");
@@ -36,7 +36,7 @@ document.getElementById("add_mod").addEventListener("click", function() {
 	addMod.id = "module"+nbMod.toString();
 	document.getElementById("list_area").appendChild(addMod);
 });
-
+*/
 //--------------- Ajout d'un champ de réponse
 /*
 var nbAnswers = 2;
