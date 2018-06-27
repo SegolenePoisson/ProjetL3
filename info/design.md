@@ -16,16 +16,16 @@ Nous pensions a priori que PHP et JavaScript avait des buts tout à fait différ
 ## 2. Architecture du projet
 La figure suivante détaille les liens entre les différents fichiers du site : les pages principales sont représentées par les encadrés bleus (nom de la page en haut), accompagnées des fichiers qui y sont inclus (cadre à l'intérieur de la page) et des fichiers qui sont appelés par la page concernée et/ou les pages qui y sont liées (en italique, action qui appelle la page, et nom de la page appelée en dessous). Les flèches peuvent être traduites par "permet d'accéder à...".
 
-![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/liens_pages.jpg "Schéma des liens entre les pages")
+![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/img/liens_pages.jpg "Schéma des liens entre les pages")
 ### 2.1. Système d'authentification
-![Diagramme de sequence de requete de connexion](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/Diagramme_de_sequence_de_requete_de_connexion.png "Diagramme de sequence de requete de connexion")
-![Diagramme de sequence de requete d'inscription](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/Diagramme_de_sequence_de_requete_d'inscription.png "Diagramme de sequence de requete d'inscription")
+![Diagramme de sequence de requete de connexion](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/img/Diagramme_de_sequence_de_requete_de_connexion.png "Diagramme de sequence de requete de connexion")
+![Diagramme de sequence de requete d'inscription](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/img/Diagramme_de_sequence_de_requete_d'inscription.png "Diagramme de sequence de requete d'inscription")
 
 
 ### 2.2. Création de sondages
 Le système de création d'un sondage a été imaginé comme détaillé à la figure suivante. Le principe est de créer des sondages pouvant contenir différents modules, c'est-à-dire des questions ayant des modalités de réponse différentes. Il utilise JavaScript pour modifier le formulaire proposé à droite selon les options selectionnées au centre.
 
-![Structure de la page de création d'un sondage](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/poll_modulaire.jpg "Structure de la page de création d'un sondage")
+![Structure de la page de création d'un sondage](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/img/poll_modulaire.jpg "Structure de la page de création d'un sondage")
 ### 2.3. Réponse à un sondage et résultats
 
 ## 3. Organisation du groupe
