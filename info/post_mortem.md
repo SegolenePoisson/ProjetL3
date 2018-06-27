@@ -54,7 +54,7 @@ On peut imaginer plusieurs options à rajouter aux sondage :
 ## 1. Localisation et organisation des fichiers.
 Les fichiers sont disponibles en ligne à l'adresse <https://github.com/SegolenePoisson/ProjetL3>.
 ## 2. Schéma des liens entre les pages :
-![schema](https://github.com/SegolenePoisson/ProjetL3/blob/framework/info/img/liens_pages.jpg "")
+![schema](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/img/liens_pages.jpg "")
 
 ## 3. Développement sur serveur local :
 Différent logiciel sont utilisables pour créer le serveur local : Xampp, WamppServer, etc. 
