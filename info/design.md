@@ -18,7 +18,14 @@ La figure suivante détaille les liens entre les différents fichiers du site : 
 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/liens_pages.jpg "Schéma des liens entre les pages")
 ### 2.1. Système d'authentification
+Le système d'authentification est geré, coté utilsateur par 2 pages:
+login.php :
+login.php propose une interface simple de connexion composé de deux champs textuels permettant de transmettre le nom d'utilisateur et le mot de passe au serveur. Suite a cela le serveur verifie les données et redirige vers index.php.
 ![Diagramme de sequence de requete de connexion](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/Diagramme_de_sequence_de_requete_de_connexion.png "Diagramme de sequence de requete de connexion")
+signup.php :
+signup.php propose une interface composé 6 champs textuels. 4 champs, nom, email,pseudonyme et mot de passe qui servent d'information pour remplir la base de donnée. 1 champs de confirmation de mot de passe et 1 champs pour le captcha.
+la verification de la forme correct de l'email, de l'egalité des deux mots de passes saisies sont implementés en JavaScript.
+Si, le captcha est validé et que les informations sont correct vous l'utilisateur sera redirigé vers login.php
 ![Diagramme de sequence de requete d'inscription](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/Diagramme_de_sequence_de_requete_d'inscription.png "Diagramme de sequence de requete d'inscription")
 
 
