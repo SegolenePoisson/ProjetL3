@@ -4,7 +4,7 @@ session_start();
 $_SESSION['captcha'] = mt_rand(100000,999999);
 
 $image = imagecreate(164, 50);
-$police = 'police/test.ttf';
+$police = 'police_captcha.ttf';
 
 $background = imagecolorallocate($image, 255, 255, 255);
 $textcolor = imagecolorallocate($image, 0, 0, 0);
