@@ -17,6 +17,10 @@
   $sql = 'SELECT * FROM polls WHERE creatorId=?';
   $result = $bdd->prepare($sql);
   $result->execute([$creator_Id]);
+  if($result->rowCount==0){
+    echo "Vous n'avez pas encore créé de sondages. ";
+    echo "  <a href='new_poll.php'class='waves-effect waves-light bt'>Créer un sondage</a>";
+  }else{
     while ($donnees = $result->fetch()) {
       ?>
       <div class="row">
@@ -43,6 +47,7 @@
     </div>
     <?php
     }
+  }
     ?>
     <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
     <script src="js/materialize.js"></script>
