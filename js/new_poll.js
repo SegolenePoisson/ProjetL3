@@ -3,26 +3,39 @@ var textarea = document.getElementById("texte").parentNode.removeChild(document.
 	calendar = document.getElementById("date").parentNode.removeChild(document.getElementById("date"));
 
 var answers = document.getElementById("rep").cloneNode(true);
+var divrepmult = document.getElementById("div_rep_mult").cloneNode(true);
 
 var optrep = document.getElementById("opt_rep"),
 	opttexte = document.getElementById("opt_texte"),
 	optdate = document.getElementById("opt_date");
+	repmult = document.getElementById("rep_mult");
+
+
 
 optrep.addEventListener("click", function() {
 	if(optrep.checked){
 		document.querySelector("form").replaceChild(answers, document.querySelector("form div"));
+		document.getElementById("option_area").appendChild(divrepmult);
 	}
 });
 opttexte.addEventListener("click", function() {
 	if(opttexte.checked){
 		document.querySelector("form").replaceChild(textarea, document.querySelector("form div"));
+		document.getElementById("option_area").removeChild(document.getElementById("div_rep_mult"));
 	}
 });
 optdate.addEventListener("click", function() {
 	if(optdate.checked){
 		document.querySelector("form").replaceChild(calendar, document.querySelector("form div"));
+		document.getElementById("option_area").removeChild(document.getElementById("div_rep_mult"));
 	}
 });
+repmult.addEventListener("click", function(){
+	if(repmult.checked){
+		document.getElementById("hidden_mult").value = "check";
+	}
+});
+
 
 //--------------- Ajout d'un module
 /*

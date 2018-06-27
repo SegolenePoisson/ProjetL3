@@ -34,7 +34,7 @@ include 'navbar.php';
         <input id="title" type="text" class="validate" placeholder="Title">
       </div>
 
-        <div class = "row">
+        <div class = "row"><!--
             <div id = "left_area" class="col s2">
               <div id = "list_area">
                 <div class="divider"></div>
@@ -48,48 +48,46 @@ include 'navbar.php';
               </div>
               <div id = "cmd_area">
                 <input type="button" class="waves-effect waves-light btn" id="add_mod" value="Ajouter un module" /><br>
-                <!--
+                
                 <input type="button" class="waves-effect waves-light btn" value="Prévisualiser" /><br>
-                -->
+                
                 <input type="button" class="waves-effect waves-light btn" value="Finir et envoyer" />
               </div>
-            </div>
+            </div>-->
             <div id = "main_area">
               <div id = "option_area" class="col s3">
                 <h5>Options</h5><br>
-                    <!--------- Choix du poll ------>
-                    <p class="col s12 m6 l4" style = "padding: 0 0;">
-                      <label>
-                        <input id="opt_rep" class="with-gap" name="group1" type="radio" checked />
-                        <span style="padding-left: 25px; color : black;">Questions</span>
-                      </label>
-                    </p>
-                    <p class="col s12 m6 l4" style = "padding: 0 0;">
-                      <label>
-                        <input id="opt_texte" class="with-gap" name="group1" type="radio" />
-                        <span style="padding-left: 25px; color : black;"> Texte </span>
-                      </label>
-                    </p>
-                    <p class="col s12 m6 l4" style = "padding: 0 0;">
-                      <label>
-                        <input id="opt_date" class="with-gap" name="group1" type="radio"  />
-                        <span style="padding-left: 25px; color : black;">Calendrier</span>
-                      </label>
-                    </p>
-                    <br>
-                <!-- <p>truc</p> <br>
-                <p>truc</p> <br> -->
+                <!--------- Choix du poll ------>
+                <p class="col s12 m6 l4" style = "padding: 0 0;">
+                  <label>
+                    <input id="opt_rep" class="with-gap" name="group1" type="radio" checked />
+                    <span style="padding-left: 25px; color : black;">Questions</span>
+                  </label>
+                </p>
+                <p class="col s12 m6 l4" style = "padding: 0 0;">
+                  <label>
+                    <input id="opt_texte" class="with-gap" name="group1" type="radio" />
+                    <span style="padding-left: 25px; color : black;"> Texte </span>
+                  </label>
+                </p>
+                <p class="col s12 m6 l4" style = "padding: 0 0;">
+                  <label>
+                    <input id="opt_date" class="with-gap" name="group1" type="radio"  />
+                    <span style="padding-left: 25px; color : black;">Calendrier</span>
+                  </label>
+                </p>
+                <br>
                 <!-- Switch Reponses Multiples-->
-                  <div class="switch">
-                   <label style ="color : black; font-size: 1rem">
+                <div class="switch" id="div_rep_mult">
+                  <label style ="color : black; font-size: 1rem">
                     <!-- réponse unique -->
-                   <input type="checkbox" id="rep_mult">
+                    <input type="checkbox" id="rep_mult">
                     <span class="lever"></span>
                     réponses multiples
-                   </label>
-                 </div>
+                  </label><br>
+                </div>
 
-                 <br>
+                 
                 <!-- choix du nb de rep si multiples -->
                  <!-- <div class="input-field col s7" style= " float :right;">
                   <input placeholder="" id="nb_rep" type="text" class="validate">
@@ -112,15 +110,15 @@ include 'navbar.php';
               <label for="choice2">Réponse* : </label>
               <input type="text" name="choice2" id="choice2" placeholder="Deuxième réponse." required /><br/>
 
-              <!--><div id="add_answer"><-->
+              <!--<div id="add_answer">-->
                 <label for="choice3">Réponse : </label>
                 <input type="text" name="choice3" id="choice3" placeholder="Réponse."/><br/>
 
-              <!--></div>
+              <!--</div>
               <input type="button" class="waves-effect waves-teal btn-flat" id="add_button" value="Ajouter un champ de réponse" />-->
 
 
-              <input name="ModuleType" type="hidden" value="check"> 
+              <input id="hidden_mult" name="ModuleType" type="hidden" value="radio"> 
 
             </div>
 
@@ -134,9 +132,9 @@ include 'navbar.php';
                 <input name="ModuleType" type="hidden" value="doodle">
             </div>
 
-            <!-->
-              <input type="submit" class="waves-effect waves-light btn" value="Ajouter le module" />
-            <-->
+            
+              <input type="submit" class="waves-effect waves-light btn" value="Envoyer" />
+            
 
 
           </form>
