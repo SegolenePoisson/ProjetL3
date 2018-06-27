@@ -29,15 +29,16 @@ Un module est un ensemble comprenant une question, des options, et eventuellemen
 - L'administrateur devrait pouvoir envoyer une newsletter / une note de version  par mail, aux utilisateurs enregistrés.
 
 ## Déroulement du projet
-La communication a principalement été faite via Discord, une application regroupant un tchat écrit et vocal.
-L'outil Trello a aussi été utilisé par certain membres du groupe pour la répartition des tâches.
+La communication a principalement été faite via Discord, une application regroupant un tchat écrit et vocal.<br>
+L'outil Trello a aussi été utilisé par certain membres du groupe pour la répartition des tâches, une todo-list.<br>
 Des réunions à l'université ont aussi permis de discuter plus librement et de se répartir les taches au long du projet.
 
 Lors des premiers jours nous avons du installer les logiciels nécessaires, notamment pour le serveur Apache, qui nous a posé problème.
+Nous avons essayés de mettre en place un environnement de travail sur les ordinateurs des salles de TP, mais 
 
-Une maquette (version zero) a été définie rapidement, pour prendre en main les outils et techniques utilisés.
-Avec nos maigres connaissances, nous avons mis en place le système d'inscription et de connexion.
-Cette version a aussi accueilli les premières ébauches de création de sondage et de réponses.
+Une maquette (version zero) a été définie rapidement, pour prendre en main les outils et techniques utilisés.<br>
+Avec nos maigres connaissances, nous avons mis en place le système d'inscription et de connexion.<br>
+Cette version a aussi accueilli les premières ébauches de création de sondage et de réponses.<br>
 Par la suite, une refonte graphique a été réalisée avec l'aide d'un FrameWork "Materialize", nous fournissant des feuilles de style et des exemples de mise en forme.
 
 Un système d'ajout d'amis (et de confirmation/refus de demande) a été implémenté, avec l'objectif de pouvoir partager plus facilement les sondages avec ses amis.
@@ -50,20 +51,22 @@ Nous avons ensuite développé l'idée de proposer des sondages regroupants plus
  - Choix d'un horaire
 Ainsi que l'option de mettre une date limite pour répondre à un sondage.
 
-Arrivant près de la date impartie pour rendre le projet, nous n'avons pas réussi à implémenter toutes ces options. De part notre connaissance limitée des langages, nous n'avons pas voulu prendre le risque de développer une fonctionalité à moitié.
+Arrivant près de la date impartie pour rendre le projet, nous n'avons pas réussi à implémenter toutes ces options. Nous n'avons pas voulu prendre le risque de développer une fonctionalité à moitié.
 
 Finalement, nous avons opté pour une version rendue proposant des sondages comprenant une question, de type réponse ouverte ou définies (multiples et uniques).
 
 
 ## Axes d'amélioration
 
+_A posteriori_ il aurait été préférable de concevoir le projet sous forme d'application smartphone, 
+
 Il est possible de remplacer le php par du JavaScript pour la modernité.
 
-Le profil peut permettre à l'utilisateur de retrouver tous les sondages auquel il a été invité.
+Le profil pourrait permettre à l'utilisateur de retrouver tous les sondages auquel il a été invité.
 
 On peut imaginer plusieurs options à rajouter aux sondage :
- - La possibilité d'ajouter dynamiquement des champs de réponse lors de la création
- - La possibilité de choisir un type DatePicker, permettant le choix entre plusieurs jours et horaires
+ - La possibilité d'ajouter dynamiquement des champs de réponse lors de la création.
+ - La possibilité de choisir un type DatePicker, permettant le choix entre plusieurs jours et horaires, comme initialement prévu.
  - Lors de l'affichage des resultats, proposer plusieurs types de graphiques représentatifs.
  
 
@@ -79,7 +82,8 @@ Les fichiers sont disponibles en ligne à l'adresse <https://github.com/Segolene
 ![schema](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/img/liens_pages.jpg "")
 
 ## 3. Développement sur serveur local :
-Différent logiciel sont utilisables pour créer le serveur local : Xampp, WamppServer, etc. 
+Différent logiciel sont utilisables pour créer le serveur local : Xampp, WamppServer, etc.
+<br>
 Nous avons utilisés Xampp, il permet de lancer un serveur apache pour executer le php, ainsi qu'un serveur phpMyAdmin, utilisé pour la base de données.
 
 Pour obtenir les tables de la base de données, sans valeurs, il faut executer db_setup.php après avoir au préalable créé une nouvelle base de donnée 'poll' dans phpmyadmin. (localhost/phpmyadmin)
