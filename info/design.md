@@ -21,7 +21,7 @@ La figure suivante détaille les liens entre les différents fichiers du site : 
 ### Modèle dynamique
 (paragraphe puis diagramme de séquence)
 
-![Diagramme de séquence général](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/nomDuDiagramme.png "Diagramme de séquence du générateur de sondage.")
+![Diagramme de séquence général](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/DiagSéquenceWoui.png "Diagramme de séquence du générateur de sondage.")
 
 ### 2.1. Système d'authentification
 Le système d'authentification est géré, côté utilisateur, par 2 pages : login.php et signup.php.
@@ -46,7 +46,7 @@ Le système de création d'un sondage a été imaginé comme détaillé à la fi
 
 ## 3. Organisation du groupe
 Nous utilisions une application de chat vocal pour nous tenir au courrant et faire des points d'avancement : [Discord](https://discordapp.com/).  
-Pour avoir une liste des tâches à effectuer et les assigner, nous utilisions Trello : [notre Trello](https://trello.com/b/PUTqpnMR/woui).  
+Pour avoir une liste des tâches à effectuer et les assigner, nous utilisions essayer d'utiliser Trello : [notre Trello](https://trello.com/b/PUTqpnMR/woui).  
 Et Github pour mettre le code en commun et gérer les versions : [notre projet Github](https://github.com/SegolenePoisson/ProjetL3/).
 
 La répartition des tâches a été faite comme suit :
