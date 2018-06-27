@@ -19,6 +19,7 @@ La figure suivante détaille les liens entre les différents fichiers du site : 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/liens_pages.jpg "Schéma des liens entre les pages")
 ### 2.1. Système d'authentification
 ![Diagramme de sequence de requete de connexion](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/Diagramme de sequence de requete de connexion.png "Diagramme de sequence de requete de connexion")
+![Structure de la page de création d'un sondage](https://github.com/SegolenePoisson/ProjetL3/raw/framework/info/poll_modulaire.jpg "Structure de la page de création d'un sondage")
 
 ### 2.2. Création de sondages
 Le système de création d'un sondage a été imaginé comme détaillé à la figure suivante. Le principe est de créer des sondages pouvant contenir différents modules, c'est-à-dire des questions ayant des modalités de réponse différentes. Il utilise JavaScript pour modifier le formulaire proposé à droite selon les options selectionnées au centre.
