@@ -30,11 +30,11 @@ Un module est un ensemble comprenant une question, des options, et eventuellemen
 
 ## Déroulement du projet
 La communication a principalement été faite via Discord, une application regroupant un tchat écrit et vocal.<br>
-L'outil Trello a aussi été utilisé par certain membres du groupe pour la répartition des tâches, une todo-list.<br>
+L'outil Trello a aussi été utilisé par certains membres du groupe pour la répartition des tâches, une todo-list.<br>
 Des réunions à l'université ont aussi permis de discuter plus librement et de se répartir les taches au long du projet.
 
 Lors des premiers jours nous avons du installer les logiciels nécessaires, notamment pour le serveur Apache, qui nous a posé problème.
-Nous avons essayés de mettre en place un environnement de travail sur les ordinateurs des salles de TP, mais 
+Nous avons essayé de mettre en place un environnement de travail sur les ordinateurs des salles de TP, mais les connexions étaient bloquées. Nous avons donc décidé d'utiliser nos machines personnelles.
 
 Une maquette (version zero) a été définie rapidement, pour prendre en main les outils et techniques utilisés.<br>
 Avec nos maigres connaissances, nous avons mis en place le système d'inscription et de connexion.<br>
@@ -49,6 +49,7 @@ Nous avons ensuite développé l'idée de proposer des sondages regroupants plus
  - Réponses uniques définies par le créateur
  - Choix d'une date
  - Choix d'un horaire
+ 
 Ainsi que l'option de mettre une date limite pour répondre à un sondage.
 
 Arrivant près de la date impartie pour rendre le projet, nous n'avons pas réussi à implémenter toutes ces options. Nous n'avons pas voulu prendre le risque de développer une fonctionalité à moitié.
@@ -58,11 +59,11 @@ Finalement, nous avons opté pour une version rendue proposant des sondages comp
 
 ## Axes d'amélioration
 
-_A posteriori_ il aurait été préférable de concevoir le projet sous forme d'application smartphone, 
+_A posteriori_ il aurait été préférable de concevoir le projet sous forme d'application smartphone.
 
 Il est possible de remplacer le php par du JavaScript pour la modernité.
 
-Le profil pourrait permettre à l'utilisateur de retrouver tous les sondages auquel il a été invité.
+Le profil pourrait permettre à l'utilisateur de retrouver tous les sondages auquels il a été invité.
 
 On peut imaginer plusieurs options à rajouter aux sondage :
  - La possibilité d'ajouter dynamiquement des champs de réponse lors de la création.
@@ -78,11 +79,11 @@ On peut imaginer plusieurs options à rajouter aux sondage :
 
 ## 1. Localisation et organisation des fichiers.
 Les fichiers sont disponibles en ligne à l'adresse <https://github.com/SegolenePoisson/ProjetL3>.
-## 2. Schéma des liens entre les pages :
+
 ![schema](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/img/liens_pages.jpg "")
 
-## 3. Développement sur serveur local :
-Différent logiciel sont utilisables pour créer le serveur local : Xampp, WamppServer, etc.
+## 2. Développement sur serveur local :
+Différents logiciels sont utilisables pour créer le serveur local : Xampp, WamppServer, etc.
 <br>
 Nous avons utilisés Xampp, il permet de lancer un serveur apache pour executer le php, ainsi qu'un serveur phpMyAdmin, utilisé pour la base de données.
 
