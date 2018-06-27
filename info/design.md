@@ -37,7 +37,6 @@ Si le captcha est validé et que les informations sont correctes, l'utilisateur 
 Le système de création d'un sondage a été imaginé comme détaillé à la figure suivante. Le principe est de créer des sondages pouvant contenir différents modules, c'est-à-dire des questions ayant des modalités de réponse différentes. Il utilise JavaScript pour modifier le formulaire proposé à droite selon les options selectionnées au centre.
 
 ![Structure de la page de création d'un sondage](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/poll_modulaire.jpg "Structure de la page de création d'un sondage")
-### 2.3. Réponse à un sondage et résultats
 
 ## 3. Organisation du groupe
 Nous utilisions une application de chat vocal pour nous tenir au courrant et faire des points d'avancement : [Discord](https://discordapp.com/).  
