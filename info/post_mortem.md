@@ -12,6 +12,8 @@
 
 - L'utilisateur peut accéder à tous les sondages qu'il a créé, à partir de sa page de profil.
 
+- L'utilisateur peut créer un sondage et choisir le type de question. 
+
 - Les utilisateurs peuvent, à partir du lien du sondage, y répondre.
 
 - Si autorisés, les utilisateurs peuvent accéder au récapitulatif des réponses d'un sondage, sinon, seul le créateur en est capable.
