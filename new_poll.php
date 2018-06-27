@@ -6,84 +6,166 @@ $_SESSION["current_page"] = "poll";
 <html lang="en">
 
 
-<head>
-  <meta charset="utf-8">
-  <!-- For proper scaling on mobile -->
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <!-- JQuery form google -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-  <!-- BOOTSTRAP -->
-  <!-- Latest compiled and minified CSS -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
-  <!-- Optional theme -->
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-  <!-- Latest compiled and minified JavaScript -->
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-  <!-- Classe css -->
-  <link rel="stylesheet" href="class1.css" />
-  <style>
-  label{
-    color: white;
-  }
-  form{
-    width: 50%; /* On a indiqué une largeur (obligatoire) */
-    margin: auto;
-    padding-top: 50px;
-    text-align: center;
-    line-height: 1.5;
-  }
-  p{
-    font-size: 12px;
-  }
-  ;
-  </style>
-  <title>WOUI</title>
-</head>
-
-
 <?php
-if(isset($_SESSION["username"])){
+include 'header.php';
+echo "<body>";
+include 'navbar.php';
+?>
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center teal-text text-lighten-2">Woui</h1>
+    </div>
+  </div>
+  <div class="parallax"><img src="img/background1.jpg"></div>
+</div>
 
-  echo "<body>";
+<div class="container">
+  <div class = "customcont">
+    <br><br>
+    <div class="row center">
+      <?php
+      if(isset($_SESSION["username"])){
+        ?>
+      <br><br>
+      <h5 class="header center teal-text text-lighten-2">Nouveau sondage</h5>
+      <div class="input-field inline">
+        <input id="title" type="text" class="validate" placeholder="Title">
+      </div>
+
+        <div class = "row"><!--
+            <div id = "left_area" class="col s2">
+              <div id = "list_area">
+                <div class="divider"></div>
+
+                <div class="section" id="module">
+                  <p>Question</p><br>
+                  <input type="button" class="waves-effect waves-light btn" value="Delete" />
+                  <div class="divider"></div>
+                </div>
+
+              </div>
+              <div id = "cmd_area">
+                <input type="button" class="waves-effect waves-light btn" id="add_mod" value="Ajouter un module" /><br>
+                
+                <input type="button" class="waves-effect waves-light btn" value="Prévisualiser" /><br>
+                
+                <input type="button" class="waves-effect waves-light btn" value="Finir et envoyer" />
+              </div>
+            </div>-->
+            <div id = "main_area">
+              <div id = "option_area" class="col s3">
+                <h5>Options</h5><br>
+                <!--------- Choix du poll ------>
+                <p class="col s12 m6 l4" style = "padding: 0 0;">
+                  <label>
+                    <input id="opt_rep" class="with-gap" name="group1" type="radio" checked />
+                    <span style="padding-left: 25px; color : black;">Questions</span>
+                  </label>
+                </p>
+                <p class="col s12 m6 l4" style = "padding: 0 0;">
+                  <label>
+                    <input id="opt_texte" class="with-gap" name="group1" type="radio" />
+                    <span style="padding-left: 25px; color : black;"> Texte </span>
+                  </label>
+                </p>
+                <p class="col s12 m6 l4" style = "padding: 0 0;">
+                  <label>
+                    <input id="opt_date" class="with-gap" name="group1" type="radio"  />
+                    <span style="padding-left: 25px; color : black;">Calendrier</span>
+                  </label>
+                </p>
+                <br>
+                <!-- Switch Reponses Multiples-->
+                <div class="switch" id="div_rep_mult">
+                  <label style ="color : black; font-size: 1rem">
+                    <!-- réponse unique -->
+                    <input type="checkbox" id="rep_mult">
+                    <span class="lever"></span>
+                    réponses multiples
+                  </label><br>
+                </div>
+
+                 
+                <!-- choix du nb de rep si multiples -->
+                 <!-- <div class="input-field col s7" style= " float :right;">
+                  <input placeholder="" id="nb_rep" type="text" class="validate">
+                  <label for="nb_rep">Nombre de réponses max. (opt)</label>
+                </div> -->
+
+              </div>
+              <div id = "right_area" class="col s7">
+               <div class = "container">
+          <br><br>
+          <form id="poll" method="post" action="confirm_poll.php">
+
+            <label for="question">Question* : </label>
+            <input type="text" name="question" id="question" placeholder="Entrez votre question." required /><br/>
+
+            <div id="rep">
+              <label for="choice1">Réponse* : </label>
+              <input type="text" name="choice1" id="choice1" placeholder="Première réponse." required /><br/>
+
+              <label for="choice2">Réponse* : </label>
+              <input type="text" name="choice2" id="choice2" placeholder="Deuxième réponse." required /><br/>
+
+              <!--<div id="add_answer">-->
+                <label for="choice3">Réponse : </label>
+                <input type="text" name="choice3" id="choice3" placeholder="Réponse."/><br/>
+
+              <!--</div>
+              <input type="button" class="waves-effect waves-teal btn-flat" id="add_button" value="Ajouter un champ de réponse" />-->
 
 
-  include 'navbar.php';
-  ?>
-  
-  <h1>New poll</h1>
-  <form method="post" action="create_poll.php">
+              <input id="hidden_mult" name="ModuleType" type="hidden" value="radio"> 
 
-    <label for="question">Question* : </label>
-    <input type="text" name="question" id="question" size="35" placeholder="Ex : What's you favorite color ?" required /><br/>
+            </div>
 
-    <label for="choice1">Answer 1* : </label>
-    <input type="text" name="choice1" id="choice1" size="35" placeholder="Ex : Blue." required /><br/>
+            <div id="texte">
+              <textarea disabled id="textarea" placeholder="Réponse ouverte." class="materialize-textarea" data-length="120"></textarea>
+                <input name="ModuleType" type="hidden" value="text">
+            </div>
 
-    <label for="choice2">Answer 2* : </label>
-    <input type="text" name="choice2" id="choice2" size="35" placeholder="Ex : Red." required /><br/>
+            <div id="date">
+              <input disabled id="date_choice" type="date" class="datepicker">
+                <input name="ModuleType" type="hidden" value="doodle">
+            </div>
 
-    <label for="choice3">Answer 3 : </label>
-    <input type="text" name="choice3" id="choice3" size="35" placeholder="Ex : Green."/><br/>
-
-    <input type="submit" value="Create poll" />
+            
+              <input type="submit" class="waves-effect waves-light btn" value="Envoyer" />
+            
 
 
-  </form>
-  <p>* this field is required.<br/></p>
-</body>
-</html>
+          </form>
+          <p>* champ requis.<br/></p>
+        </div>
+              </div>
+            </div>
+          <script src="js/new_poll.js"></script>
+        </div>
 
-<?php
-}
-else{
-  echo "<body>";
-  include 'navbar.php';
-  ?>
+      <?php
+    }
+    else{
+      ?>
 
-  <h1>New poll</h1>
-  <p>To create a new poll, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php">create one</a> !<br/></p>
-</body>
-</html>
+      <h5 class="header center teal-text text-lighten-2">Nouveau sondage</h5>
+      <p>Pour créer un sondage, <a href="logIn.php" class="waves-effect waves-light btn">Connectez vous</a>
+        Pas de compte ? <a href="SignUp.php" class="waves-effect waves-light btn">inscrivez vous</a><br/></p>
+      </div>
+      <br><br>
+    </div>
+  </div>
+
+
+
 <?php
 }
 ?>
+<script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+<script src="js/materialize.js"></script>
+<script src="js/init.js"></script>
+
+</body>
+</html>

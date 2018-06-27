@@ -1,36 +1,67 @@
-
 <?php
-  session_start();
+  //  echo $_POST["module1"];
   include 'db_connect.php';
+  session_start();
+  $mod = unserialize(base64_decode($_POST["modules"]));
+if(isset($_SESSION["username"])){
+echo "module# : type : Data <br>";
 
-  $answers = $_POST['selected'];
-  if(empty($answers)){
-    echo("You didn't select any choice.");
-  }else{
+$idUser=null;
+$sql = 'SELECT id FROM user WHERE username=?';
+$result = $bdd->prepare($sql);
+$result->execute([$_SESSION['username']]);
+while($row = $result->fetchColumn()) {
+  $idUser=$row;
+}
+  //pour chaque module de la liste
+  foreach ($mod as $key => &$value) {
+    $answer = $_POST["module".$key];
 
-    $idUser=null;
-    $sql = 'SELECT id FROM user WHERE username=?';
-    $result = $bdd->prepare($sql);
-    $result->execute([$_SESSION['username']]);
-    while($row = $result->fetchColumn()) {
-      $idUser=$row;
-    }
-    $N = count($answers);
-    for($i=1; $i < $N; $i++){
-      //Verification du double vote (pour chaque option cochée)
-      $sql = "SELECT * FROM votes WHERE userID = ? AND answerId = ?";
-      $result = $bdd->prepare($sql);
-      $result->execute([$idUser,$answers[$i]]);
+      echo $key." : ".$value." : ";
+      switch($value){
+        case "text":
+        echo $_POST["module".$key];
 
-      if ($result->rowCount() == 0){
+        //insertion de la réponse ouverte dans la table
+        $sql = "INSERT INTO answers (moduleId, data) VALUES (?,?)";
+        $result = $bdd->prepare($sql);
+        $result->execute([(int)$key,$_POST["module".$key]]);
+        //récupération de l'id de la réponse ajoutée
+        $sql = 'SELECT id FROM answers WHERE data=?';
+        $result = $bdd->prepare($sql);
+        $result->execute([$_POST["module".$key]);
+        while($row = $result->fetchColumn()) {
+          echo $row;
+          $textId=$row;
+        }
+        //on ajoute le vote en lui même
         $sql = "INSERT INTO votes (userID, answerId) VALUES (?,?)";
         $result = $bdd->prepare($sql);
-        $result->execute([$idUser,$answers[$i]]);
-      }
-    }
+        $result->execute([$idUser,$textId]);
 
-    header('Location: poll.php?id='.$answers[0].'&r');
-    echo("Your vote have been submited.");
-    exit();
+        break;
+        case "check":
+        case "radio":
+        $N = count($answer);
+        for($i=0; $i < $N; $i++){
+          echo $answer[$i]." ";
+          //on insère le vote dans la table
+          $sql = "INSERT INTO votes (userID, answerId) VALUES (?,?)";
+          $result = $bdd->prepare($sql);
+          $result->execute([$idUser,$answer[$i]]);
+        }
+        break;
+        default :
+        //TODO check timepicker
+        echo "default<br>";
+        break;
+      }
+      echo "<br>";
   }
+  //on ajoute l'utilisateur dans la liste des votants 
+  $sql = "INSERT INTO avote (userId, pollId) VALUES (?,?)";
+  $result = $bdd->prepare($sql);
+  $result->execute([$idUser,$_POST["pollid"]]);
+
+}
 ?>
