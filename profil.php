@@ -17,7 +17,7 @@
   $sql = 'SELECT * FROM polls WHERE creatorId=?';
   $result = $bdd->prepare($sql);
   $result->execute([$creator_Id]);
-  if($result->rowCount==0){
+  if($result->rowCount()==0){
     echo "Vous n'avez pas encore créé de sondages. ";
     echo "  <a href='new_poll.php'class='waves-effect waves-light bt'>Créer un sondage</a>";
   }else{
