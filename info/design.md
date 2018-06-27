@@ -18,7 +18,7 @@ La figure suivante détaille les liens entre les différents fichiers du site : 
 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/liens_pages.jpg "Schéma des liens entre les pages")
 ### 2.1. Système d'authentification
-Le système d'authentification est geré, côté utilisateur, par 2 pages : login.php et signup.php.
+Le système d'authentification est géré, côté utilisateur, par 2 pages : login.php et signup.php.
 #### login.php
 La page login.php propose une interface simple de connexion composée de deux champs textuels permettant de transmettre le nom d'utilisateur et le mot de passe au serveur. Suite à cela, le serveur verifie les données et redirige vers index.php.
 
