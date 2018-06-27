@@ -44,7 +44,7 @@ else{*/
 <div class="container">
   <div class="customcont">
     <h5 class="header center teal-text text-lighten-2">Information</h5>
-    <p>Votre compte a été créé avec succès.</p>
+    <p>Votre compte a été créé avec succès. Vous allez bientôt être redirigé vers la page de connexion.</p>
   </div>
 </div>
 
