@@ -14,9 +14,12 @@ Nous avons opté pour les langages suivants :
 Nous étions tous à peu près débutants dans ces langages, nous les avions donc choisis entre autres pour l'abondance de documentation et de cours à leur sujet, en particulier sur [Openclassroom](https://openclassrooms.com/). Ils sont couramment utilisés et nous donnent donc une bonne base pour la suite de notre apprentissage.
 Nous pensions a priori que PHP et JavaScript avait des buts tout à fait différents, que le PHP concernait l'aspect serveur d'un site web alors que le JavaScript permettait essentiellement de faire évoluer une page web "en direct", sans avoir à la rafraîchir. Nous avons appris à mi-projet que JavaScript était bien plus complet, mais nos compétences dans ce langage ne permettaient pas une refonte du site. Ici, JavaScript est utilisé uniquement côté client, à la création d'un compte et à la création d'un sondage. Sur la page d'inscription (création de compte), un script vérifie la validité du contenu des champs au remplissage (forme de l'adresse mail et confirmation du mot de passe). Sur la page de création de sondage, un script modifie le formulaire proposé selon l'option de réponse choisie. Vous trouverez plus de détails sur la structure de ces pages dans la section suivante.
 ## 2. Architecture du projet
+### Modèle statique
 La figure suivante détaille les liens entre les différents fichiers du site : les pages principales sont représentées par les encadrés bleus (nom de la page en haut), accompagnées des fichiers qui y sont inclus (cadre à l'intérieur de la page) et des fichiers qui sont appelés par la page concernée et/ou les pages qui y sont liées (en italique, action qui appelle la page, et nom de la page appelée en dessous). Les flèches peuvent être traduites par "permet d'accéder à...".
 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/liens_pages.jpg "Schéma des liens entre les pages")
+### Modèle dynamique
+(paragraphe puis diagramme de séquence)
 ### 2.1. Système d'authentification
 Le système d'authentification est géré, côté utilisateur, par 2 pages : login.php et signup.php.
 #### login.php
