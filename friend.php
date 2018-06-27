@@ -22,6 +22,8 @@ include 'db_connect.php';
 
 <div class="container">
   <div class= "customcont">
+    <br><br>
+    <div class="row center">
   <?php
     if(isset($_SESSION["username"])){
       $username = $_SESSION["username"];
@@ -177,19 +179,25 @@ include 'db_connect.php';
 
 
 
-  <?php
-  }else{
-    ?>
 
-     <h1>Add Friends</h1>
-    <p>To add friends, please <a href="logIn.php">log in</a>. If you don't have an account, you can <a href="SignUp.php">create one</a> !<br/></p>
-   <?php
+ <?php
+    }else{
+      ?>
 
-  }
-  ?>
-</div>
-</div>
+      <h5 class="header center teal-text text-lighten-2">Liste d'amis</h5>
+      <p>Pour accéder à la liste d'amis, <a href="logIn.php" class="waves-effect waves-light btn">Connectez vous</a>
+        Pas de compte ? <a href="SignUp.php" class="waves-effect waves-light btn">inscrivez vous</a><br/></p>
+      </div>
+      <br><br>
+    </div>
+    </div>
+  </div>
 
+
+
+<?php
+}
+?>
 
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
