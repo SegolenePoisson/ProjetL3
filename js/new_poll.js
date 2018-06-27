@@ -12,21 +12,25 @@ var optrep = document.getElementById("opt_rep"),
 
 
 
+
 optrep.addEventListener("click", function() {
 	if(optrep.checked){
-		document.querySelector("form").replaceChild(answers, document.querySelector("form div"));
+		var formdiv = document.querySelectorAll("form div");
+		document.querySelector("form").replaceChild(answers, formdiv[1]);
 		document.getElementById("option_area").appendChild(divrepmult);
 	}
 });
 opttexte.addEventListener("click", function() {
 	if(opttexte.checked){
-		document.querySelector("form").replaceChild(textarea, document.querySelector("form div"));
+		var formdiv = document.querySelectorAll("form div");
+		document.querySelector("form").replaceChild(textarea, formdiv[1]);
 		document.getElementById("option_area").removeChild(document.getElementById("div_rep_mult"));
 	}
 });
 optdate.addEventListener("click", function() {
 	if(optdate.checked){
-		document.querySelector("form").replaceChild(calendar, document.querySelector("form div"));
+		var formdiv = document.querySelectorAll("form div");
+		document.querySelector("form").replaceChild(calendar, formdiv[1]);
 		document.getElementById("option_area").removeChild(document.getElementById("div_rep_mult"));
 	}
 });
