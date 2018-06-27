@@ -12,12 +12,12 @@ include 'navbar.php';
 include 'db_connect.php';
 
 
-/* Vérification de la validité du captcha */
+/* Vérification de la validité du captcha *//*
 if ($_POST["captcha"] != $_SESSION['captcha']){
 		header("refresh:0;url=signup.php");
 		die();
 }
-else{
+else{*/
 	/* Verifie si les champs du formulaire d'inscription ont été remplis */
 	if(isset($_POST["name"], $_POST["email"], $_POST["username"], $_POST["confirm"])){
 
@@ -37,7 +37,7 @@ else{
 			$ajout->execute([$username ,$name, $password ,$email]);
 		}
 	}
-}
+//}
 
 ?>
 

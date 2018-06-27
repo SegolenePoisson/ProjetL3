@@ -87,7 +87,7 @@ include 'navbar.php';
               </div>
             </div>
 
-			
+			<!--
 			<div class="form-group">
               <label for="confirm" class="cols-sm-2 control-label">Copier le captcha</label>
               <br><br>
@@ -99,6 +99,7 @@ include 'navbar.php';
                 </div>
               </div>
             </div>
+			-->
 			
             <br>
 
