@@ -1,5 +1,7 @@
 # Document d'architecture
-L'objectif était de créer un outil en ligne de génération de sondages personnalisés. L'utilisateur fait ceci cela... à préciser
+L'objectif était de créer un outil en ligne de génération de sondages personnalisés.
+
+WOUI permet aux utilisateurs possédant un compte de créer des sondages à petite échelle. Une page spécifique est générée à la création du sondage, l'utilisateur partage le lien aux personnes qui y participent, lesquelles répondent directement sur cette page. Le sondage reste ouvert pendant une durée prédéfinie.
 
 Nous détaillerons ici nos choix techniques, puis l'organisation des différents fichiers du projet et enfin la manière dont nous nous sommes organisés au sein du groupe.
 ## 1. Choix techniques
