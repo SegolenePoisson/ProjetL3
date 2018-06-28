@@ -136,7 +136,7 @@ CREATE TABLE `polls` (
 --
 
 INSERT INTO `polls` (`id`, `creatorId`, `title`, `displayresult`, `enddate`) VALUES
-('1234', 4, 'Test Title', 0, NULL);
+('1234', 1, 'Test Title', 1, NULL);
 
 -- --------------------------------------------------------
 
