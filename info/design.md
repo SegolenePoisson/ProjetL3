@@ -58,8 +58,8 @@ Participant | Tâche
 Valentin Petit |  
 Romain Olivo | 
 Luc Powell | 
-Kévin Chertier | 
 Antoine Mousserion | 
+Kévin Chertier | PHP et SQL pour l'enregistrement des sondages, la pris en compte des votes et l'affichage des resultats
 Ségolène Poisson | JavaScript ; Script pour la vérification des informations à l'inscription, script pour l'apparition dynamique du formulaire à la création d'un sondage
 
 >- Principe de mise en œuvre de la solution (comment)
