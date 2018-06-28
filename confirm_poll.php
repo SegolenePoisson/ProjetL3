@@ -39,7 +39,6 @@ include 'db_connect.php';
         $result = $bdd->prepare($sql);
         $result->execute([$_SESSION['username']]);
         $row = $result->fetchColumn();
-        echo $row;
         $idUser=$row;
 
         //poll
@@ -48,12 +47,10 @@ include 'db_connect.php';
           $sql = "INSERT INTO polls(`id`,`creatorId`, `title`, `displayresult`) VALUES (?,?,?,?)";
           $result = $bdd->prepare($sql);
           $result->execute([$pollId,$idUser,$_POST['titre'],isset($_POST['rep'])]);
-          echo $pollId."titre";
         }else{
           $sql = "INSERT INTO polls(`id`,`creatorId`, `displayresult`) VALUES (?,?)";
           $result = $bdd->prepare($sql);
           $result->execute([$pollId,$idUser,isset($_POST['rep'])]);
-          echo $pollId;
         }
 
 
@@ -68,7 +65,6 @@ include 'db_connect.php';
         $result = $bdd->prepare($sql);
         $result->execute([$pollId,$_POST['question']]);
         $row = $result->fetchColumn();
-        echo "<br>".$row;
         $modId = $row;
 
         //Options
