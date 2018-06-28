@@ -1,5 +1,7 @@
 # Document d'architecture
-L'objectif était de créer un outil en ligne de génération de sondages personnalisés. L'utilisateur fait ceci cela... à préciser
+L'objectif était de créer un outil en ligne de génération de sondages personnalisés.
+
+WOUI permet aux utilisateurs possédant un compte de créer des sondages à petite échelle. Une page spécifique est générée à la création du sondage, l'utilisateur partage le lien aux personnes qui y participent, lesquelles répondent directement sur cette page. Le sondage reste ouvert pendant une durée prédéfinie.
 
 Nous détaillerons ici nos choix techniques, puis l'organisation des différents fichiers du projet et enfin la manière dont nous nous sommes organisés au sein du groupe.
 ## 1. Choix techniques
@@ -19,7 +21,10 @@ La figure suivante détaille les liens entre les différents fichiers du site : 
 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/liens_pages.jpg "Schéma des liens entre les pages")
 ### Modèle dynamique
-(paragraphe puis diagramme de séquence)
+Nous avons représenté les intéractions entre l'utilisateur, le client et le serveur, sous la forme d'un diagramme de séquence.
+
+![Diagramme de séquence général](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/DiagSéquenceWoui.png "Diagramme de séquence du générateur de sondage.")
+
 ### 2.1. Système d'authentification
 Le système d'authentification est géré, côté utilisateur, par 2 pages : login.php et signup.php.
 #### login.php
@@ -43,7 +48,7 @@ Le système de création d'un sondage a été imaginé comme détaillé à la fi
 
 ## 3. Organisation du groupe
 Nous utilisions une application de chat vocal pour nous tenir au courrant et faire des points d'avancement : [Discord](https://discordapp.com/).  
-Pour avoir une liste des tâches à effectuer et les assigner, nous utilisions Trello : [notre Trello](https://trello.com/b/PUTqpnMR/woui).  
+Pour avoir une liste des tâches à effectuer et les assigner, nous utilisions essayer d'utiliser Trello : [notre Trello](https://trello.com/b/PUTqpnMR/woui).  
 Et Github pour mettre le code en commun et gérer les versions : [notre projet Github](https://github.com/SegolenePoisson/ProjetL3/).
 
 La répartition des tâches a été faite comme suit :
