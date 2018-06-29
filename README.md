@@ -23,7 +23,7 @@ Ce projet a été réalisé par *Valentin Petit*, *Kévin Chertier*, *Ségolène
   <dd>Création d'un sondage à plusieurs modules.</dd>
   <dd>Options des modules : réponses simples, réponses ouvertes, à choix multiples, date.</dd>
   <dd>Gestion de la liste d'amis, ajout avec confirmation.</dd>
-  <dd>Création d'un comtpe administrateur.</dd>
+  <dd>Création d'un compte administrateur.</dd>
 </dl>
 
 ---
