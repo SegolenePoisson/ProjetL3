@@ -11,7 +11,15 @@ echo "<body>";
 include 'navbar.php';
 include 'db_connect.php';
 ?>
-
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center teal-text text-lighten-2">Woui</h1>
+    </div>
+  </div>
+  <div class="parallax"><img src="img/background1.jpg"></div>
+</div>
 
   <div class="container">
     <div class = "customcont">
