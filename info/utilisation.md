@@ -37,7 +37,7 @@ En haut, un champ permet de donner un titre au sondage (ou un thème). A gauche 
  
 Une fois les options choisies et le formulaire rempli, cliquer sur "**Envoyer**" pour créer le sondage. Une page s'ouvre alors, indiquant que le sondage a bien été créé et mettant à disposition le lien de partage du sondage.
 
-![Capture d'écran de la page Sondage Créé](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/SondageCree.png "Capture d'écran de la page suivant la création d'un sondage.")
+![Capture d'écran de la page Sondage Créé](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/SondageCree.PNG "Capture d'écran de la page suivant la création d'un sondage.")
 
 
 ### 1.3. Partager et consulter les résultats d'un sondage.
@@ -50,7 +50,7 @@ Pour utiliser le lien de partage d'un sondage, copier le lien fourni puis l'envo
 
 La page du profil contient la liste des sondages créés via ce compte. Sur chaque sondage figure le bouton "**Voir les résultats**". Cliquer sur ce bouton affiche une page présentant les résultats du sondage ainsi que le lien de partage, à copier pour l'envoyer aux personnes concernées.
 
-![Capture d'écran de la page Resultats](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/results.png "Capture d'écran de la page d'affichage des résultats.")
+![Capture d'écran de la page Resultats](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/results.PNG "Capture d'écran de la page d'affichage des résultats.")
 
 
 ### 1.4. Répondre à un sondage.
@@ -58,7 +58,7 @@ La page du profil contient la liste des sondages créés via ce compte. Sur chaq
 
 Pour répondre à un sondage, ouvrir le lien qui y est associé dans le navigateur. La page de réponse du sondage s'affiche alors.
 
-![Capture d'écran de la page Réponse](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/poll.png "Capture d'écran de la page de réponse à un sondage.")
+![Capture d'écran de la page Réponse](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/poll.PNG "Capture d'écran de la page de réponse à un sondage.")
 
 Il suffit de compléter les champs et/ou cocher les cases indiquées dans le formulaire de réponse, puis de cliquer sur le bouton "**Valider**". Le vote est alors pris en compte. Si le créateur du sondage avait choisi l'option "Autoriser les votants à accéder aux réponses", une page s'ouvre contenant les résultats actuels du sondage, elle est sinon redirigée vers la page d'accueil du site.
 
