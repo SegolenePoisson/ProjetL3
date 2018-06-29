@@ -25,7 +25,7 @@ include 'db_connect.php';
 
 <div class="container">
   <div class = "customcont">
-    <div class="row justify-content-center">
+    <div class="row justify-content-center" id="idconfirm">
       <?php
       if(isset($_SESSION["username"])){
 
@@ -90,17 +90,22 @@ include 'db_connect.php';
               }
               $i++;
             }
-          break;
+            break;
+            case "text":
+          case "doodle":
+          // pas de choix à proposer
           default:
-          break;
+            break;
         }
 
       }
       $path = dirname('http://'.$_SERVER['HTTP_HOST'].$_SERVER['PHP_SELF']);
-      echo "Votre sondage a été ajouté !";
+      echo "<h5> Votre sondage a été ajouté ! </h5>";
       echo '<input type="text" value="'.$path.'/poll.php?id='.$pollId.'" id="myInput">';
 
-      echo '<button class="waves-effect waves-light btn" onclick="copy()">Copier le lien de partage</button>';
+      echo '<button class="waves-effect waves-light btn" id="btnConfirm" onclick="copy()">Copier le lien de partage</button>';
+
+      echo '<a href='.$path.'/poll.php?id='.$pollId.'><button class="waves-effect waves-light btn" id="btnConfirm">Acceder à votre sondage</button></a>';
       ?>
     </div>
   </div>

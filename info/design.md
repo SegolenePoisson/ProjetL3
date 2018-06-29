@@ -16,27 +16,31 @@ Nous avons opté pour les langages suivants :
 Nous étions tous à peu près débutants dans ces langages, nous les avions donc choisis entre autres pour l'abondance de documentation et de cours à leur sujet, en particulier sur [Openclassroom](https://openclassrooms.com/). Ils sont couramment utilisés et nous donnent donc une bonne base pour la suite de notre apprentissage.
 Nous pensions a priori que PHP et JavaScript avait des buts tout à fait différents, que le PHP concernait l'aspect serveur d'un site web alors que le JavaScript permettait essentiellement de faire évoluer une page web "en direct", sans avoir à la rafraîchir. Nous avons appris à mi-projet que JavaScript était bien plus complet, mais nos compétences dans ce langage ne permettaient pas une refonte du site. Ici, JavaScript est utilisé uniquement côté client, à la création d'un compte et à la création d'un sondage. Sur la page d'inscription (création de compte), un script vérifie la validité du contenu des champs au remplissage (forme de l'adresse mail et confirmation du mot de passe). Sur la page de création de sondage, un script modifie le formulaire proposé selon l'option de réponse choisie. Vous trouverez plus de détails sur la structure de ces pages dans la section suivante.
 ## 2. Architecture du projet
+
+Cette section exposera tout d'abord les modèles statique et dynamique du projet, pour expliquer ensuite plus en détail le fonctionnement des deux fonctionalités principales du site : le système d'authentification et la création d'un sondage.
+
 ### Modèle statique
 La figure suivante détaille les liens entre les différents fichiers du site : les pages principales sont représentées par les encadrés bleus (nom de la page en haut), accompagnées des fichiers qui y sont inclus (cadre à l'intérieur de la page) et des fichiers qui sont appelés par la page concernée et/ou les pages qui y sont liées (en italique, action qui appelle la page, et nom de la page appelée en dessous). Les flèches peuvent être traduites par "permet d'accéder à...".
 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/liens_pages.jpg "Schéma des liens entre les pages")
+
 ### Modèle dynamique
 Nous avons représenté les intéractions entre l'utilisateur, le client et le serveur, sous la forme d'un diagramme de séquence.
 
 ![Diagramme de séquence général](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/DiagSéquenceWoui.png "Diagramme de séquence du générateur de sondage.")
 
 ### 2.1. Système d'authentification
-Le système d'authentification est géré, côté utilisateur, par 2 pages : login.php et signup.php.
+Le système d'authentification est géré, côté utilisateur, par deux pages : login.php pour la connexion et signup.php pour l'inscription.
 #### login.php
-La page login.php propose une interface simple de connexion composée de deux champs textuels permettant de transmettre le nom d'utilisateur et le mot de passe au serveur. Suite à cela, le serveur verifie les données et redirige vers index.php.
+La page login.php propose une interface simple de connexion composée de deux champs textuels permettant de transmettre le nom d'utilisateur et le mot de passe au serveur. Suite à cela, le serveur vérifie les données et redirige vers la page d'acueil : index.php.
 
 ![Diagramme de sequence de requete de connexion](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/Diagramme_de_sequence_de_requete_de_connexion.png "Diagramme de sequence de requete de connexion")
 
 #### signup.php
-La page signup.php propose une interface composée 6 champs textuels permettant de vérifier et d'enregistrer les informations de l'utilisateur dans la base de données (nom, mail, pseudonyme et mot de passe).  
+La page signup.php propose une interface composée  de six champs textuels permettant de vérifier et d'enregistrer les informations de l'utilisateur dans la base de données (nom, mail, pseudonyme et mot de passe).  
 Un captcha empêche la création automatique et intempestive de comptes.  
-La verification de la forme correcte de l'adresse mail et de l'egalité des deux mots de passes saisis est implementée en JavaScript.
-Si le captcha est validé et que les informations sont correctes, l'utilisateur sera redirigé vers login.php.
+La vérification de la forme correcte de l'adresse mail et de l'égalité des deux mots de passe saisis est implementée en JavaScript.
+Si le captcha est validé et que les informations sont correctes, l'utilisateur sera redirigé vers la page de connexion : login.php.
 
 ![Diagramme de sequence de requete d'inscription](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/Diagramme_de_sequence_de_requete_d'inscription.png "Diagramme de sequence de requete d'inscription")
 
@@ -48,25 +52,16 @@ Le système de création d'un sondage a été imaginé comme détaillé à la fi
 
 ## 3. Organisation du groupe
 Nous utilisions une application de chat vocal pour nous tenir au courrant et faire des points d'avancement : [Discord](https://discordapp.com/).  
-Pour avoir une liste des tâches à effectuer et les assigner, nous utilisions essayer d'utiliser Trello : [notre Trello](https://trello.com/b/PUTqpnMR/woui).  
-Et Github pour mettre le code en commun et gérer les versions : [notre projet Github](https://github.com/SegolenePoisson/ProjetL3/).
+Pour avoir une liste des tâches à effectuer et les assigner, nous utilisions Trello : [notre liste de tâches sur Trello](https://trello.com/b/PUTqpnMR/woui). Il est à noter cependant que le déséquilibre apparent dans la répartition des tâches n'est pas représentatif, tous les membres du groupe n'ont en effet pas utilisé cet outil aussi fréquemment.  
+Pour mettre le code en commun et gérer les versions, nous avons utilisé GitHub : [notre projet sur Github](https://github.com/SegolenePoisson/ProjetL3/).
 
 La répartition des tâches a été faite comme suit :
 
 Participant | Tâche
 :---: | ---
-Valentin Petit |  
+Valentin Petit |  HTML, CSS et Javascript; Script pour l'apparition dynamique de champ de réponse (non abouti); page de création de sondages / resultats
 Romain Olivo | PHP et SQL pour la création de compte, sécurisation de la base de donnée
-Luc Powell | PHP et SQL pour la connexion/deconexion, la liste d'amis et la page d'administration(pas abouti) et securisation de la base donné (cryptage et injection SQL)
+Luc Powell | PHP et SQL pour la connexion/déconnexion, la liste d'amis et la page d'administration (pas abouti) et sécurisation de la base de données (cryptage et injection SQL)
 Antoine Mousserion | 
-Kévin Chertier | PHP et SQL pour l'enregistrement des sondages, la pris en compte des votes et l'affichage des resultats
-Ségolène Poisson | JavaScript ; Script pour la vérification des informations à l'inscription, script pour l'apparition dynamique du formulaire à la création d'un sondage
-
->- Principe de mise en œuvre de la solution (comment)
->- Règles d'architecture
->- Modèle statique : organisation des packages, descriptions des classes principales et de leurs responsabilités (si cela a du sens dans votre projet)
->- Modèle dynamique : flux des événements, nominal et sur erreur, démarrage et arrêt (si cela a du sens dans votre projet)
->- Explication de la prise en compte des contraintes d'analyse (Si une exigence d'analyse a eu un impact sur le design, genre projet multo-plateforme)
->- Cadre de production : outils de dev, de configuration et de livraison.
-
->A ajouter aussi : diagramme de séquences
+Kévin Chertier | PHP et SQL pour l'enregistrement des sondages, la prise en compte des votes et l'affichage des résultats
+Ségolène Poisson | HTML et JavaScript ; Script pour la vérification des informations à l'inscription, script pour l'apparition dynamique du formulaire à la création d'un sondage ; page de création de sondages

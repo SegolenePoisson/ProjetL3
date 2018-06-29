@@ -11,7 +11,15 @@ echo "<body>";
 include 'navbar.php';
 include 'db_connect.php';
 ?>
-
+<div id="index-banner" class="parallax-container">
+  <div class="section no-pad-bot">
+    <div class="container">
+      <br><br>
+      <h1 class="header center teal-text text-lighten-2">Woui</h1>
+    </div>
+  </div>
+  <div class="parallax"><img src="img/background1.jpg"></div>
+</div>
 
 <div class="container">
   <div class = "customcont">
@@ -114,6 +122,11 @@ include 'db_connect.php';
                 }
                 break;
                 case "doodle":
+                ?>
+                <label>
+                  <input type="text" class="datepicker">
+                </label>
+                <?php
                 echo "todo";
                 break;
                 default:
@@ -145,7 +158,7 @@ include 'db_connect.php';
 </div>
 </div>
 
-
+</script>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
