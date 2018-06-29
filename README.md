@@ -21,9 +21,8 @@ Ce projet a été réalisé par *Valentin Petit*, *Kévin Chertier*, *Ségolène
 	
   <dt>v1 - 19/06/2018</dt>
   <dd>Création d'un sondage à plusieurs modules.</dd>
-  <dd>Options des modules : réponses simples, réponses ouvertes, à choix multiples, date.</dd>
+  <dd>Options des modules : réponses simples, réponses ouvertes, à choix multiples.</dd>
   <dd>Gestion de la liste d'amis, ajout avec confirmation.</dd>
-  <dd>Création d'un compte administrateur.</dd>
 </dl>
 
 ---
