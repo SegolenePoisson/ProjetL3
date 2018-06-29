@@ -15,6 +15,8 @@ Sur la page d'accueil, dans la barre de navigation, en haut à droite, cliquer s
 
 Remplir le formulaire d'inscription : entrer un nom, une adresse mail valide, choisir un pseudonyme, un mot de passe (à entrer une deuxième fois pour confirmation dans le champ prévu à cet effet) et un captcha pour prévenir des robots. Cliquer sur le bouton "**S'inscrire**". Le compte est alors créé. Une page d'information s'affiche indiquant "*Votre compte a été créé avec succès.*" avant d'être redirigée vers la page de connexion.
 
+![Capture d'écran de la page Se connecter](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/logIn.jpg "Capture d'écran de la page de connexion.")
+
 Pour se connecter, saisir le pseudonyme choisi lors de l'inscription ainsi que le mot de passe associé, puis cliquer sur "**Se connecter**". Le compte est maintenant connecté. Pour se déconnecter, cliquer sur le bouton "**Déconnexion**". A gauche de ce bouton, on peut voir apparaître le pseudonyme associé au compte.
 
 Un fois connecté à son compte, l'utilisateur peut créer un sondage.
