@@ -70,7 +70,7 @@ Il faut posséder un compte et y être connecté pour ajouter des amis.
 
 Dans la barre de navigation, en haut à droite, cliquer sur "**Amis**". 
 
-![Capture d'écran de la page Amis](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/img.jpg "Capture d'écran de la liste d'amis.")
+![Capture d'écran de la page Amis](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/amis.png "Capture d'écran de la liste d'amis.")
 
 Entrer le pseudonyme d'un ami **possédant un compte** puis cliquer sur "**Ajouter cet ami**". Une demande d'ami est envoyée et le message "*Requêtes d'amis en attente*" s'affiche sur la page suivi de la liste des demandes d'ami en attente de réponse. Si l'ami concerné accepte la demande, il est alors ajouté à la liste d'amis.
 
