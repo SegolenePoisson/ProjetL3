@@ -37,7 +37,7 @@ En haut, un champ permet de donner un titre au sondage (ou un thème). A gauche 
  
 Une fois les options choisies et le formulaire rempli, cliquer sur "**Envoyer**" pour créer le sondage. Une page s'ouvre alors, indiquant que le sondage a bien été créé et mettant à disposition le lien de partage du sondage.
 
-![Capture d'écran de la page Sondage Créé](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/SondageCree.png "Capture d'écran de la page suivant la création d'un sondage.")
+![Capture d'écran de la page Sondage Créé](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/SondageCree.PNG "Capture d'écran de la page suivant la création d'un sondage.")
 
 
 ### 1.3. Partager et consulter les résultats d'un sondage.
@@ -46,11 +46,11 @@ Une fois les options choisies et le formulaire rempli, cliquer sur "**Envoyer**"
 Pour partager un sondage, il y a deux possibilités : utiliser le lien de partage ou passer par la liste d'amis (*cette fonctionnalité n'est pas encore disponible*).
 Pour utiliser le lien de partage d'un sondage, copier le lien fourni puis l'envoyer aux contacts concernés par les moyens de communication habituels. Ce lien est affiché juste après la création du sondage, mais il est également disponible sur la page "**Profil**", de même que ses résultats. Pour y accéder, cliquer sur le pseudonyme associé au compte, dans la barre de navigation, en haut à droite. 
 
-![Capture d'écran de la page Profil](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/profil.png "Capture d'écran de la page du profil.")
+![Capture d'écran de la page Profil](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/profil.PNG "Capture d'écran de la page du profil.")
 
 La page du profil contient la liste des sondages créés via ce compte. Sur chaque sondage figure le bouton "**Voir les résultats**". Cliquer sur ce bouton affiche une page présentant les résultats du sondage ainsi que le lien de partage, à copier pour l'envoyer aux personnes concernées.
 
-![Capture d'écran de la page Resultats](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/results.png "Capture d'écran de la page d'affichage des résultats.")
+![Capture d'écran de la page Resultats](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/results.PNG "Capture d'écran de la page d'affichage des résultats.")
 
 
 ### 1.4. Répondre à un sondage.
