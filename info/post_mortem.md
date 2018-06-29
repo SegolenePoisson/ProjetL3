@@ -71,9 +71,11 @@ On peut imaginer plusieurs options à rajouter aux sondages :
  - La possibilité d'ajouter dynamiquement des champs de réponse lors de la création.
  - La possibilité de choisir un type DatePicker, permettant le choix entre plusieurs jours et horaires, comme initialement prévu.
  - Lors de l'affichage des résultats, proposer plusieurs types de graphiques représentatifs.
- <br><br><br>
+ 
+ <br>
 
 ---
+<br>
 
 # Manuel de reprise de code
 
