@@ -4,7 +4,7 @@ L'objectif de ce projet est la création d'un outil en ligne de génération de 
 
 WOUI permet aux utilisateurs possédant un compte de créer des sondages personnalisables grâces à des options, pour permettre par exemple le choix entre plusieurs réponses prédéfinies ou la réponse à une question ouverte. Une page spécifique est générée à la création du sondage, l'utilisateur en partage le lien aux personnes qui y participent, lesquelles répondent directement sur cette page. Le sondage reste ouvert pendant une durée prédéfinie. Pour plus d'informations à ce sujet, nous vous invitons à consulter le [manuel d'utilisation](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/utilisation.md).
 
-Le système de vote fera l'objet de plusieurs amélioration/versions. Vous en trouverez le détail dans le [document post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/post_mortem.md), qui contient également un manuel de reprise de code.
+Le système de vote fera l'objet de plusieurs améliorations/versions. Vous en trouverez le détail dans le [document post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/post_mortem.md), qui contient également un manuel de reprise de code.
 
 L'organisation du site et les outils utilisés sont détaillés dans le [document d'architecture](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/design.md).
 
