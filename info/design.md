@@ -24,6 +24,9 @@ La figure suivante détaille les liens entre les différents fichiers du site : 
 
 ![Schéma des liens entre les pages](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/liens_pages.jpg "Schéma des liens entre les pages")
 
+
+Cette figure détaille les tables de la base de données, ainsi que les relations entre celles-ci.
+![Organisation de la base de données](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/bdd.png "Organisation de la base de données")
 ### Modèle dynamique
 Nous avons représenté les intéractions entre l'utilisateur, le client et le serveur, sous la forme d'un diagramme de séquence.
 
