@@ -114,6 +114,11 @@ include 'db_connect.php';
                 }
                 break;
                 case "doodle":
+                ?>
+                <label>
+                  <input type="text" class="datepicker">
+                </label>
+                <?php
                 echo "todo";
                 break;
                 default:
@@ -145,7 +150,7 @@ include 'db_connect.php';
 </div>
 </div>
 
-
+</script>
 <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
 <script src="js/materialize.js"></script>
 <script src="js/init.js"></script>
