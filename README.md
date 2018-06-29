@@ -1,10 +1,12 @@
-# ProjetL3
+# Projet L3 Informatique : générateur de sondage
 
 L'objectif est de créer un outil en ligne de génération de sondages à petite échelle.
 
 WOUI permet aux utilisateurs possédant un compte de créer des sondages personnalisables grâces aux options, pour permettre par exemple le choix entre plusieurs réponses prédéfinies ou la réponse à une question ouverte. Une page spécifique est générée à la création du sondage, l'utilisateur en partage le lien aux personnes qui y participent, lesquelles répondent directement sur cette page. Le sondage reste ouvert pendant une durée prédéfinie. Pour plus d'informations à ce sujet, nous vous invitons à consulter le [manuel d'utilisation](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/utilisation.md).
 
 Le système de vote fera l'objet de plusieurs amélioration/versions. Vous en trouverez le détail dans le [document post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/post_mortem.md).
+
+Ce projet a été réalisé par *Valentin Petit*, *Kévin Chertier*, *Ségolène Poisson*, *Luc Powell*, *Antoine Mousserion* et *Romain Olivo*, étudiants à l'université de Rennes 1 en troisième année de Licence Informatique.
 
 ----
 
