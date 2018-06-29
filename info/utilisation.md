@@ -36,7 +36,7 @@ En haut, un champ permet de donner un titre au sondage (ou un thème). A gauche 
  A la fin du formulaire, une dernière option est proposée : "**Autoriser les votants à accéder aux réponses**", qui permet aux votants de voir les résultats actuels du sondage après avoir soumis leur vote.
  
 Une fois les options choisies et le formulaire rempli, cliquer sur "**Envoyer**" pour créer le sondage. Une page s'ouvre alors, indiquant que le sondage a bien été créé et mettant à disposition le lien de partage du sondage.
-Vous pourrez ensuite copier ce lien et acceder à votre sondage grâce aux deux boutons en bas de la page
+Vous pourrez ensuite copier ce lien et accéder à votre sondage grâce aux deux boutons en bas de la page.
 
 ![Capture d'écran de la page Sondage Créé](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/SondageCree.PNG "Capture d'écran de la page suivant la création d'un sondage.")
 
