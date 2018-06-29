@@ -11,7 +11,7 @@ L'utilisateur doit créer un compte pour utiliser les fonctionnalités du site (
 
 Sur la page d'accueil, dans la barre de navigation, en haut à droite, cliquer sur "**S'inscrire**". 
 
-![Capture d'écran de la page S'inscrire](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/img.jpg "Capture d'écran de la page d'inscription.")
+![Capture d'écran de la page S'inscrire](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/signUp.png "Capture d'écran de la page d'inscription.")
 
 Remplir le formulaire d'inscription : entrer un nom, une adresse mail valide, choisir un pseudonyme, un mot de passe (à entrer une deuxième fois pour confirmation dans le champ prévu à cet effet) et un captcha pour prévenir des robots. Cliquer sur le bouton "**S'inscrire**". Le compte est alors créé. Une page d'information s'affiche indiquant "*Votre compte a été créé avec succès.*" avant d'être redirigée vers la page de connexion.
 
