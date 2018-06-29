@@ -59,7 +59,7 @@ La répartition des tâches a été faite comme suit :
 
 Participant | Tâche
 :---: | ---
-Valentin Petit |  HTML, CSS et Javascript; Script pour l'apparition dynamique de champ de réponse (non abouti); page de création de sondages / resultats
+Valentin Petit |  HTML, CSS et Javascript ; Script pour l'apparition dynamique de champ de réponse (non abouti) ; page de création de sondages / resultats
 Romain Olivo | PHP et SQL pour la création de compte, sécurisation de la base de donnée
 Luc Powell | PHP et SQL pour la connexion/déconnexion, la liste d'amis et la page d'administration (pas abouti) et sécurisation de la base de données (cryptage et injection SQL)
 Antoine Mousserion | 
