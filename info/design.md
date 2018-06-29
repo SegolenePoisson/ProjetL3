@@ -62,6 +62,6 @@ Participant | Tâche
 Valentin Petit |  HTML, CSS et Javascript ; Script pour l'apparition dynamique de champ de réponse (non abouti) ; page de création de sondages / resultats
 Romain Olivo | PHP et SQL pour la création de compte, sécurisation de la base de donnée
 Luc Powell | PHP et SQL pour la connexion/déconnexion, la liste d'amis et la page d'administration (pas abouti) et sécurisation de la base de données (cryptage et injection SQL)
-Antoine Mousserion | 
+Antoine Mousserion | PHP et JavaScript pour la création du système d'amis et des pages de sondage initiales
 Kévin Chertier | PHP et SQL pour l'enregistrement des sondages, la prise en compte des votes et l'affichage des résultats
 Ségolène Poisson | HTML et JavaScript ; Script pour la vérification des informations à l'inscription, script pour l'apparition dynamique du formulaire à la création d'un sondage ; page de création de sondages
