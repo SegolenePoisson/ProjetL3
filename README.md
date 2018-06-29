@@ -8,7 +8,7 @@ Le système de vote fera l'objet de plusieurs améliorations/versions. Vous en t
 
 L'organisation du site et les outils utilisés sont détaillés dans le [document d'architecture](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/design.md).
 
-Ce projet a été réalisé par *Valentin Petit*, *Kévin Chertier*, *Ségolène Poisson*, *Luc Powell*, *Antoine Mousserion* et *Romain Olivo*, étudiants à l'université de Rennes 1 en troisième année de Licence Informatique. Vous pouvez consulter le [journal de bord](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/journal.md) pour plus de renseignements sur la répartion des tâches au cours du projet.
+Ce projet a été réalisé par *Valentin Petit*, *Kévin Chertier*, *Ségolène Poisson*, *Luc Powell*, *Antoine Mousserion* et *Romain Olivo*, étudiants à l'université de Rennes 1 en troisième année de Licence Informatique. Vous pouvez consulter le [journal de bord](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/journal.md) pour plus de renseignements sur la répartition des tâches au cours du projet.
 
 ----
 
