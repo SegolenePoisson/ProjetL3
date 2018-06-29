@@ -56,7 +56,7 @@ La répartition des tâches a été faite comme suit :
 Participant | Tâche
 :---: | ---
 Valentin Petit |  
-Romain Olivo | 
+Romain Olivo | PHP et SQL pour la création de compte, sécurisation de la base de donnée
 Luc Powell | 
 Antoine Mousserion | 
 Kévin Chertier | PHP et SQL pour l'enregistrement des sondages, la pris en compte des votes et l'affichage des resultats
