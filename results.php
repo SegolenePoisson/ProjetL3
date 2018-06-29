@@ -21,13 +21,27 @@ include 'db_connect.php';
         if(isset($_SESSION["username"])){
           if(isset($_GET['id'])) {
 
-
-            $sql = "SELECT title from polls,user WHERE polls.id = ? AND creatorId=user.id AND username=?";
+            //on recupere le titre du sondage
+            $sql = "SELECT title from polls WHERE polls.id = ?";
             $result = $bdd->prepare($sql);
-            $result->execute([$_GET["id"],$_SESSION["username"]]);
+            $result->execute([$_GET["id"]]);
             $donnees = $result->fetch();
 
+            //si le sondage existe
             if($result->rowCount()>0){
+                  //si les résultats peuvent être affich"s au public ou si l'utilisateur est le créateur
+                  $sql = "SELECT displayresult from polls WHERE polls.id = ?";
+                  $isAllowed = $bdd->prepare($sql);
+                  $isAllowed->execute([$_GET["id"]]);
+                  $allowed = $isAllowed->fetch();
+
+                  $sql = "SELECT title FROM polls,user WHERE polls.id = ? and creatorId = user.id AND username = ?";
+                  $creator = $bdd->prepare($sql);
+                  $creator->execute([$_GET["id"],$_SESSION["username"]]);
+                  $isCreator = $creator->fetch();
+                  $nb = ($creator->rowCount());
+                
+              if($allowed["displayresult"] || $nb>0){
               echo  '<h5 class="header center teal-text text-lighten-2">'.$donnees["title"].'</h5>';
 
               //boucle sur les modules de ce polls
@@ -92,10 +106,11 @@ include 'db_connect.php';
 
 
 
-
-            }else{
+            }
+            else{
               echo "Vous n'avez pas la permission d'acceder à cette page.";
             }
+          }
           }else{
             echo "ce sondage n'existe pas, merci de réessayer.";
           }

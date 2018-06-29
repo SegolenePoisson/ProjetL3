@@ -90,9 +90,12 @@ include 'db_connect.php';
               }
               $i++;
             }
-          break;
+            break;
+            case "text":
+          case "doodle":
+          // pas de choix à proposer
           default:
-          break;
+            break;
         }
 
       }

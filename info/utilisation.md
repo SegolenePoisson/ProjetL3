@@ -11,7 +11,7 @@ L'utilisateur doit créer un compte pour utiliser les fonctionnalités du site (
 
 Sur la page d'accueil, dans la barre de navigation, en haut à droite, cliquer sur "**S'inscrire**". 
 
-![Capture d'écran de la page S'inscrire](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/img.jpg "Capture d'écran de la page d'inscription.")
+![Capture d'écran de la page S'inscrire](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/signUp.png "Capture d'écran de la page d'inscription.")
 
 Remplir le formulaire d'inscription : entrer un nom, une adresse mail valide, choisir un pseudonyme, un mot de passe (à entrer une deuxième fois pour confirmation dans le champ prévu à cet effet) et un captcha pour prévenir des robots. Cliquer sur le bouton "**S'inscrire**". Le compte est alors créé. Une page d'information s'affiche indiquant "*Votre compte a été créé avec succès.*" avant d'être redirigée vers la page de connexion.
 
@@ -31,11 +31,7 @@ En haut, un champ permet de donner un titre au sondage (ou un thème). A gauche 
 - "**Texte**" permet de créer un sondage à partir d'une question ouverte. Dans la partie droite contenant le formulaire, un champ permet d'entrer la question ouverte. Les sondés disposeront d'un cadre de texte pour y répondre librement.
 - "**Calendrier**" permet aux sondés de sélectionner une date sur un calendrier miniature pour répondre à la question renseignée dans le formulaire de création de sondage, dans le champ prévu à cet effet (*cette fonctionnalité n'est pas encore disponible*).
 
- A la fin du formulaire, une dernière option est proposée : "**Autoriser les votants à 
- 
- 
- 
- eder aux réponses**", qui permet aux votants de voir les résultats actuels du sondage après avoir soumis leur vote.
+ A la fin du formulaire, une dernière option est proposée : "**Autoriser les votants à accéder aux réponses**", qui permet aux votants de voir les résultats actuels du sondage après avoir soumis leur vote.
  
 Une fois les options choisies et le formulaire rempli, cliquer sur "**Envoyer**" pour créer le sondage. Une page s'ouvre alors, indiquant que le sondage a bien été créé et mettant à disposition le lien de partage du sondage.
 
@@ -50,7 +46,7 @@ Pour utiliser le lien de partage d'un sondage, copier le lien fourni puis l'envo
 
 ![Capture d'écran de la page Profil](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/profil.png "Capture d'écran de la page du profil.")
 
-La page du profil contient la liste des sondages créés via ce compte. Sur chaque sondage figure le bouton "**Voir les résultats**". Cliquer sur ce bouton affiche une page présentant les résultats du sondage ainsi que le lien de partage, à copier pour pour l'envoyer aux personnes concernées.
+La page du profil contient la liste des sondages créés via ce compte. Sur chaque sondage figure le bouton "**Voir les résultats**". Cliquer sur ce bouton affiche une page présentant les résultats du sondage ainsi que le lien de partage, à copier pour l'envoyer aux personnes concernées.
 
 ![Capture d'écran de la page Resultats](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/results.png "Capture d'écran de la page d'affichage des résultats.")
 
@@ -70,11 +66,11 @@ Il faut posséder un compte et y être connecté pour ajouter des amis.
 
 Dans la barre de navigation, en haut à droite, cliquer sur "**Amis**". 
 
-![Capture d'écran de la page Amis](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/img.jpg "Capture d'écran de la liste d'amis.")
+![Capture d'écran de la page Amis](https://github.com/SegolenePoisson/ProjetL3/raw/master/info/img/amis.png "Capture d'écran de la liste d'amis.")
 
 Entrer le pseudonyme d'un ami **possédant un compte** puis cliquer sur "**Ajouter cet ami**". Une demande d'ami est envoyée et le message "*Requêtes d'amis en attente*" s'affiche sur la page suivi de la liste des demandes d'ami en attente de réponse. Si l'ami concerné accepte la demande, il est alors ajouté à la liste d'amis.
 
-Quand une demande d'ami est reçue, un message apparaît dans la page "**Amis**" ("*Ces personnes veulent vous ajouter en ami*") ainsi que le pseudonyme de la personne ayant fait la demande, accompagné de deux boutons : l'un permettant d'accepter la demande ("**Accepter**") et l'autre pour la refuser ("**Refuser**").
+Quand une demande d'ami est reçue, un message apparaît dans la page "**Amis**" ("*Ces personnes veulent vous ajouter en ami*") ainsi que le pseudonyme de la personne ayant fait la demande, accompagné de deux boutons : l'un permettant d'accepter la demande ("**Accepter**") et l'autre de la refuser ("**Refuser**").
 
 Une fois les amis ajoutés, ils pourront apparaître lors de la diffusion d'un sondage pour le leur envoyer par mail rapidement (*cette fonctionnalité n'est pas encore disponible*).
 
