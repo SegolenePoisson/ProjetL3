@@ -26,7 +26,7 @@ Un module est un ensemble comprenant une question, des options, et eventuellemen
 - Après l'élaboration du sondage, son créateur devrait pouvoir envoyer un email à certains contacts de sa liste d'amis, en cochant une case par exemple.
 - Le créateur d'un sondage devrait aussi pouvoir définir une date de clôture du sondage.
 - Le créateur d'un sondage devrait pouvoir le supprimer ou le desactiver/cacher.
-
+- Un des utilisateurs est l'administrateur général du site.
 - L'administrateur du site devrait pouvoir supprimer des utilisateurs ou des sondages.
 - L'administrateur devrait pouvoir envoyer une newsletter et/ou une note de version par mail, aux utilisateurs enregistrés.
 
