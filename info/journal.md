@@ -8,3 +8,12 @@
 11/06-17/06 | mise en forme de la seconde version du sondage, page profil et sondages déjà créés | seconde version page de vote | sécurisation : prévention des injections SQL système de confirmation pour la liste d'amis afin d'éviter les spam | sécurité (injection SQL) + renseignements sur la création de captcha | Amélioration visuelle du système d'amis et ajout de fonctionnalités | mise en place des sondages modulaires
 18/06-24/06 | ajout des modules pour la création d'un sondage  | élaboration de la version 2 de la page de vue des résultats, ainsi que de la page de profil | page administrateur | sécurité (création du captcha anti-bot) | Dossier | ajout de JS sur la page de création de sondage pour modifier le formulaire affiché selon les options choisies ; création des fichiers squelette du dossier
 25/06-29/06 | dossier | dossier | dossier | dossier + sécurité (captcha) | Dossier | dossier
+
+<br><br>
+
+---
+
+Autres documents d'information :  
+- [document post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/post_mortem.md) ;
+- [document d'architecture](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/design.md) ;
+- [manuel d'utilisation](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/utilisation.md).
