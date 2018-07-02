@@ -99,3 +99,11 @@ Pour obtenir les tables de la base de données, sans valeurs, il faut exécuter 
 
 Pour obtenir les tables avec un exemple de valeurs, dans phpmyadmin, utiliser la fonction 'import' et le fichier structure.sql.
 
+<br><br>
+
+---
+
+Autres documents d'information :  
+- [manuel d'utilisation](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/utilisation.md) ;
+- [document d'architecture](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/design.md) ;
+- [journal de bord](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/journal.md).
