@@ -7,7 +7,7 @@ WOUI permet aux utilisateurs possédant un compte de créer des sondages personn
 Le site est disponible en ligne en cliquant [ici](http://mydexios.fr/index.php).
 
 Le système de vote fera l'objet de plusieurs améliorations/versions. Vous en trouverez le détail dans le [document post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/post_mortem.md), qui contient également un manuel de reprise de code.
-Vous pouvez aussi visionner le [screencast](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/screenscast.wmv) de présentation du site.
+Vous pouvez aussi visionner le screencast de présentation du site [via Youtube](https://youtu.be/K_7WUoWmru8), ou le télécharger [via GitHub](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/screenscast.wmv).
 
 L'organisation du site et les outils utilisés sont détaillés dans le [document d'architecture](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/design.md).
 
