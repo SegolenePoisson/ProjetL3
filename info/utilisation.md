@@ -88,4 +88,5 @@ Une fois les amis ajoutés, ils pourront apparaître lors de la diffusion d'un s
 Autres documents d'information :  
 - [document post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/post_mortem.md) ;
 - [document d'architecture](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/design.md) ;
-- [journal de bord](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/journal.md).
+- [journal de bord](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/journal.md) ;
+- [screencast](https://youtu.be/K_7WUoWmru8) (Youtube).
