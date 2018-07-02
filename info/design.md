@@ -68,3 +68,13 @@ Luc Powell | PHP et SQL pour la connexion/déconnexion, la liste d'amis et la pa
 Antoine Mousserion | PHP et JavaScript pour la création du système d'amis et des pages de sondage initiales
 Kévin Chertier | PHP et SQL pour l'enregistrement des sondages, la prise en compte des votes et l'affichage des résultats
 Ségolène Poisson | HTML et JavaScript ; Script pour la vérification des informations à l'inscription, script pour l'apparition dynamique du formulaire à la création d'un sondage ; page de création de sondages
+
+<br><br>
+
+---
+
+Autres documents d'information :  
+- [document post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/post_mortem.md) ;
+- [manuel d'utilisation](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/utilisation.md) ;
+- [journal de bord](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/journal.md).
+
