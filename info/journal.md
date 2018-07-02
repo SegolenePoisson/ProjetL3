@@ -16,4 +16,5 @@
 Autres documents d'information :  
 - [document post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/post_mortem.md) ;
 - [document d'architecture](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/design.md) ;
-- [manuel d'utilisation](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/utilisation.md).
+- [manuel d'utilisation](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/utilisation.md) ;
+- [screencast](https://youtu.be/K_7WUoWmru8) (Youtube).
