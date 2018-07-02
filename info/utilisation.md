@@ -7,7 +7,7 @@ WOUI permet aux utilisateurs possédant un compte de créer des sondages à peti
 
 L'utilisateur doit créer un compte pour utiliser les fonctionnalités du site (détaillées dans les parties suivantes) : créer un sondage, le partager, y répondre, consulter les résultats et gérer la liste d'amis.
 
-Pour un résumé du fonctionnement du site, une vidéo screencast est disponible sur Youtube en cliquant [ici](https://youtu.be/K_7WUoWmru8).
+Pour un rapide aperçu du fonctionnement du site, une vidéo screencast est disponible sur Youtube en cliquant [ici](https://youtu.be/K_7WUoWmru8).
 
 ### 1.1. Créer un compte et se connecter.
 
