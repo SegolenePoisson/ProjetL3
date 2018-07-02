@@ -76,5 +76,5 @@ Ségolène Poisson | HTML et JavaScript ; Script pour la vérification des infor
 Autres documents d'information :  
 - [document post-mortem](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/post_mortem.md) ;
 - [manuel d'utilisation](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/utilisation.md) ;
-- [journal de bord](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/journal.md).
-
+- [journal de bord](https://github.com/SegolenePoisson/ProjetL3/blob/master/info/journal.md) ;
+- [screencast](https://youtu.be/K_7WUoWmru8) (Youtube).
