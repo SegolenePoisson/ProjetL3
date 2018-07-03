@@ -57,7 +57,7 @@ footer.page-footer {
   margin: 0;
 }
 .customcont{
-  background-color: #EEE;
+  background-color: #c5e1a5;
   padding : 1%;
 }
 h5{
@@ -84,4 +84,8 @@ h5{
 
 #btnConfirm {
   margin: 5px 0 0 5px;
+}
+.altback {
+   background-color: #c5e1a5;
+  padding : 1%;
 }
